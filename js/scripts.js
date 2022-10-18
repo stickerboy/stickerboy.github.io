@@ -6,8 +6,10 @@
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-const resume = document.getElementById("resume");
-const email = "xc.ynnek@yeh";
-const subject = "Request for CV / Resume";
-const emailRev = email.split("").reverse().join("");
-resume.setAttribute("href", "mailto:" + emailRev + "?subject=" + subject);
+if(document.getElementById("resume").length > 0) {
+    const resume = document.getElementById("resume");
+    const email = "xc.ynnek@yeh";
+    const subject = "Request for CV / Resume";
+    const emailRev = email.split("").reverse().join("");
+    resume.setAttribute("href", "mailto:" + emailRev + "?subject=" + subject);
+}
