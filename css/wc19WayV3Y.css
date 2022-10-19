@@ -1,6 +1,9 @@
 /*!
 * CURIOUS?
 */
+header.masthead {
+    background: url("../assets/img/bg-masthead-wc19WayV3Y.jpg") no-repeat left 50% bottom 25%;
+}
 #curiousgrid button {
     min-width: 2.5rem;
     font-weight: 600;
