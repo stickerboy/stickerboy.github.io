@@ -13,3 +13,14 @@ if(document.getElementById("resume") !== null) {
     const emailRev = email.split("").reverse().join("");
     resume.setAttribute("href", "mailto:" + emailRev + "?subject=" + subject);
 }
+
+const curious = document.getElementById("curious");
+const curiouser = document.getElementById("curiouser");
+curious.addEventListener("click", function() {
+    this.classList.toggle("me-4");
+    curiouser.classList.toggle("visually-hidden");
+});
+
+curiouser.addEventListener("click", function() {
+    window.location = "../==wc19WayV3Y/index.html";
+});
