@@ -22,5 +22,5 @@ curious.addEventListener("click", function() {
 });
 
 curiouser.addEventListener("click", function() {
-    window.location = "../==wc19WayV3Y/index.html";
+    window.location = "../==wc19WayV3Y";
 });
