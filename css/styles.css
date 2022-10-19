@@ -44,7 +44,10 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     border-bottom: 0.25rem solid;
     padding-bottom: 0.25rem;
 }
-  
+.navbar-nav .show > .nav-link,
+.navbar-nav .nav-link.active {
+    color: var(--bs-cyan-800);
+}
 .navbar-toggler-icon {
     background-image: var(--bs-navbar-toggler-icon-bg);
 }
