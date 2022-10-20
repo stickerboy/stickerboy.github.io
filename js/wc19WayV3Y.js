@@ -14,7 +14,7 @@ verify.addEventListener("click", function() {
         codeInput.classList.remove("is-invalid");
         codeInput.classList.add("is-valid");
         setTimeout(() => {
-            window.location ="../index.html";
+            window.location = `../${atob("c21pcmtsZQ==")}`;
         }, 2000);
         return;
     }
