@@ -68,17 +68,17 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 * Site feature styling
 */
 .features-icons {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 .features-icons .features-icons-item {
     max-width: 20rem;
 }
 .features-icons .features-icons-item .features-icons-icon {
-    height: 7rem;
+    height: 5rem;
 }
 .features-icons .features-icons-item .features-icons-icon i {
-    font-size: 4.5rem;
+    font-size: 3rem;
 }
 .features-icons .features-icons-item .features-icons-icon i::before {
     transition: stroke 0.4s ease, color 0.4s ease;
