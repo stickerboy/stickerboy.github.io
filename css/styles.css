@@ -8,6 +8,7 @@
 */
 :root {
     --bs-cyan-600: #0aa2c0;
+    --bs-cyan-600-85: rgba(10, 162, 192, 0.85);
     --bs-cyan-800: #055160;
     --bs-343: #343a40;
     --bs-ice-dark: #1c375e;
@@ -140,22 +141,31 @@ header.masthead h1, header.masthead .h1 {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
-  
 .flickr .card {
     -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
-}
-  
+} 
 .flickr .card:hover,
 .flickr .card:focus,
 .flickr .card:active {
     box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
     -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  
+    transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
 }
-  
+.card-caption {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: var(--bs-cyan-600-85);
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.flickr-item:hover .card-caption, 
+.flickr-item:focus .card-caption {
+    opacity: 1;
+}
+
 .call-to-action {
     position: relative;
     background-color: var(--bs-343);
