@@ -59,6 +59,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 .link-stckr:focus, 
 .link-stckr:hover {
     color: var(--bs-cyan-800);
+    transition: color 0.3s ease;
 }
 .border-stckr {
     border-color: var(--bs-cyan-600) !important;
@@ -143,7 +144,7 @@ header.masthead h1, header.masthead .h1 {
     padding-bottom: 4rem;
 }
 
-.projects .card {
+.projects .card-text {
     text-decoration: none;
     color: var(--bs-dark);
 }
