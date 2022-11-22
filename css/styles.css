@@ -142,6 +142,12 @@ header.masthead h1, header.masthead .h1 {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
+
+.projects .card {
+    text-decoration: none;
+    color: var(--bs-dark);
+}
+
 .flickr .card {
     -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -161,6 +167,7 @@ header.masthead h1, header.masthead .h1 {
     top: 0;
     left: 0;
     position: absolute;
+    border-radius: var(--bs-border-radius);
 }
 .flickr-item:hover .card-caption, 
 .flickr-item:focus .card-caption {
