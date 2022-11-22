@@ -144,16 +144,21 @@ header.masthead h1, header.masthead .h1 {
     padding-bottom: 4rem;
 }
 
-.projects .card-text {
+.projects .card {
     text-decoration: none;
     color: var(--bs-dark);
 }
 
+.projects .card,
 .flickr .card {
     -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
 } 
+
+.projects .card:hover,
+.projects .card:focus,
+.projects .card:active,
 .flickr .card:hover,
 .flickr .card:focus,
 .flickr .card:active {
