@@ -1,7 +1,7 @@
 /*!
 * 
-* Copyright 2022 @stickerboy / Kenny Cameron
 * kenny.cx v1.1.0 (https://www.kenny.cx)
+* Copyright 2024 @stickerboy / Kenny Cameron
 */
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
