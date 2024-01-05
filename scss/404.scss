@@ -1,6 +1,9 @@
 /*!
 * CURIOUS?
 */
+@use "sass:map";
+@import "backgrounds";
+
 .masthead {
-    background: url("../img/bg-masthead-faito.jpg") no-repeat left 50% bottom 25%;
+    background: url(map.get($backgrounds, "404")) no-repeat left 50% bottom 25%;
 }

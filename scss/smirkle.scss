@@ -1,8 +1,11 @@
 /*!
 * CURIOUS?
 */
+@use "sass:map";
+@import "backgrounds";
+
 .masthead {
-    background: url("../img/bg-masthead-smirkle.jpg") no-repeat left 60% bottom 60%;
+    background: url(map.get($backgrounds, "smirkle")) no-repeat left 60% bottom 60%;
 }
 .ascii {
     display: inline-block;
