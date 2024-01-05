@@ -15,5 +15,8 @@
     "url": "https://github.com/stickerboy/stickerboy.github.io/issues"
   },
   "author": "Kenny Cameron",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-scss": "^5.3.2"
+  }
 }
