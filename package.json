@@ -3,9 +3,9 @@
   "version": "1.1.0",
   "description": "I'm a web-designing code-decrypting tech-support musician",
   "main": "index.html",
-  "scripts": {   
-	  "dev": "sass --watch --update --style=expanded scss:assets/devcss",   
-	  "prod": "sass --no-source-map --style=compressed scss:assets/css" 
+  "scripts": {
+    "dev": "sass --watch --update --style=expanded scss:assets/devcss",
+    "prod": "sass --no-source-map --style=compressed scss:assets/css"
   },
   "repository": {
     "type": "git",
