@@ -5,7 +5,7 @@
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "wc19WayV3Y")) no-repeat left 50% bottom 42%;
+    background: url(map.get($backgrounds, "wc19WayV3Y"))  map.get($background-pos, "wc19WayV3Y");
 }
 #curiousgrid button {
     min-width: 2.5rem;

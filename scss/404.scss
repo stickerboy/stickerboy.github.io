@@ -5,5 +5,5 @@
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "404")) no-repeat left 50% bottom 25%;
+    background: url(map.get($backgrounds, "404")) map.get($background-pos, "404");
 }

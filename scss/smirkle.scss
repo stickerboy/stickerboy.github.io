@@ -5,7 +5,7 @@
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "smirkle")) no-repeat left 60% bottom 60%;
+    background: url(map.get($backgrounds, "smirkle"))  map.get($background-pos, "smirkle");
 }
 .ascii {
     display: inline-block;

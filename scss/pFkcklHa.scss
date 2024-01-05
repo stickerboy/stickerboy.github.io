@@ -5,5 +5,5 @@
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "pFkcklHa")) no-repeat left 60% bottom 84%;
+    background: url(map.get($backgrounds, "pFkcklHa")) map.get($background-pos, "pFkcklHa");
 }
