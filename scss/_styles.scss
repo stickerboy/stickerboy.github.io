@@ -91,11 +91,6 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     background: url(map.get($backgrounds, "default")) map.get($background-pos, "default");
     background-size: cover;
 
-    @media (min-width: 768px) {
-        padding-top: 12rem;
-        padding-bottom: 12rem;
-    }
-
     h1,
     .h1 {
         font-size: 2rem;
