@@ -62,9 +62,6 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 * Site feature styling
 */
 .features-icons {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-
     &-item {
         max-width: 20rem;
     }
@@ -93,8 +90,6 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     background-color: var(--bs-343);
     background: url(map.get($backgrounds, "default")) map.get($background-pos, "default");
     background-size: cover;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
 
     @media (min-width: 768px) {
         padding-top: 12rem;
@@ -122,12 +117,6 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 }
 
 .showcase {
-    &-text {
-        padding: 3rem;
-        @media (min-width: 768px) {
-            padding: 7rem;
-        }
-    }
     &-img {
         min-height: 30rem;
         background-size: cover;
@@ -136,9 +125,6 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 }
   
 .card-container {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-
     .card {
         -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -186,8 +172,6 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     background-color: var(--bs-343);
     background: url("../img/bg-masthead-faito.jpg") no-repeat center center;
     background-size: cover;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
 
     h2,
     .h2 {
@@ -204,9 +188,4 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
         left: 0;
         opacity: 0.5;
     }
-}
-  
-.footer {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
 }
