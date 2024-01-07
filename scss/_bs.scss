@@ -26,6 +26,14 @@ $spacers: (
   14: $spacer + 11rem,
 );
 
+// Custom colors
+$custom-colors: (
+  "stckr": #0aa2c0,
+  "343": #343a40,
+  "ice": #1c375e
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
 @import "../node_modules/bootstrap-scss/maps";
 @import "../node_modules/bootstrap-scss/mixins";
 @import "../node_modules/bootstrap-scss/utilities";
