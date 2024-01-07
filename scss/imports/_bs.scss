@@ -34,6 +34,10 @@ $custom-colors: (
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
+$color-stckr: map-get($theme-colors, "stckr");
+$color-343: map-get($theme-colors, "343");
+$color-ice: map-get($theme-colors, "ice");
+
 @import "../../node_modules/bootstrap-scss/maps";
 @import "../../node_modules/bootstrap-scss/mixins";
 @import "../../node_modules/bootstrap-scss/utilities";
