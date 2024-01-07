@@ -1,7 +1,7 @@
 /*!
 * CURIOUS?
 */
-@import "default";
+@import "imports/default";
 
 .masthead {
     background: url(map-get($backgrounds, "fallback")) map-get($background-pos, "default");
