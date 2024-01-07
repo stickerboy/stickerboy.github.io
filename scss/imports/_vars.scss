@@ -28,3 +28,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 $color-stckr: map-get($theme-colors, "stckr");
 $color-343: map-get($theme-colors, "343");
 $color-ice: map-get($theme-colors, "ice");
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem,
+  7: 2rem,
+  8: 1.5rem
+);
