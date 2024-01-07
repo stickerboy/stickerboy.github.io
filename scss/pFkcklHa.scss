@@ -1,9 +1,8 @@
 /*!
 * CURIOUS?
 */
-@use "sass:map";
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "pFkcklHa")) map.get($background-pos, "pFkcklHa");
+    background: url(map-get($backgrounds, "pFkcklHa")) map-get($background-pos, "pFkcklHa");
 }

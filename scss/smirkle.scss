@@ -1,11 +1,10 @@
 /*!
 * CURIOUS?
 */
-@use "sass:map";
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "smirkle"))  map.get($background-pos, "smirkle");
+    background: url(map-get($backgrounds, "smirkle"))  map-get($background-pos, "smirkle");
 }
 .ascii {
     display: inline-block;

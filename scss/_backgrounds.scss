@@ -1,6 +1,6 @@
 $backgrounds: (
     "default": "../img/bg-masthead-tir.jpg",
-    "404": "../img/bg-masthead-faito.jpg",
+    "fallback": "../img/bg-masthead-faito.jpg",
     "wc19WayV3Y": "../img/bg-masthead-wc19WayV3Y.jpg",
     "pFkcklHa": "../img/bg-masthead-pFkcklHa.jpg",
     "smirkle": "../img/bg-masthead-smirkle.jpg"
@@ -10,5 +10,6 @@ $background-pos: (
     "default": no-repeat left 50% bottom 25%,
     "wc19WayV3Y": no-repeat left 50% bottom 42%,
     "pFkcklHa": no-repeat left 60% bottom 84%,
-    "smirkle":  no-repeat left 60% bottom 60%
+    "smirkle":  no-repeat left 60% bottom 60%,
+    "cta":  no-repeat center center
 );

@@ -1,11 +1,10 @@
 /*!
 * CURIOUS?
 */
-@use "sass:map";
 @import "backgrounds";
 
 .masthead {
-    background: url(map.get($backgrounds, "wc19WayV3Y"))  map.get($background-pos, "wc19WayV3Y");
+    background: url(map-get($backgrounds, "wc19WayV3Y"))  map-get($background-pos, "wc19WayV3Y");
 }
 #curiousgrid button {
     min-width: 2.5rem;
