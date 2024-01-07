@@ -99,7 +99,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     &:before {
         content: "";
         position: absolute;
-        background-color: var(--bs-ice-dark);
+        background-color: var(--bs-ice);
         height: 100%;
         width: 100%;
         top: 0;
@@ -173,7 +173,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     &:before {
         content: "";
         position: absolute;
-        background-color: var(--bs-ice-dark);
+        background-color: var(--bs-ice);
         height: 100%;
         width: 100%;
         top: 0;
