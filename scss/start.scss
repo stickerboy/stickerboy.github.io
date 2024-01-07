@@ -24,49 +24,8 @@ h1,
     font-weight: 400;
 }
 
-.col-form-label {
-    padding-top: calc(0.75rem + 1px);
-    padding-bottom: calc(0.75rem + 1px);
-}
-
-.col-form-label-lg {
-    padding-top: calc(1rem + 1px);
-    padding-bottom: calc(1rem + 1px);
-}
-
-.col-form-label-sm {
-    padding-top: calc(0.5rem + 1px);
-    padding-bottom: calc(0.5rem + 1px);
-}
-
 .form-control {
     padding: 0.75rem 1rem;
-}
-
-.form-control:-ms-input-placeholder {
-    color: #6c757d;
-    opacity: 1;
-}
-
-.form-control::-webkit-file-upload-button {
-    padding: 0.75rem 1rem;
-    margin: -0.75rem -1rem;
-    -webkit-margin-end: 1rem;
-    margin-inline-end: 1rem;
-}
-
-.form-control::file-selector-button {
-    padding: 0.75rem 1rem;
-    margin: -0.75rem -1rem;
-    -webkit-margin-end: 1rem;
-    margin-inline-end: 1rem;
-}
-
-.form-control::-webkit-file-upload-button {
-    padding: 0.75rem 1rem;
-    margin: -0.75rem -1rem;
-    -webkit-margin-end: 1rem;
-    margin-inline-end: 1rem;
 }
 
 .form-control-plaintext {
@@ -78,51 +37,9 @@ h1,
     padding: 0.5rem 0.75rem;
 }
 
-.form-control-sm::-webkit-file-upload-button {
-    padding: 0.5rem 0.75rem;
-    margin: -0.5rem -0.75rem;
-    -webkit-margin-end: 0.75rem;
-    margin-inline-end: 0.75rem;
-}
-
-.form-control-sm::file-selector-button {
-    padding: 0.5rem 0.75rem;
-    margin: -0.5rem -0.75rem;
-    -webkit-margin-end: 0.75rem;
-    margin-inline-end: 0.75rem;
-}
-
-.form-control-sm::-webkit-file-upload-button {
-    padding: 0.5rem 0.75rem;
-    margin: -0.5rem -0.75rem;
-    -webkit-margin-end: 0.75rem;
-    margin-inline-end: 0.75rem;
-}
-
 .form-control-lg {
     min-height: calc(1.5em + 2rem + 2px);
     padding: 1rem 1.25rem;
-}
-
-.form-control-lg::-webkit-file-upload-button {
-    padding: 1rem 1.25rem;
-    margin: -1rem -1.25rem;
-    -webkit-margin-end: 1.25rem;
-    margin-inline-end: 1.25rem;
-}
-
-.form-control-lg::file-selector-button {
-    padding: 1rem 1.25rem;
-    margin: -1rem -1.25rem;
-    -webkit-margin-end: 1.25rem;
-    margin-inline-end: 1.25rem;
-}
-
-.form-control-lg::-webkit-file-upload-button {
-    padding: 1rem 1.25rem;
-    margin: -1rem -1.25rem;
-    -webkit-margin-end: 1.25rem;
-    margin-inline-end: 1.25rem;
 }
 
 textarea.form-control {
@@ -137,81 +54,20 @@ textarea.form-control-lg {
     min-height: calc(1.5em + 2rem + 2px);
 }
 
-.form-control-color {
-    padding: 0.75rem;
-}
-
-.form-select {
-    padding: 0.75rem 3rem 0.75rem 1rem;
-    -moz-padding-start: calc(1rem - 3px);
-    background-position: right 1rem center;
-}
-
-.form-select[multiple],
-.form-select[size]:not([size="1"]) {
-    padding-right: 1rem;
-}
-
-.form-select-sm {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 0.75rem;
-}
-
-.form-select-lg {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.25rem;
-}
-
-.form-floating>label {
-    padding: 1rem 1rem;
-}
-
-.form-floating>.form-control {
-    padding: 1rem 1rem;
-}
-
-.form-floating>.form-control:-ms-input-placeholder {
-    color: transparent;
-}
-
-.form-floating>.form-control:not(:-moz-placeholder-shown) {
-    padding-top: 1.625rem;
-    padding-bottom: 0.625rem;
-}
-
-.form-floating>.form-control:not(:-ms-input-placeholder) {
-    padding-top: 1.625rem;
-    padding-bottom: 0.625rem;
-}
-
-.form-floating>.form-control:not(:-ms-input-placeholder)~label {
-    opacity: 0.65;
-    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-}
-
 .input-group-text {
     padding: 0.75rem 1rem;
 }
 
 .input-group-lg>.form-control,
-.input-group-lg>.form-select,
 .input-group-lg>.input-group-text,
 .input-group-lg>.btn {
     padding: 1rem 1.25rem;
 }
 
 .input-group-sm>.form-control,
-.input-group-sm>.form-select,
 .input-group-sm>.input-group-text,
 .input-group-sm>.btn {
     padding: 0.5rem 0.75rem;
-}
-
-.input-group-lg>.form-select,
-.input-group-sm>.form-select {
-    padding-right: 4rem;
 }
 
 .was-validated .form-control:valid,
