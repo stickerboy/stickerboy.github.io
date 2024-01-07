@@ -13,7 +13,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
         &:hover,
         &:active,
         &:focus {
-            fill: var(--bs-cyan-600);
+            fill: var(--bs-stckr);
             stroke: var(--bs-body-color);
         }
     }
@@ -24,7 +24,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 }
 
 .nav-link {
-    color: var(--bs-cyan-800);
+    color: var(--bs-stckr-shade);
 
     .active {
         border-bottom: 0.25rem solid;
@@ -34,7 +34,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 .nav-link
 .navbar-nav .show > .nav-link,
 .navbar-nav .nav-link.active {
-    color: var(--bs-cyan-800);
+    color: var(--bs-stckr-shade);
 }
 .navbar-toggler-icon {
     background-image: var(--bs-navbar-toggler-icon-bg);
@@ -45,13 +45,13 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 
     &:focus,
     &:hover {
-        color: var(--bs-cyan-800);
+        color: var(--bs-stckr-shade);
         transition: color 0.3s ease;
     }
 }
 
 .border-stckr {
-    border-color: var(--bs-cyan-600) !important;
+    border-color: var(--bs-stckr) !important;
 }
 
 
@@ -76,7 +76,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
         &:active,
         &:focus {
             i::before {
-                color: var(--bs-cyan-600);
+                color: var(--bs-stckr);
             }
         }
     }
@@ -151,7 +151,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 .card-caption {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    background-color: var(--bs-cyan-600-85);
+    background-color: var(--bs-stckr-85);
     top: 0;
     left: 0;
     position: absolute;

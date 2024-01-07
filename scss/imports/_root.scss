@@ -3,9 +3,9 @@
 * Copyright 2024 @stickerboy / Kenny Cameron
 */
 :root {
-    --bs-cyan-600: #{$color-stckr};
-    --bs-cyan-600-85: #{rgba($color-stckr, .85)};
-    --bs-cyan-800: #{shade-color($color-stckr, 50%)};
+    --bs-stckr: #{$color-stckr};
+    --bs-stckr-85: #{rgba($color-stckr, .85)};
+    --bs-stckr-shade: #{shade-color($color-stckr, 50%)};
     --bs-343: #{$color-343};
     --bs-ice: #{$color-ice};
     --bs-heading-font-family: 'Ubuntu', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
