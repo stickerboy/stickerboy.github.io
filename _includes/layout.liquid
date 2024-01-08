@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "route" %}
+        {% include "meta" %}
+
+        {% render "if" %}
+        {% include "css" %}
+    </head>
+    {% if homepage %}
+    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true">
+        {% render "nav" %}
+    {% else %}
+    <body>
+        {% render "nav-simple" %}
+    {% endif %}
+
+        {% include "masthead" %}
+
+        {{ content }}
+
+        {% render "footer" %}
+
+        {% include "scripts" %}
+    </body>
+</html>

@@ -1,0 +1,12 @@
+/*!
+* CURIOUS?
+*/
+@import "imports/default";
+
+.masthead {
+    background: url(map-get($backgrounds, "wc19WayV3Y"))  map-get($background-pos, "wc19WayV3Y");
+}
+#curiousgrid button {
+    min-width: 2.5rem;
+    font-weight: 600;
+}

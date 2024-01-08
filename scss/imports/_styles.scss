@@ -1,0 +1,186 @@
+h4, .h4, h3, .h3, h2, .h2, h1, .h1,
+.navbar-brand {
+    font-family: var(--bs-heading-font-family);
+}
+
+.glyphs {
+    .glyph {
+        fill: var(--bs-body-color);
+        stroke: rgba(0, 0, 0, 0);
+        stroke-width: 50px;
+        transition: stroke  0.4s ease, fill 0.4s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            fill: var(--bs-stckr);
+            stroke: var(--bs-body-color);
+        }
+    }
+}
+
+.btn:hover {
+    box-shadow: 0 0 0 0.25rem rgb(211 212 213 / 50%);
+}
+
+.nav-link {
+    color: var(--bs-stckr-shade);
+
+    .active {
+        border-bottom: 0.25rem solid;
+        padding-bottom: 0.25rem;
+    }
+}
+.nav-link
+.navbar-nav .show > .nav-link,
+.navbar-nav .nav-link.active {
+    color: var(--bs-stckr-shade);
+}
+.navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-bg);
+}
+
+.link-stckr {
+    color: var(--bs-stckr);
+
+    &:focus,
+    &:hover {
+        color: var(--bs-stckr-shade);
+        transition: color 0.3s ease;
+    }
+}
+
+.border-stckr {
+    border-color: var(--bs-stckr) !important;
+}
+
+
+/*!
+* Site feature styling
+*/
+.features-icons {
+    &-item {
+        max-width: 20rem;
+    }
+    &-icon {
+        height: 5rem;
+
+        i {
+            font-size: #{map-get($display-font-sizes, 7)};
+            @include media-breakpoint-up(md) {
+                font-size: #{map-get($display-font-sizes, 5)};
+            }
+            &::before {
+                transition: stroke 0.4s ease, color 0.4s ease;
+            }
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            i::before {
+                color: var(--bs-stckr);
+            }
+        }
+    }
+}
+
+.masthead {
+    position: relative;
+    background-color: var(--bs-343);
+    background: url(map-get($backgrounds, "default")) map-get($background-pos, "default");
+    background-size: cover;
+
+    h1,
+    .h1 {
+        font-size: #{map-get($display-font-sizes, 7)};
+        @media (min-width: 768px) {
+            font-size: #{map-get($display-font-sizes, 3)};
+        }
+        text-shadow: 2px 2px 3px var(--bs-dark);
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: var(--bs-ice);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+    }
+}
+
+.showcase {
+    &-img {
+        min-height: 30rem;
+        background-size: cover;
+        background-position: center;        
+    }
+}
+  
+.card-container {
+    .card {
+        -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover,
+        &:focus,
+        &:active {
+            box-shadow: rgb(0 0 0 / 19%) 0px 10px 20px, rgb(0 0 0 / 23%) 0px 6px 6px;
+            -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+
+            .card-caption {
+                opacity: 1;  
+            }
+        }
+    }
+}
+
+.projects {
+    .card {
+        text-decoration: none;
+        color: var(--bs-dark);
+    }
+}
+
+.flickr {
+    .card {
+        border: none;
+    }
+} 
+
+.card-caption {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: var(--bs-stckr-85);
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: var(--bs-border-radius);
+}
+
+
+.call-to-action {
+    position: relative;
+    background-color: var(--bs-343);
+    background: url(map-get($backgrounds, "fallback")) map-get($background-pos, "cta");
+    background-size: cover;
+
+    h2,
+    .h2 {
+        text-shadow: 2px 2px 3px var(--bs-dark);
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: var(--bs-ice);
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+    }
+}
