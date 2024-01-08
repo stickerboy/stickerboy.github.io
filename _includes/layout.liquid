@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!--
-            //START FILE/
-            /Route detected..
-            /Processing......
-            {% if route == "noroute" %}/Route access denied - the easter egg is in another castle
-            /Be a little more... curious{% else %}{{ route }}{% endif %}
-            /END FILE ../
-        -->
+        {% include "route" %}
         {% include "meta" %}
-
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
         {% render "if" %}
         {% include "css" %}
     </head>
+    {% if homepage %}
     <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true">
         {% render "nav" %}
+    {% else %}
+    <body>
+        {% render "nav-simple" %}
+    {% endif %}
+
         {% include "masthead" %}
 
         {{ content }}
 
         {% render "footer" %}
-        {% render "scripts" %}
+
+        {% include "scripts" %}
     </body>
 </html>
