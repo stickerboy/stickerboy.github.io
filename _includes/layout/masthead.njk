@@ -1,5 +1,9 @@
 <!-- Masthead-->
-        <header class="masthead py-8 py-sm-10 py-md-14">
+        {%- if homepage %}
+        <header class="masthead py-6 py-sm-8 py-md-12">
+        {%- else %}
+        <header class="masthead py-5 pb-3">
+        {%- endif %}
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">

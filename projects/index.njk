@@ -1,0 +1,30 @@
+---
+layout: base.njk
+title: Projects
+pageHeading: Projects
+cssFile: home
+permalink: /projects/
+---
+
+<section class="bg-light py-md-6 py-5" id="projects-list">
+    <div class="container">
+        <p class="mb-4">A list of projects with links to individual pages.</p>
+
+        <div class="row g-4">
+            {% for project in collections.projects %}
+            {% set destination = project.url %}
+            <div class="col-12 col-md-6">
+                <article class="card h-100">
+                    <div class="card-body">
+                        <h2 class="h4 mb-2">{{ project.data.title }}</h2>
+                        {% if project.data.summary %}
+                        <p class="mb-3">{{ project.data.summary }}</p>
+                        {% endif %}
+                        <a href="{{ destination }}" class="btn btn-outline-dark btn-sm">View project</a>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

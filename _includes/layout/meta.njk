@@ -3,7 +3,7 @@
         <meta name="description" content="I'm a web-designing code-decrypting tech-support musician" />
         <meta name="author" content="@stickerboy" />
         {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
-        <title>{{ title }}</title>
+        <title>{{ title }}{% if not homepage %} - Kenny Cameron{% endif %}</title>
         {% if route == "ouroboros" %}
         <meta name="robots" content="noindex, nofollow" />
         <meta http-equiv="refresh" content="0; url = https://www.kenny.cx" />

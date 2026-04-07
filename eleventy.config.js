@@ -85,6 +85,19 @@ export default function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("projects", (collectionApi) => {
+        return collectionApi.getFilteredByTag("projects").sort((a, b) => {
+            return (a.data.title || "").localeCompare(b.data.title || "");
+        });
+    });
+
+    eleventyConfig.addCollection("featuredProjects", (collectionApi) => {
+        return collectionApi
+            .getFilteredByTag("projects")
+            .filter((item) => item.data.featured)
+            .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
+    });
+
     // Automatically set permalink for changelog items
     eleventyConfig.addGlobalData("eleventyComputed", {
         permalink: (data) => {
@@ -95,7 +108,8 @@ export default function (eleventyConfig) {
                 // Remove 'pages/' from the input path and construct the permalink
                 const relativePath = data.page.inputPath.replace(/^.*\/pages\//, "");
                 const permalinkPath = relativePath.replace(/\.[^/.]+$/, ""); // Remove file extension
-                return `/${permalinkPath}/`; // Ensure it ends with a trailing slash
+                const normalizedPath = permalinkPath.replace(/\/index$/, "");
+                return `/${normalizedPath}/`; // Ensure it ends with a trailing slash
             }
             if (data.page.inputPath.includes("changelog/")) {
                 const versionSlug = data.page.fileSlug; // Use the file name (e.g., "2.0.0")
