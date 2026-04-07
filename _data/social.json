@@ -1,0 +1,50 @@
+[
+    {
+        "platform": "Instagram",
+        "handle": "stckrboy",
+        "url": "https://instagram.com/stckrboy",
+        "icon": "bi-instagram",
+        "title": "Link to Kenny's profile on Instagram",
+        "enabled": true
+    },
+    {
+        "platform": "Spotify",
+        "handle": "stickerboy",
+        "url": "https://open.spotify.com/user/frv4z7134a70e194ff72bqbcj",
+        "icon": "bi-spotify",
+        "title": "Link to Kenny's profile on Spotify",
+        "enabled": true
+    },
+    {
+        "platform": "Xbox Live",
+        "handle": "stckrboy",
+        "url": "https://account.xbox.com/en-us/Profile?gamerTag=stckrboy",
+        "icon": "bi-xbox",
+        "title": "Link to Kenny's profile on Xbox Live",
+        "enabled": true
+    },
+    {
+        "platform": "GitHub",
+        "handle": "stickerboy",
+        "url": "https://github.com/stickerboy",
+        "icon": "bi-github",
+        "title": "Link to Kenny's profile on Github",
+        "enabled": true
+    },
+    {
+        "platform": "Threads",
+        "handle": "stckrboy",
+        "url": "https://threads.com/stckrboy",
+        "icon": "bi-threads",
+        "title": "Link to Kenny's profile on Threads",
+        "enabled": true
+    },
+    {
+        "platform": "LinkedIn",
+        "handle": "stickerboy",
+        "url": "https://www.linkedin.com/in/stickerboy/",
+        "icon": "bi-linkedin",
+        "title": "Link to Kenny's profile on LinkedIn",
+        "enabled": true
+    }
+]

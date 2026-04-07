@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!--
+            //START FILE/
+            /Route detected..
+            /Processing......
+            {% if route == "noroute" %}/Route access denied - the easter egg is in another castle
+            /Be a little more... curious{% else %}/Route found - /{{ route }}{% endif %}
+            /END FILE ../
+        -->
+        {% include "layout/meta.njk" %}
+        {% include "layout/if.njk" %}
+        {% include "layout/css.njk" %}
+    </head>
+
+    <body>
+        {% include "layout/nav-simple.njk" %}
+        {% include "layout/masthead.njk" %}
+
+        {{ content | safe }}
+
+        {% include "layout/footer.njk" %}
+
+        {% include "layout/scripts.njk" %}
+    </body>
+
+</html>

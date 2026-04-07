@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include "layout/route.njk" %}
+        {% include "layout/meta.njk" %}
+
+        {% include "layout/if.njk" %}
+        {% include "layout/css.njk" %}
+    </head>
+    {% if homepage %}
+    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true">
+        {% include "layout/nav.njk" %}
+    {% else %}
+    <body>
+        {% include "layout/nav-simple.njk" %}
+    {% endif %}
+
+        {% include "layout/masthead.njk" %}
+
+        {{ content | safe }}
+
+        {% include "layout/footer.njk" %}
+
+        {% include "layout/scripts.njk" %}
+    </body>
+</html>
