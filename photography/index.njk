@@ -1,18 +1,18 @@
 ---
 layout: base.njk
-title: Photography - Kenny Cameron
+title: Photography
 pageHeading: Photography
 cssFile: home
 permalink: /photography/
 ---
 
-<section class="bg-light py-md-6 py-5" id="photography-list">
+<section class="flickr card-container bg-light py-md-6 py-5" id="photography-list">
     <div class="container">
         <p class="mb-4">A curated set of photographs and visual work.</p>
 
         <div class="row g-4">
             {% for photo in collections.photographs %}
-            {% set destination = photo.data.photoUrl or photo.url %}
+            {% set destination = photo.url %}
             {% set imagePath = photo.data.image or ('/assets/img/photography/' ~ photo.data.photoId ~ '.jpg') %}
             <div class="col-12 col-md-6 col-lg-4">
                 <article class="card h-100">
@@ -20,6 +20,9 @@ permalink: /photography/
                         <img src="{{ imagePath | url }}" class="card-img" alt="{{ photo.data.imageAlt or photo.data.title }}">
                         <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
                             <p class="h3 text-white">{{ photo.data.pageHeading or photo.data.title }}</p>
+                        </div>
+                        <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
+                            <p class="h3 text-white">{{ photo.data.pageHeading }}</p>
                         </div>
                     </a>
                     <div class="card-body">
