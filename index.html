@@ -38,7 +38,7 @@ homepage: yes
                 <h2 class="mb-5">Photography on Flickr</h2>
                 <p>In my spare time I spend a lot of it taking photographs, capturing little moments in life. I share some of my best on Flickr.</p>
                 <p>All photography used on this site was taken by me.</p>
-                <div class="row g-4">
+                <div class="row g-4 mb-3">
                     {% for photo in collections.featuredPhotographs %}
                     {% set destination = photo.url %}
                     {% set imagePath = photo.data.image or ('/assets/img/photography/' ~ photo.data.photoId ~ '.jpg') %}
@@ -53,7 +53,8 @@ homepage: yes
                         </div>
                     </div>
                     {% endfor %}
-                  </div>
+                </div>
+                <a class="btn btn-stckr btn-lg" href="{{ '/photography' | url}}">View more photos</a>
             </div>
         </section>
 
