@@ -1,0 +1,24 @@
+<!-- Showcases-->
+<section class="showcase" id="about">
+    <div class="container-fluid p-0">
+        {% for item in collections.featuredShowcases %}
+        {% set imageOrderClass = 'order-lg-2' if loop.index0 % 2 == 0 else '' %}
+        {% set textOrderClass = 'order-lg-1' if loop.index0 % 2 == 0 else '' %}
+        {% set imageId = 'showcase-' ~ loop.index %}
+        <div class="row g-0">
+            <div class="col-lg-6 {{ imageOrderClass }} text-white showcase-img"
+                style="background-image: url('{{ (item.data.image or ('/assets/img/showcase/' ~ item.data.page.fileSlug ~ '.jpg')) | url }}')"
+                aria-describedby="{{ imageId }}"></div>
+            <p class="visually-hidden" id="{{ imageId }}">{{ item.data.imageAlt or item.data.title }}</p>
+            <div class="col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-9">
+                <h2>{{ item.data.pageHeading or item.data.title }}</h2>
+                <p class="fs-6 mt-3">{{ item.data.summary }}</p>
+                {% if item.data.homeSecondary %}
+                <p class="fs-6 mt-1">{{ item.data.homeSecondary }}</p>
+                {% endif %}
+                <p class="fs-6 mb-0 mt-1"><a href="{{ item.url }}" class="btn btn-light">Read more</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

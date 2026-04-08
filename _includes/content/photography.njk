@@ -1,0 +1,29 @@
+<!-- Flickr-->
+<section class="flickr card-container text-center bg-light py-md-6 py-5" id="photography">
+    <div class="container">
+        <h2 class="mb-5">Photography on Flickr</h2>
+        <p>In my spare time I spend a lot of it taking photographs, capturing little moments in life. I share some of my
+            best on Flickr.</p>
+        <p>All photography used on this site was taken by me.</p>
+        <div class="row g-4 mb-3">
+            {% for photo in collections.featuredPhotographs %}
+            {% set destination = photo.url %}
+            {% set imagePath = photo.data.image or ('/assets/img/photography/' ~ photo.data.photoId ~ '.jpg') %}
+            <div class="col-sm-4">
+                <div class="card">
+                    <a href="{{ destination }}"
+                        title="{{ photo.data.pageHeading or photo.data.title }} - photo by Kenny Cameron"
+                        class="flickr-item">
+                        <img src="{{ imagePath | url }}" class="card-img"
+                            alt="{{ photo.data.imageAlt or photo.data.title }}">
+                        <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
+                            <p class="h3 text-white">{{ photo.data.pageHeading or photo.data.title }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="btn btn-stckr btn-lg" href="{{ '/photography' | url}}">View more photos</a>
+    </div>
+</section>

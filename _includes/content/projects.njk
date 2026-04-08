@@ -1,0 +1,25 @@
+<!-- Projects -->
+<section class="projects card-container text-center py-md-6 py-5" id="projects">
+    <div class="container">
+        <h2 class="mb-5">Web projects</h2>
+        <p>Some of the personal projects I have worked on.</p>
+        <div class="row g-4 justify-content-center">
+            {% for project in collections.featuredProjects %}
+            {% set destination = project.url %}
+            {% set imagePath = project.data.image or ('/assets/img/projects/' ~ project.data.projectId ~ '.png') %}
+            <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                <a href="{{ destination }}" class="card h-100">
+                    <h5 class="card-header link-stckr">{{ project.data.pageHeading or project.data.title }}</h5>
+                    <img src="{{ imagePath | url }}" class="card-img rounded-0"
+                        alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}">
+                    <div class="card-body">
+                        <p class="card-text text-start">
+                            {{ project.data.summary }}
+                        </p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
