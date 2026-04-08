@@ -1,0 +1,51 @@
+---
+layout: base.njk
+title: Community Moderation and Management - Kenny Cameron
+pageHeading: Community Moderation & Management
+cssFile: home
+tags:
+  - showcases
+featured: true
+order: 2
+summary: Working with communities and helping to build fun and safe environments is a passion of mine. Healthy communities don’t happen by accident — they’re the result of clear expectations, consistent moderation, and people who genuinely care about the spaces they help look after.
+image: /assets/img/bg-showcase-2.jpg
+imageAlt: Photograph of the multi-monitor setup I use in my home office, which is largely surrounded with Halo collectibles. Centre top is a large Samsung monitor, below is a Halo Xbox Series X. Either side of the Xbox is a laptop and additional monitor. All screens have a Halo image showing. Top left and right are studio monitor speakers on a shelf along with some Halo collectibles. On the bottom the photo are various Halo mouse mats, a mug, Halo Xbox controller and a midi keyboard and mixing desk.
+homeSecondary: I’ve been moderating and helping to manage communities in a voluntary capacity for over 20 years, working with platforms and companies such as phpBB and Xbox. Over that time, I’ve seen online communities grow from small forums into large, fast‑moving social spaces, each with their own challenges and dynamics.
+permalink: /about/community-moderation/
+---
+
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 my-auto showcase-text p-5 p-md-9">
+                <h2>{{ pageHeading }}</h2>
+                <p class="fs-6 mt-3">{{ summary }}</p>
+                {% if homeSecondary %}
+                <p class="fs-6 mt-1">{{ homeSecondary }}</p>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 text-white showcase-img"
+                 style="background-image: url('{{ image | url }}')"
+                 aria-describedby="showcase-detail-img"></div>
+            <p class="visually-hidden" id="showcase-detail-img">{{ imageAlt }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-md-6 py-5">
+    <div class="container">
+        <p class="fs-6 mb-3">
+            Since 2016, I’ve been part of the Community Moderation team for Microsoft’s first‑person shooter franchise, Halo. In this role, I help enforce Xbox and Halo Community Guidelines across forums and live streams, ensuring discussions remain respectful and welcoming. Alongside day‑to‑day moderation, I also contribute by developing guidance for fellow moderators, building web‑based tools to support moderation workflows, and assisting with the management of social platforms such as Discord.
+        </p>
+        <p class="fs-6 mb-3">
+            Moderation at this scale goes beyond simply responding to reports. It requires judgement, consistency, and an understanding of context — knowing when to step in firmly, when to de‑escalate, and when to guide conversations back on track. Supporting other moderators, improving processes, and creating tools that reduce friction are all part of making moderation sustainable and effective over the long term. 
+        </p>
+        <p class="fs-6 mb-3">
+            Wherever possible, I strive to make conflict resolution an educational moment rather than a punitive one. Helping members understand why certain behaviour isn’t acceptable — and how to engage more positively — supports healthier interactions in the future and reduces repeat issues. Approaching these situations thoughtfully helps maintain trust while keeping communities safe and welcoming.
+        </p>
+        <p class="fs-6 mb-3">
+            Across all of this work, the focus remains the same: supporting positive engagement, protecting community members, and helping create spaces where players and fans feel safe to participate, share, and enjoy the community around the games they love.
+        </p>
+        <p class="mt-4 mb-0"><a href="/about/">Back to about</a></p>
+    </div>
+</section>

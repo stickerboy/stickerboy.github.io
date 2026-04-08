@@ -98,6 +98,48 @@ export default function (eleventyConfig) {
             .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
     });
 
+    eleventyConfig.addCollection("photographs", (collectionApi) => {
+        return collectionApi.getFilteredByTag("photographs").sort((a, b) => {
+            return (a.data.title || "").localeCompare(b.data.title || "");
+        });
+    });
+
+    eleventyConfig.addCollection("featuredPhotographs", (collectionApi) => {
+        return collectionApi
+            .getFilteredByTag("photographs")
+            .filter((item) => item.data.featured)
+            .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
+    });
+
+    eleventyConfig.addCollection("showcases", (collectionApi) => {
+        return collectionApi.getFilteredByTag("showcases").sort((a, b) => {
+            const aOrder = a.data.order ?? Number.MAX_SAFE_INTEGER;
+            const bOrder = b.data.order ?? Number.MAX_SAFE_INTEGER;
+
+            if (aOrder !== bOrder) {
+                return aOrder - bOrder;
+            }
+
+            return (a.data.title || "").localeCompare(b.data.title || "");
+        });
+    });
+
+    eleventyConfig.addCollection("featuredShowcases", (collectionApi) => {
+        return collectionApi
+            .getFilteredByTag("showcases")
+            .filter((item) => item.data.featured)
+            .sort((a, b) => {
+                const aOrder = a.data.order ?? Number.MAX_SAFE_INTEGER;
+                const bOrder = b.data.order ?? Number.MAX_SAFE_INTEGER;
+
+                if (aOrder !== bOrder) {
+                    return aOrder - bOrder;
+                }
+
+                return (a.data.title || "").localeCompare(b.data.title || "");
+            });
+    });
+
     // Automatically set permalink for changelog items
     eleventyConfig.addGlobalData("eleventyComputed", {
         permalink: (data) => {
