@@ -13,14 +13,23 @@ permalink: /projects/
         <div class="row g-4">
             {% for project in collections.projects %}
             {% set destination = project.url %}
-            <div class="col-12 col-md-6">
+            {% set imagePath = project.data.image or ('/assets/img/projects/' ~ project.data.projectId ~ '.png') %}
+            <div class="col-12">
                 <article class="card h-100">
-                    <div class="card-body">
-                        <h2 class="h4 mb-2">{{ project.data.title }}</h2>
-                        {% if project.data.summary %}
-                        <p class="mb-3">{{ project.data.summary }}</p>
-                        {% endif %}
-                        <a href="{{ destination }}" class="btn btn-outline-dark btn-sm">View project</a>
+                    <div class="row g-0">
+                        <div class="col-md-5 col-lg-4">
+                            <img src="{{ imagePath | url }}" class="card-img rounded-0 h-100"
+                                alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}">
+                        </div>
+                        <div class="col-md-7 col-lg-8">
+                            <div class="card-body d-flex flex-column h-100">
+                                <h2 class="card-title">{{ project.data.title }}</h2>
+                                {%- if project.data.summary %}
+                                <p class="card-text">{{ project.data.summary }}</p>
+                                {%- endif %}
+                                <a href="{{ destination }}" class="btn btn-outline-stckr btn-sm me-auto mt-auto">View project</a>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -28,3 +37,4 @@ permalink: /projects/
         </div>
     </div>
 </section>
+
