@@ -6,7 +6,7 @@ cssFile: home
 permalink: /projects/
 ---
 
-<section class="bg-light py-md-6 py-5" id="projects-list">
+<section class="projects card-container py-md-6 py-5" id="projects-list">
     <div class="container">
         <p class="mb-4">A list of projects with links to individual pages.</p>
 
@@ -18,7 +18,7 @@ permalink: /projects/
                 <article class="card h-100">
                     <div class="row g-0">
                         <div class="col-md-5 col-lg-4">
-                            <img src="{{ imagePath | url }}" class="card-img rounded-0 h-100"
+                            <img src="{{ imagePath | url }}" class="card-img h-100"
                                 alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}">
                         </div>
                         <div class="col-md-7 col-lg-8">
