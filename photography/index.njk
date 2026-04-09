@@ -12,7 +12,7 @@ cssFile: home
         <div class="row g-4">
             {% for photo in collections.photographs %}
             {% set destination = photo.url %}
-            {% set imagePath = photo.data.image or ('/assets/img/photography/' ~ photo.data.photoId ~ '.jpg') %}
+            {% set imagePath = '/assets/img/photography/' ~ photo.data.photoId ~ '.jpg' %}
             <div class="col-12 col-md-6 col-lg-4">
                 <article class="card h-100">
                     <a href="{{ destination }}" class="flickr-item">
