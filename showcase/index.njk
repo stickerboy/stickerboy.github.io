@@ -11,9 +11,10 @@ cssFile: home
         {% set imageOrderClass = 'order-lg-2' if loop.index0 % 2 == 0 else '' %}
         {% set textOrderClass = 'order-lg-1' if loop.index0 % 2 == 0 else '' %}
         {% set imageId = 'about-showcase-' ~ loop.index %}
+           {% set imagePath = item.data.image or (item.data.page.fileSlug ~ '.jpg') %}
         <div class="row g-0">
             <div class="col-lg-6 {{ imageOrderClass }} text-white showcase-img"
-                 style="background-image: url('/assets/img/showcase/{{ (item.data.image or (item.data.page.fileSlug ~ '.jpg')) | url }}')"
+                  style="background-image: url('{{ imagePath | assetImagePath('', '', item.data.tags) | url }}')"
                  aria-describedby="{{ imageId }}"></div>
             <p class="visually-hidden" id="{{ imageId }}">{{ item.data.imageAlt or item.data.title }}</p>
             <div class="col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-9">

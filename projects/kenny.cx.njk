@@ -26,7 +26,8 @@ description: kenny.cx is my personal portfolio site, built to highlight the crea
 
         </div>
         <div class="row mb-4">
-            <img src="{{ '/assets/img/projects/' ~ projectId ~ '/' ~ projectId ~ '-lg.png' | url }}" class="card-img h-100"
+            {% set heroImage = projectId | assetImagePath('png', '', tags, 'lg') %}
+            <img src="{{ heroImage | url }}" class="card-img h-100"
                 alt="{{ imageAlt or (title ~ ' screenshot') }}">
         </div>
         <p><a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a></p>

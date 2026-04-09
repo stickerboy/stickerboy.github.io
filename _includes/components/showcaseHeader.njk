@@ -9,7 +9,7 @@
                 {% endif %}
             </div>
             <div class="col-lg-6 text-white showcase-img"
-                style="background-image: url('/assets/img/showcase/{{ image | url }}')"
+                style="background-image: url('{{ image | assetImagePath('', 'showcase') | url }}')"
                 aria-describedby="showcase-detail-img"></div>
             <p class="visually-hidden" id="showcase-detail-img">{{ imageAlt }}</p>
         </div>

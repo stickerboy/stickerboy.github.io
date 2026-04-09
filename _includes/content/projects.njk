@@ -7,7 +7,7 @@
             {% for project in collections.featuredProjects %}
             {% set destination = project.url %}
             {% set projectId = project.data.projectId %}
-            {% set imagePath = '/assets/img/projects/' ~ projectId ~ '/' ~ projectId ~ '-sm.png' | url %}
+            {% set imagePath = projectId | assetImagePath('png', '', project.data.tags, 'sm') %}
             <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 col-xl-3">
                 <a href="{{ destination }}" class="card h-100">
                     <h5 class="card-header link-stckr">{{ project.data.pageHeading or project.data.title }}</h5>

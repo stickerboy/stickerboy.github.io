@@ -13,7 +13,7 @@ cssFile: home
         <div class="row g-4">
             {% for project in collections.projects %}
             {% set destination = project.url %}
-            {% set imagePath = '/assets/img/projects/' ~ project.data.projectId ~ '/' ~ project.data.projectId ~ '-sm.png' %}
+            {% set imagePath = project.data.projectId | assetImagePath('png', '', project.data.tags, 'sm') %}
             <div class="col-12">
                 <article class="card h-100">
                     <div class="row g-0">

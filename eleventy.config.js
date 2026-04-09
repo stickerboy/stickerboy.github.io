@@ -17,6 +17,7 @@ export default function (eleventyConfig) {
     eleventyConfig.ignores.add("_includes/");
     eleventyConfig.ignores.add("_templates/");
     eleventyConfig.ignores.add(".github");
+    eleventyConfig.ignores.add("docs");
     eleventyConfig.setWatchThrottleWaitTime(100);
     eleventyConfig.addPassthroughCopy("LICENSE");
     eleventyConfig.addPassthroughCopy("assets/css/*.css");
@@ -29,6 +30,59 @@ export default function (eleventyConfig) {
     eleventyConfig.addGlobalData("layout", "md.njk");
 
     eleventyConfig.addShortcode("year", () => `2020 &mdash; ${new Date().getFullYear()}`);
+
+    const inferImageGroupFromTags = (tags) => {
+        const tagList = Array.isArray(tags) ? tags : (typeof tags === "string" ? [tags] : []);
+        if (tagList.includes("projects")) return "projects";
+        if (tagList.includes("photographs")) return "photography";
+        if (tagList.includes("showcases")) return "showcase";
+        return "";
+    };
+
+    const buildAssetImagePath = (imagePath = "", extension = "", group = "", tags = [], size = "") => {
+        if (!imagePath) return "";
+
+        let normalizedImagePath = String(imagePath).replace(/^\/+/, "");
+
+        if (normalizedImagePath.startsWith("assets/img/")) {
+            return `/${normalizedImagePath}`;
+        }
+
+        const resolvedGroup = group || inferImageGroupFromTags(tags);
+        const normalizedSize = String(size || "").trim();
+
+        if (normalizedSize && resolvedGroup === "projects" && !normalizedImagePath.includes("/")) {
+            normalizedImagePath = `${normalizedImagePath}/${normalizedImagePath}`;
+        }
+
+        if (normalizedSize) {
+            if (/\.[a-z0-9]+$/i.test(normalizedImagePath)) {
+                normalizedImagePath = normalizedImagePath.replace(/(\.[a-z0-9]+)$/i, `-${normalizedSize}$1`);
+            } else {
+                normalizedImagePath = `${normalizedImagePath}-${normalizedSize}`;
+            }
+        }
+
+        const hasFileExtension = /\.[a-z0-9]+$/i.test(normalizedImagePath);
+        const pathWithGroup = resolvedGroup
+            ? `${resolvedGroup}/${normalizedImagePath}`
+            : normalizedImagePath;
+
+        if (hasFileExtension || !extension) {
+            return `/assets/img/${pathWithGroup}`;
+        }
+
+        const normalizedExtension = String(extension).replace(/^\./, "");
+        return `/assets/img/${pathWithGroup}.${normalizedExtension}`;
+    };
+
+    eleventyConfig.addShortcode("assetImagePath", (imagePath, extension = "", group = "", tags = [], size = "") => {
+        return buildAssetImagePath(imagePath, extension, group, tags, size);
+    });
+
+    eleventyConfig.addFilter("assetImagePath", (imagePath, extension = "", group = "", tags = [], size = "") => {
+        return buildAssetImagePath(imagePath, extension, group, tags, size);
+    });
 
     eleventyConfig.addFilter("readFile", (filePath) => {
         const fullPath = path.join(process.cwd(), filePath);

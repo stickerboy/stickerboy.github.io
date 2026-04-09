@@ -8,8 +8,7 @@
         <div class="row g-4 mb-3">
             {% for photo in collections.featuredPhotographs %}
             {% set destination = photo.url %}
-            {% set imagePath = photo.data.photoId %}
-            {% set imagePathFull = ('/assets/img/photography/' ~ imagePath ~ '.jpg') %}
+            {% set imagePathFull = photo.data.photoId | assetImagePath('jpg', '', photo.data.tags) %}
             <div class="col-sm-4">
                 <div class="card">
                     <a href="{{ destination }}"

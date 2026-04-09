@@ -5,8 +5,8 @@
         {% set imageOrderClass = 'order-lg-2' if loop.index0 % 2 == 0 else '' %}
         {% set textOrderClass = 'order-lg-1' if loop.index0 % 2 == 0 else '' %}
         {% set imageId = 'showcase-' ~ loop.index %}
-        {% set imagePath = item.data.image or item.data.page.fileSlug %}
-        {% set imagePathFull = ('/assets/img/showcase/' ~ imagePath) %}
+        {% set imagePath = item.data.image or (item.data.page.fileSlug ~ '.jpg') %}
+        {% set imagePathFull = imagePath | assetImagePath('', '', item.data.tags) %}
         <div class="row g-0">
             <div class="col-lg-6 {{ imageOrderClass }} text-white showcase-img"
                 style="background-image: url('{{ imagePathFull | url }}')"
