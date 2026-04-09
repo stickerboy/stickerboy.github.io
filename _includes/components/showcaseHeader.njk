@@ -1,0 +1,17 @@
+<section class="showcase">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 my-auto showcase-text p-5 p-md-9">
+                <h2>{{ pageHeading }}</h2>
+                <p class="fs-6 mt-3">{{ summary }}</p>
+                {% if homeSecondary %}
+                <p class="fs-6 mt-1">{{ homeSecondary }}</p>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 text-white showcase-img"
+                style="background-image: url('/assets/img/showcase/{{ image | url }}')"
+                aria-describedby="showcase-detail-img"></div>
+            <p class="visually-hidden" id="showcase-detail-img">{{ imageAlt }}</p>
+        </div>
+    </div>
+</section>

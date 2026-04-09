@@ -7,10 +7,8 @@ tags:
   - projects
 section: themes
 order: 2
-featured: true
 projectId: waypoint-light
 projectUrl: https://github.com/stickerboy/waypoint-light
-image: /assets/img/waypoint.png
 imageAlt: Halo Waypoint light theme screenshot
 description: Waypoint Light is a custom light theme built for the Halo Waypoint forums, designed to improve readability and create a cleaner, and more comfortable experience when browsing.
 summary: A custom light theme for the Halo Waypoint forums.
@@ -19,7 +17,19 @@ permalink: /projects/waypoint-light/
 
 <section class="py-md-6 py-5">
     <div class="container">
-        <p>Waypoint Light customizes the forum experience with a cleaner, brighter visual style.</p>
-        <p><a href="{{ '/projects' | url }}">Back to all projects</a></p>
+        <div class="row mb-3">
+            <div class="col">
+                <p class="lead fw-normal">{{ description }}</p>
+                <p><a href="{{ projectUrl }}" class="link-stckr">{{ projectUrl }}</a></p>
+            </div>
+        </div>
+        <div class="row g-4 g-md-5 mb-4">
+
+        </div>
+        <div class="row mb-4">
+            <img src="{{ '/assets/img/projects/' ~ projectId ~ '/' ~ projectId ~ '-lg.png' | url }}" class="card-img h-100"
+                alt="{{ imageAlt or (title ~ ' screenshot') }}">
+        </div>
+        <p><a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a></p>
     </div>
 </section>

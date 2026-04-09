@@ -8,13 +8,14 @@
         <div class="row g-4 mb-3">
             {% for photo in collections.featuredPhotographs %}
             {% set destination = photo.url %}
-            {% set imagePath = photo.data.image or ('/assets/img/photography/' ~ photo.data.photoId ~ '.jpg') %}
+            {% set imagePath = photo.data.image or photo.data.photoId %}
+            {% set imagePathFull = ('/assets/img/photography/' ~ imagePath) %}
             <div class="col-sm-4">
                 <div class="card">
                     <a href="{{ destination }}"
                         title="{{ photo.data.pageHeading or photo.data.title }} - photo by Kenny Cameron"
                         class="flickr-item">
-                        <img src="{{ imagePath | url }}" class="card-img"
+                        <img src="{{ imagePathFull | url }}" class="card-img"
                             alt="{{ photo.data.imageAlt or photo.data.title }}">
                         <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
                             <p class="h3 text-white">{{ photo.data.pageHeading or photo.data.title }}</p>

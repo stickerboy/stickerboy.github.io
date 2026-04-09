@@ -14,7 +14,7 @@ permalink: /projects/
         <div class="row g-4">
             {% for project in collections.projects %}
             {% set destination = project.url %}
-            {% set imagePath = project.data.image or ('/assets/img/projects/' ~ project.data.projectId ~ '.png') %}
+            {% set imagePath = '/assets/img/projects/' ~ project.data.projectId ~ '/' ~ project.data.projectId ~ '-sm.png' %}
             <div class="col-12">
                 <article class="card h-100">
                     <div class="row g-0">

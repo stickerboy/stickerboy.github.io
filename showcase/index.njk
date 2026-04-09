@@ -14,7 +14,7 @@ permalink: /about/
         {% set imageId = 'about-showcase-' ~ loop.index %}
         <div class="row g-0">
             <div class="col-lg-6 {{ imageOrderClass }} text-white showcase-img"
-                 style="background-image: url('{{ (item.data.image or ('/assets/img/showcase/' ~ item.data.page.fileSlug ~ '.jpg')) | url }}')"
+                 style="background-image: url('/assets/img/showcase/{{ (item.data.image or (item.data.page.fileSlug ~ '.jpg')) | url }}')"
                  aria-describedby="{{ imageId }}"></div>
             <p class="visually-hidden" id="{{ imageId }}">{{ item.data.imageAlt or item.data.title }}</p>
             <div class="col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-9">
@@ -23,7 +23,7 @@ permalink: /about/
                 {% if item.data.homeSecondary %}
                 <p class="fs-6 mt-1">{{ item.data.homeSecondary }}</p>
                 {% endif %}
-                <p class="fs-6 mb-0 mt-1"><a href="{{ item.url }}">Read more</a></p>
+                <p class="fs-6 mb-0 mt-1"><a href="{{ item.url }}" class="btn btn-light">Read more</a></p>
             </div>
         </div>
         {% endfor %}
