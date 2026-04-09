@@ -1,0 +1,50 @@
+---
+layout: base.njk
+cssFile: home
+tags:
+  - photographs
+pagination:
+  data: photographs
+  size: 1
+  alias: photo
+permalink: /photography/{{ photo.slug }}/
+---
+
+<section class="showcase photo">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-lg-6 my-auto showcase-text p-5 p-md-9">
+                <h2>About this photo</h2>
+                {% if photo.details and photo.details.length %}
+                    {% for detail in photo.details %}
+                    <p class="fs-6 mt-3">{{ detail }}</p>
+                    {% endfor %}
+                {% elif photo.summary %}
+                    <p class="fs-6 mt-1">{{ photo.summary }}</p>
+                {% endif %}
+
+                {% if photo.photoUrl %}
+                <p><a href="{{ photo.photoUrl }}" class="link-stckr" rel="noopener" target="_blank">View this image on Flickr</a></p>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 text-white showcase-img"
+                style="background-image: url('{{ photo.photoId | assetImagePath('jpg', '', tags)  }}')"
+                aria-describedby="showcase-detail-img"></div>
+            <p class="visually-hidden" id="showcase-detail-img">{{ photo.imageAlt or photo.title }}</p>
+        </div>
+    </div>
+</section>
+
+{% if photo.exif %}
+<section class="py-md-6 py-5 bg-light">
+    <div class="container">
+        <h2>Exif data</h2>
+    </div>
+</section>
+{% endif %}
+
+<section class="py-md-6 py-5">
+    <div class="container">
+        <p><a href="/photography/" class="btn btn-outline-stckr">Back to all photography</a></p>
+    </div>
+</section>

@@ -1,0 +1,162 @@
+[
+  {
+    "photoId": "alain",
+    "slug": "alain",
+    "title": "Alain",
+    "pageHeading": "Alain",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/28135798622/",
+    "imageAlt": "Alain",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "fero",
+    "slug": "fero",
+    "title": "Fero",
+    "pageHeading": "Fero",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/29604476186",
+    "imageAlt": "Fero",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "firstquarter",
+    "slug": "firstquarter",
+    "title": "First quarter",
+    "pageHeading": "First quarter",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/51189634232",
+    "imageAlt": "First quarter",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "footprints",
+    "slug": "footprints",
+    "title": "Footprints",
+    "pageHeading": "Footprints",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/38866732815",
+    "imageAlt": "Footprints",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "gethuman",
+    "slug": "gethuman",
+    "title": "Get human",
+    "pageHeading": "Get human",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/14665495093",
+    "imageAlt": "Get human",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "gorjuss",
+    "slug": "gorjuss",
+    "title": "Gorjuss",
+    "pageHeading": "Gorjuss in the snow",
+    "featured": true,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/24420913515",
+    "imageAlt": "Shot from behind a woman as she walks through the snow as it falls.",
+    "summary": "A candid winter moment captured during snowfall.",
+    "details": [
+      "A portrait-oriented composition focused on motion, weather, and mood."
+    ]
+  },
+  {
+    "photoId": "reflect",
+    "slug": "reflect",
+    "title": "Reflect",
+    "pageHeading": "Reflect",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/29637188192",
+    "imageAlt": "Reflect",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "rhodos",
+    "slug": "rhodos",
+    "title": "Rhodos",
+    "pageHeading": "Rhodos",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/28462614364",
+    "imageAlt": "Rhodos",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "ripples",
+    "slug": "ripples",
+    "title": "Ripples",
+    "pageHeading": "Ripples",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/20226349784",
+    "imageAlt": "Ripples",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "solitude",
+    "slug": "solitude",
+    "title": "Solitude",
+    "pageHeading": "Solitude",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/39429557891",
+    "imageAlt": "Solitude",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "tenpins",
+    "slug": "tenpins",
+    "title": "Ten pins",
+    "pageHeading": "Ten pins",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/20327463635",
+    "imageAlt": "Ten pins",
+    "summary": "I love bowling, though I don't get to do it very often. Took my camera with me one night and captured a few shots while we played.",
+    "details": []
+  },
+  {
+    "photoId": "thedreamer",
+    "slug": "thedreamer",
+    "title": "The dreamer",
+    "pageHeading": "The dreamer",
+    "featured": false,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/30148845067",
+    "imageAlt": "The dreamer",
+    "summary": "",
+    "details": []
+  },
+  {
+    "photoId": "tranquility",
+    "slug": "tranquility",
+    "title": "Tranquility",
+    "pageHeading": "Tranquility",
+    "featured": true,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/36736682740",
+    "imageAlt": "Long exposure photo taken in the Portland Japanese Gardens. A view of the pond, waterfall and trees behind it.",
+    "summary": "A long-exposure landscape shot from Portland Japanese Gardens.",
+    "details": [
+      "Part of a series focused on calm, atmospheric scenes from gardens and parks."
+    ]
+  },
+  {
+    "photoId": "waves",
+    "slug": "waves",
+    "title": "Waves",
+    "pageHeading": "Waves",
+    "featured": true,
+    "photoUrl": "https://www.flickr.com/photos/stickerboy/44523824072",
+    "imageAlt": "View of waves crashing into a concrete pier on the island of Rhodos.",
+    "summary": "High-energy seascape with dramatic wave impact and color gradients.",
+    "details": [
+      "Captured on Rhodos, this shot emphasizes texture, force, and geometric framing."
+    ]
+  }
+]

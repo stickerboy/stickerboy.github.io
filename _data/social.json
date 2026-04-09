@@ -46,5 +46,13 @@
         "icon": "bi-linkedin",
         "title": "Link to Kenny's profile on LinkedIn",
         "enabled": true
+    },
+    {
+        "platform": "Flickr",
+        "handle": "stickerboy",
+        "url": "https://www.flickr.com/photos/stickerboy/",
+        "icon": "bi-flickr",
+        "title": "Link to Kenny's profile on Flickr",
+        "enabled": false
     }
 ]

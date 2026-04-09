@@ -3,6 +3,11 @@ layout: base.njk
 title: Photography
 pageHeading: Photography
 cssFile: home
+pagination:
+    data: photographs
+    size: 9
+    alias: pagedPhotos
+permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photography/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
 <section class="flickr card-container bg-light py-md-6 py-5" id="photography-list">
@@ -10,26 +15,41 @@ cssFile: home
         <p class="mb-4">A curated set of photographs and visual work.</p>
 
         <div class="row g-4">
-            {% for photo in collections.photographs %}
-            {% set destination = photo.url %}
-            {% set imagePath = photo.data.photoId | assetImagePath('jpg', '', photo.data.tags) %}
+            {% for photo in pagedPhotos %}
+            {% set destination = '/photography/' + photo.slug + '/' %}
+            {% set imagePath = photo.photoId | assetImagePath('jpg', 'photography') %}
             <div class="col-12 col-md-6 col-lg-4">
                 <article class="card h-100">
                     <a href="{{ destination }}" class="flickr-item">
-                        <img src="{{ imagePath | url }}" class="card-img-top" alt="{{ photo.data.imageAlt or photo.data.title }}">
+                        <img src="{{ imagePath | url }}" class="card-img-top" alt="{{ photo.imageAlt or photo.title }}">
                         <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
-                            <p class="h3 text-white">{{ photo.data.pageHeading or photo.data.title }}</p>
-                        </div>
-                        <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
-                            <p class="h3 text-white">{{ photo.data.pageHeading }}</p>
+                            <p class="h3 text-white">{{ photo.title or photo.pageHeading }}</p>
                         </div>
                     </a>
                     <div class="card-body">
-                        <p class="card-text text-start">{{ photo.data.summary }}</p>
+                        <p class="card-text text-start">{{ photo.summary }}</p>
                     </div>
                 </article>
             </div>
             {% endfor %}
         </div>
+
+        {% if pagination.href.previous or pagination.href.next %}
+        <nav class="d-flex justify-content-between align-items-center mt-5" aria-label="Photography pagination">
+            <div>
+                {% if pagination.href.previous %}
+                <a class="btn btn-outline-stckr" href="{{ pagination.href.previous | url }}">Newer photos</a>
+                {% endif %}
+            </div>
+            <div class="text-muted small">
+                Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+            </div>
+            <div>
+                {% if pagination.href.next %}
+                <a class="btn btn-outline-stckr" href="{{ pagination.href.next | url }}">Older photos</a>
+                {% endif %}
+            </div>
+        </nav>
+        {% endif %}
     </div>
 </section>

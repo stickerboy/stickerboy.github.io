@@ -43,6 +43,7 @@ export default function (eleventyConfig) {
         if (!imagePath) return "";
 
         let normalizedImagePath = String(imagePath).replace(/^\/+/, "");
+        const imageExtensionPattern = /\.(avif|gif|jpe?g|png|svg|webp)$/i;
 
         if (normalizedImagePath.startsWith("assets/img/")) {
             return `/${normalizedImagePath}`;
@@ -56,14 +57,14 @@ export default function (eleventyConfig) {
         }
 
         if (normalizedSize) {
-            if (/\.[a-z0-9]+$/i.test(normalizedImagePath)) {
-                normalizedImagePath = normalizedImagePath.replace(/(\.[a-z0-9]+)$/i, `-${normalizedSize}$1`);
+            if (imageExtensionPattern.test(normalizedImagePath)) {
+                normalizedImagePath = normalizedImagePath.replace(imageExtensionPattern, `-${normalizedSize}$&`);
             } else {
                 normalizedImagePath = `${normalizedImagePath}-${normalizedSize}`;
             }
         }
 
-        const hasFileExtension = /\.[a-z0-9]+$/i.test(normalizedImagePath);
+        const hasFileExtension = imageExtensionPattern.test(normalizedImagePath);
         const pathWithGroup = resolvedGroup
             ? `${resolvedGroup}/${normalizedImagePath}`
             : normalizedImagePath;
@@ -150,15 +151,21 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addCollection("photographs", (collectionApi) => {
         return collectionApi.getFilteredByTag("photographs").sort((a, b) => {
-            return (a.data.title || "").localeCompare(b.data.title || "");
+            const aTitle = a.data.pageHeading || a.data.title || a.data.photo?.pageHeading || a.data.photo?.title || "";
+            const bTitle = b.data.pageHeading || b.data.title || b.data.photo?.pageHeading || b.data.photo?.title || "";
+            return aTitle.localeCompare(bTitle);
         });
     });
 
     eleventyConfig.addCollection("featuredPhotographs", (collectionApi) => {
         return collectionApi
             .getFilteredByTag("photographs")
-            .filter((item) => item.data.featured)
-            .sort((a, b) => (a.data.title || "").localeCompare(b.data.title || ""));
+            .filter((item) => item.data.featured || item.data.photo?.featured)
+            .sort((a, b) => {
+                const aTitle = a.data.pageHeading || a.data.title || a.data.photo?.pageHeading || a.data.photo?.title || "";
+                const bTitle = b.data.pageHeading || b.data.title || b.data.photo?.pageHeading || b.data.photo?.title || "";
+                return aTitle.localeCompare(bTitle);
+            });
     });
 
     eleventyConfig.addCollection("showcases", (collectionApi) => {
@@ -224,6 +231,11 @@ export default function (eleventyConfig) {
                 return data.customPermalink; // Use custom permalink if provided
             }
 
+            // Keep explicit front matter permalinks on paginated templates.
+            if (data.pagination && data.permalink) {
+                return data.permalink;
+            }
+
             const collectionPermalink = getCollectionPermalink(data.page.inputPath);
             if (collectionPermalink) {
                 return collectionPermalink;
@@ -252,6 +264,48 @@ export default function (eleventyConfig) {
                 })}`;
             }
             return data.description; // Keep existing description for other pages
+        },
+        title: (data) => {
+            if (data.photo && !data.title) {
+                return data.photo.title || data.photo.pageHeading || data.title;
+            }
+            return data.title;
+        },
+        pageHeading: (data) => {
+            if (data.photo && !data.pageHeading) {
+                return data.photo.pageHeading || data.photo.title || data.pageHeading;
+            }
+            return data.pageHeading;
+        },
+        featured: (data) => {
+            if (data.photo && typeof data.featured === "undefined") {
+                return Boolean(data.photo.featured);
+            }
+            return data.featured;
+        },
+        photoId: (data) => {
+            if (data.photo && !data.photoId) {
+                return data.photo.photoId || data.photo.slug || data.photoId;
+            }
+            return data.photoId;
+        },
+        photoUrl: (data) => {
+            if (data.photo && !data.photoUrl) {
+                return data.photo.photoUrl || data.photoUrl;
+            }
+            return data.photoUrl;
+        },
+        imageAlt: (data) => {
+            if (data.photo && !data.imageAlt) {
+                return data.photo.imageAlt || data.imageAlt;
+            }
+            return data.imageAlt;
+        },
+        summary: (data) => {
+            if (data.photo && !data.summary) {
+                return data.photo.summary || data.summary;
+            }
+            return data.summary;
         },
         pageGroup: (data) => {
             if (data.page.inputPath.includes("pages/")) {
