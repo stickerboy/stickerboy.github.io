@@ -58,30 +58,26 @@ export default function (eleventyConfig) {
         }
     });
 
-    eleventyConfig.addCollection("groupPages", (collectionApi) => {
-        const pagesDir = path.join(process.cwd(), "pages");
-        const folders = fs.readdirSync(pagesDir).filter((file) => {
-            return fs.lstatSync(path.join(pagesDir, file)).isDirectory();
-        });
+    const pagesDir = path.join(process.cwd(), "pages");
+    const pageEntries = fs.readdirSync(pagesDir).filter((entry) => {
+        return fs.lstatSync(path.join(pagesDir, entry)).isFile();
+    });
+    const pageNames = pageEntries.map((entry) => path.parse(entry).name);
 
-        return folders.map((folder) => {
-            const folderItems = collectionApi.getFilteredByGlob(`./pages/${folder}/**/*.*`);
+    eleventyConfig.addCollection("groupPages", (collectionApi) => {
+        return pageNames.map((pageName) => {
+            const pageItems = collectionApi.getFilteredByGlob(`./pages/${pageName}.*`);
             return {
-                folderName: folder,
-                folderItems: folderItems,
-                permalink: `/${folder}/`,
+                pageGroup: pageName,
+                pageEntries: pageItems,
+                permalink: `/${pageName}/`,
             };
         });
     });
 
-    const pagesDir = path.join(process.cwd(), "pages");
-    const folders = fs.readdirSync(pagesDir).filter((file) => {
-        return fs.lstatSync(path.join(pagesDir, file)).isDirectory();
-    });
-
-    folders.forEach((folder) => {
-        eleventyConfig.addCollection(folder, (collectionApi) => {
-            return collectionApi.getFilteredByGlob(`./pages/${folder}/*.njk`);
+    pageNames.forEach((pageName) => {
+        eleventyConfig.addCollection(pageName, (collectionApi) => {
+            return collectionApi.getFilteredByGlob(`./pages/${pageName}.*`);
         });
     });
 
@@ -140,14 +136,47 @@ export default function (eleventyConfig) {
             });
     });
 
-    // Automatically set permalink for changelog items
+    const contentPermalinkRoots = {
+        projects: "projects",
+        photography: "photography",
+        showcase: "about",
+    };
+
+    const getCollectionPermalink = (inputPath) => {
+        const normalizedInputPath = inputPath.replace(/\\/g, "/");
+
+        for (const [sourceDir, outputDir] of Object.entries(contentPermalinkRoots)) {
+            if (!normalizedInputPath.includes(`/${sourceDir}/`) && !normalizedInputPath.startsWith(`${sourceDir}/`)) {
+                continue;
+            }
+
+            const relativePath = normalizedInputPath.replace(new RegExp(`^.*?${sourceDir}/`), "");
+            const permalinkPath = relativePath.replace(/\.[^/.]+$/, "");
+
+            if (permalinkPath === "index") {
+                return `/${outputDir}/`;
+            }
+
+            return `/${outputDir}/${permalinkPath}/`;
+        }
+
+        return null;
+    };
+
+    // Automatically set permalinks for content sections, flat pages content, and changelog items.
     eleventyConfig.addGlobalData("eleventyComputed", {
         permalink: (data) => {
             if (data.customPermalink) {
                 return data.customPermalink; // Use custom permalink if provided
             }
+
+            const collectionPermalink = getCollectionPermalink(data.page.inputPath);
+            if (collectionPermalink) {
+                return collectionPermalink;
+            }
+
             if (data.page.inputPath.includes("pages/")) {
-                // Remove 'pages/' from the input path and construct the permalink
+                // Remove 'pages/' from the input path and construct a slug-based permalink.
                 const relativePath = data.page.inputPath.replace(/^.*\/pages\//, "");
                 const permalinkPath = relativePath.replace(/\.[^/.]+$/, ""); // Remove file extension
                 const normalizedPath = permalinkPath.replace(/\/index$/, "");
@@ -170,25 +199,24 @@ export default function (eleventyConfig) {
             }
             return data.description; // Keep existing description for other pages
         },
-        folderName: (data) => {
+        pageGroup: (data) => {
             if (data.page.inputPath.includes("pages/")) {
-                const folderPath = data.page.inputPath.split("/").slice(-2, -1)[0];
-                return folderPath;
+                return data.page.fileSlug;
             }
             if (data.page.fileSlug && data.collections && data.collections.groupPages) {
-                const groupPage = data.collections.groupPages.find(
-                    (group) => group.folderName === data.page.fileSlug
+                const pageGroupData = data.collections.groupPages.find(
+                    (group) => group.pageGroup === data.page.fileSlug
                 );
-                return groupPage ? groupPage.folderName : null;
+                return pageGroupData ? pageGroupData.pageGroup : null;
             }
-            return data.folderName;
+            return data.pageGroup;
         },
-        folderItems: (data) => {
-            if (data.folderName && data.collections && data.collections.groupPages) {
-                const groupPage = data.collections.groupPages.find(
-                    (group) => group.folderName === data.folderName
+        pageEntries: (data) => {
+            if (data.pageGroup && data.collections && data.collections.groupPages) {
+                const pageGroupData = data.collections.groupPages.find(
+                    (group) => group.pageGroup === data.pageGroup
                 );
-                return groupPage ? groupPage.folderItems : [];
+                return pageGroupData ? pageGroupData.pageEntries : [];
             }
             return [];
         },
