@@ -44,17 +44,6 @@
     "details": []
   },
   {
-    "photoId": "gethuman",
-    "slug": "gethuman",
-    "title": "Get human",
-    "pageHeading": "Get human",
-    "featured": false,
-    "photoUrl": "https://www.flickr.com/photos/stickerboy/14665495093",
-    "imageAlt": "Get human",
-    "summary": "",
-    "details": []
-  },
-  {
     "photoId": "gorjuss",
     "slug": "gorjuss",
     "title": "Gorjuss",
@@ -65,7 +54,8 @@
     "summary": "A candid winter moment captured during snowfall.",
     "details": [
       "A portrait-oriented composition focused on motion, weather, and mood."
-    ]
+    ],
+    "exif": []
   },
   {
     "photoId": "reflect",
