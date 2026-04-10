@@ -7,8 +7,19 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/28135798622/",
     "imageAlt": "Alain",
-    "summary": "",
-    "details": []
+    "summary": "A monochrome portrait of a long-haired cat resting on a raised platform.",
+    "description": "This is Alain, a male Ragdoll cat who was a resident at the cat café Maison de Moggy in Edinburgh. I had the pleasure of visiting the café on several occasions and was able to capture a number of photographs during my time there. Alain has since retired from café life, but during my visits he was playful, affectionate, and wonderfully relaxed around the camera, allowing me to get these memorable shots of him.",
+    "details": "A close-up, low-angle black-and-white photograph capturing a long-haired cat from below, with paws and face prominently framed. The minimal indoor background and strong contrast draw attention to texture and expression.",
+    "tags": [
+      "cat",
+      "pet",
+      "animal",
+      "ragdoll",
+      "cat-cafe",
+      "portrait",
+      "black-and-white",
+      "indoor"
+    ]
   },
   {
     "photoId": "fero",
@@ -18,8 +29,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/29604476186",
     "imageAlt": "Fero",
-    "summary": "",
-    "details": []
+    "summary": "A detailed portrait of a long-haired cat in an outdoor setting.",
+    "description": "This is Mooka, a very shy Norwegian Forest cat from Glasgow. He belonged to a neighbour of my wife’s parents and would often wander over to spend time relaxing in their garden. I captured this photograph from a safe distance, giving him the space he clearly preferred.",
+    "details": "The subject is framed tightly to emphasise facial features and fur texture. A soft, muted background helps isolate the subject while retaining a natural outdoor feel.",
+    "tags": [
+      "cat",
+      "pet",
+      "animal",
+      "portrait",
+      "outdoor"
+    ]
   },
   {
     "photoId": "firstquarter",
@@ -29,8 +48,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/51189634232",
     "imageAlt": "First quarter",
-    "summary": "",
-    "details": []
+    "summary": "A sharply focused view of the moon during its first quarter phase.",
+    "description": "Taken in Paisley, Scotland at around 10:30pm on May 20, 2021, this is my clearest and most detailed photograph of the moon so far, and serves as a marker of how much my photography has progressed since my earliest shots with this camera. ",
+    "details": "The image highlights surface texture and craters along the terminator line. Strong contrast between illuminated and shadowed areas emphasises depth and detail.",
+    "tags": [
+      "moon",
+      "astronomy",
+      "night",
+      "space",
+      "minimal"
+    ]
   },
   {
     "photoId": "footprints",
@@ -40,8 +67,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/38866732815",
     "imageAlt": "Footprints",
-    "summary": "",
-    "details": []
+    "summary": "A snow-covered woodland path marked by a trail of footprints.",
+    "description": "I grew up with winters filled with snow days — watching it fall outside the window and building snowmen in the garden. During a visit home as an adult, I experienced snowfall on a scale I hadn’t seen since childhood. This photograph was taken in the woods behind my childhood home, capturing a moment that felt both familiar and rare.",
+    "details": "Fresh snow blankets trees and ground, creating a quiet winter atmosphere. Footprints lead through the scene, adding scale, direction, and narrative.",
+    "tags": [
+      "winter",
+      "snow",
+      "forest",
+      "landscape",
+      "path"
+    ]
   },
   {
     "photoId": "gorjuss",
@@ -52,10 +87,16 @@
     "photoUrl": "https://www.flickr.com/photos/stickerboy/24420913515",
     "imageAlt": "Shot from behind a woman as she walks through the snow as it falls.",
     "summary": "A candid winter moment captured during snowfall.",
-    "details": [
-      "A portrait-oriented composition focused on motion, weather, and mood."
-    ],
-    "exif": []
+    "description": "An unexpected snowfall at the home of my wife’s parents turned into an unplanned walk out into the winter landscape. With no real intention behind it, this photograph came together entirely by chance — a moment shaped by the conditions rather than a plan.",
+    "details": "A portrait-oriented composition focused on motion, weather, and mood.",
+    "exif": [],
+    "tags": [
+      "snow",
+      "winter",
+      "street",
+      "atmospheric",
+      "candid"
+    ]
   },
   {
     "photoId": "reflect",
@@ -65,8 +106,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/29637188192",
     "imageAlt": "Reflect",
-    "summary": "",
-    "details": []
+    "summary": "Rain droplets on glass overlooking a blurred city street.",
+    "description": "This was a last‑minute photograph, taken while walking through the city of Leeds. I noticed hundreds of rain droplets scattered across the glass, each catching the light, and then the reflection behind them. For a brief moment, it felt like two worlds were blending into one — reality and reflection layered together through the glass.",
+    "details": "Raindrops cling sharply to the glass surface while the urban scene behind remains out of focus. The black-and-white treatment enhances contrast and texture.",
+    "tags": [
+      "rain",
+      "reflection",
+      "city",
+      "black-and-white",
+      "urban"
+    ]
   },
   {
     "photoId": "rhodos",
@@ -76,8 +125,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/28462614364",
     "imageAlt": "Rhodos",
-    "summary": "",
-    "details": []
+    "summary": "A wide coastal view overlooking a town and sea on a clear day.",
+    "description": "Taken on my first trip to the island of Rhodes, this photograph looks out over the old town at the northern tip of the island. It was a breathtaking view of the coastline, where it gently blends out into the deep blue of the sea.",
+    "details": "White buildings line the shoreline, meeting deep blue water and sky. Dry foreground terrain provides visual contrast and depth.",
+    "tags": [
+      "coast",
+      "sea",
+      "travel",
+      "landscape",
+      "architecture"
+    ]
   },
   {
     "photoId": "ripples",
@@ -87,8 +144,17 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/20226349784",
     "imageAlt": "Ripples",
-    "summary": "",
-    "details": []
+    "summary": "A solitary swan floating on gently rippling water.",
+    "description": "This photograph was the result of patience and timing, waiting for the moment the swan turned towards me as it surfaced from the water. The angle of its head and the small droplets falling from its beak, rippling the surface below, became an unexpected bonus. There was originally a hint of colour in the beak, but stripping that back allowed the image to settle naturally into monochrome, where the framing and contrast spoke for themselves.",
+    "details": "The monochrome composition highlights repeating ripple patterns. Minimal framing centres the subject in a calm, balanced scene.",
+    "tags": [
+      "swan",
+      "water",
+      "wildlife",
+      "minimal",
+      "animal",
+      "black-and-white"
+    ]
   },
   {
     "photoId": "solitude",
@@ -98,8 +164,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/39429557891",
     "imageAlt": "Solitude",
-    "summary": "",
-    "details": []
+    "summary": "A quiet, snow-covered park scene framed by bare trees.",
+    "description": "A light dusting of snow had me reaching for my camera before heading to work one morning. Taken in Glasgow’s West End, this scene comes from a small park beside the water at Kelvinbridge. Everything felt unusually quiet and serene, echoing the mood of an old oil painting from the early twentieth century. The bare branches stretch upward and weave together with the surrounding trees, forming a kind of natural canopy and sheltering the stillness below.",
+    "details": "Snow-laden branches dominate the scene, creating intricate detail. A bench in the background adds scale and a sense of stillness.",
+    "tags": [
+      "winter",
+      "snow",
+      "park",
+      "quiet",
+      "landscape"
+    ]
   },
   {
     "photoId": "tenpins",
@@ -109,8 +183,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/20327463635",
     "imageAlt": "Ten pins",
-    "summary": "I love bowling, though I don't get to do it very often. Took my camera with me one night and captured a few shots while we played.",
-    "details": []
+    "summary": "I don’t get to go bowling as often as I’d like, but on one night out I brought my camera along to see what I could capture. The lighting in the venue made action shots difficult, and many didn’t quite land the way I hoped, but this image immediately stood out. The worn, rustic look of the pins, the reflections stretching across the lane, and the subtle tilt of the frame all came together naturally. The pins peeking through from behind add an unexpected sense of depth, creating a layered, almost three‑dimensional shadow effect that gives the image its character.",
+    "description": "",
+    "details": [],
+    "tags": [
+      "bowling",
+      "sport",
+      "still-life",
+      "indoor",
+      "contrast"
+    ]
   },
   {
     "photoId": "thedreamer",
@@ -120,8 +202,16 @@
     "featured": false,
     "photoUrl": "https://www.flickr.com/photos/stickerboy/30148845067",
     "imageAlt": "The dreamer",
-    "summary": "",
-    "details": []
+    "summary": "A young kitten resting on a sunlit stone step.",
+    "description": "This photograph is the second in a three‑part series featuring the same litter of kittens: The Yearner, The Dreamer, and The Adventurer. The images were taken as they played together on a staircase outside a small home on the outskirts of northern Rhodes. Their mother stayed close by, quietly watching over them as they climbed and explored.",
+    "details": "Natural light highlights the texture of stone and fur. The relaxed pose creates an intimate, candid moment.",
+    "tags": [
+      "kitten",
+      "cat",
+      "pet",
+      "light",
+      "candid"
+    ]
   },
   {
     "photoId": "tranquility",
@@ -132,8 +222,14 @@
     "photoUrl": "https://www.flickr.com/photos/stickerboy/36736682740",
     "imageAlt": "Long exposure photo taken in the Portland Japanese Gardens. A view of the pond, waterfall and trees behind it.",
     "summary": "A long-exposure landscape shot from Portland Japanese Gardens.",
-    "details": [
-      "Part of a series focused on calm, atmospheric scenes from gardens and parks."
+    "description": "In 2017, I took what felt like a once‑in‑a‑lifetime trip to Portland and Seattle, with a visit to the Japanese Gardens being one of the highlights. The gardens were absolutely beautiful, offering a sense of calm and balance that invited slower, more considered photography. This image required patience and careful framing, as I aimed to create an ikebana‑inspired triangular composition using the stone lantern, the waterfall, and the triangular rock in the koi pond.",
+    "details": "Part of a series focused on calm, atmospheric scenes from gardens and parks.",
+    "tags": [
+      "garden",
+      "nature",
+      "water",
+      "long-exposure",
+      "tranquil"
     ]
   },
   {
@@ -145,8 +241,14 @@
     "photoUrl": "https://www.flickr.com/photos/stickerboy/44523824072",
     "imageAlt": "View of waves crashing into a concrete pier on the island of Rhodos.",
     "summary": "High-energy seascape with dramatic wave impact and color gradients.",
-    "details": [
-      "Captured on Rhodos, this shot emphasizes texture, force, and geometric framing."
+    "description": "This is undoubtedly one of my favourite photographs from my entire collection. Taken on the north‑west side of the island during my second visit, it captures a blustery afternoon with strong winds driving waves into a long stone pier. The way the sea blends into the sky still blows me away, with mist from the crashing waves rising and towering over pier.",
+    "details": "Captured on Rhodos, this shot emphasizes texture, force, and geometric framing.",
+    "tags": [
+      "sea",
+      "waves",
+      "motion",
+      "coastal",
+      "energy"
     ]
   }
 ]

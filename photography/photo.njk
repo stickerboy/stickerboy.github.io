@@ -15,16 +15,20 @@ permalink: /photography/{{ photo.slug }}/
         <div class="row g-0">
             <div class="col-lg-6 my-auto showcase-text p-5 p-md-9">
                 <h2>About this photo</h2>
-                {% if photo.details and photo.details.length %}
-                    {% for detail in photo.details %}
-                    <p class="fs-6 mt-3">{{ detail }}</p>
-                    {% endfor %}
-                {% elif photo.summary %}
-                    <p class="fs-6 mt-1">{{ photo.summary }}</p>
+
+                {% if photo.summary %}
+                    <p class="fs-6 mt-3">{{ photo.summary }}</p>
+                {% endif %}
+                {% if photo.description %}
+                    <p class="fs-6 mt-3">{{ photo.description }}</p>
+                {% endif %}
+                {% if photo.details %}
+                    <p class="visually-hidden fs-6 mt-{% if photo.summary %}1{% else %}3{% endif %}">{{ photo.details }}</p>
                 {% endif %}
 
+
                 {% if photo.photoUrl %}
-                <p><a href="{{ photo.photoUrl }}" class="link-stckr" rel="noopener" target="_blank">View this image on Flickr</a></p>
+                <p><a href="{{ photo.photoUrl }}" class="btn btn-light" rel="noopener" target="_blank">View this image on Flickr</a></p>
                 {% endif %}
             </div>
             <div class="col-lg-6 text-white showcase-img"
@@ -43,14 +47,14 @@ permalink: /photography/{{ photo.slug }}/
             {% if photo.exif.camera or photo.exif.model %}
             <div class="col mb-4">
                 <h3 class="h5">Camera</h3>
-                <p class="mb-0">{{ photo.exif.camera or "Unknown" }}{% if photo.exif.model %} {{ photo.exif.model }}{% endif %}</p>
+                <p class="mb-0">{{ photo.exif.camera | replace("OLYMPUS IMAGING CORP.", "Olympus Pen ") or "Unknown" }}{% if photo.exif.model %} {{ photo.exif.model | replace("OLYMPUS IMAGING CORP.", "Olympus Pen ") }}{% endif %}</p>
             </div>
             {% endif %}
 
             {% if photo.exif.lens %}
             <div class="col mb-4">
                 <h3 class="h5">Lens</h3>
-                <p class="mb-0">{{ photo.exif.lens }}</p>
+                <p class="mb-0">{{ photo.exif.lens | replace("OLYMPUS", "Olympus") }}</p>
             </div>
             {% endif %}
 
