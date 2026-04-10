@@ -90,6 +90,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     background-color: var(--bs-343);
     background: url(map-get($backgrounds, "default")) map-get($background-pos, "default");
     background-size: cover;
+    border-bottom: 5px solid var(--bs-stckr);
 
     h1,
     .h1 {
