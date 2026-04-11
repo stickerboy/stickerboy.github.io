@@ -117,6 +117,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
         min-height: 30rem;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
@@ -151,6 +152,16 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
                 border-radius: var(--bs-card-inner-border-radius) 0 var(--bs-card-inner-border-radius);
             }
         }
+    }
+    &-text {
+        min-height: 15rem;
+        align-content: center;
+    }
+    &-img {
+        min-height: 15rem;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }
 
