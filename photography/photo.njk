@@ -7,6 +7,7 @@ pagination:
   data: photos
   size: 1
   alias: photo
+  resolve: values
 permalink: /photography/{{ photo.slug }}/
 ---
 
@@ -117,7 +118,9 @@ permalink: /photography/{{ photo.slug }}/
 {% endif %}
 
 <section class="py-md-4 py-3">
-    <div class="container">
+        <div class="container">
+
+        {% include "components/pagination.njk" %}
         <p class="mb-0"><a href="/photography/" class="btn btn-outline-stckr">Back to all photography</a></p>
     </div>
 </section>
