@@ -24,7 +24,39 @@ summary: My personal portfolio site, built with 11ty.
             </div>
         </div>
         <div class="row g-4 g-md-5 mb-4">
-
+            <div class="col-md-6 col-xl-4">
+                <div class="d-flex">
+                    <div class="text-stckr me-4">
+                        {% include "svg/11ty.njk" %}
+                    </div>
+                    <div>
+                        <h5 class="mb-2 mb-lg-3 fw-bold">Why 11ty?</h5>
+                        <p>I chose Eleventy (11ty) because it’s fast, flexible, and lets me build exactly the kind of site I want—without getting in my way. Its simplicity and power make it perfect for a creative portfolio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <div class="d-flex">
+                    <div class="text-stckr me-4">
+                        {% include "svg/bootstrap.njk" %}
+                    </div>
+                    <div>
+                        <h5 class="mb-2 mb-lg-3 fw-bold">Why Bootstrap?</h5>
+                        <p>I use Bootstrap because it gives me a solid, responsive grid and a ton of utility classes—so I can focus on design and content, not reinventing the basics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-4">
+                <div class="d-flex">
+                    <div class="text-stckr me-4">
+                        {% include "svg/nunjucks.njk" %}
+                    </div>
+                    <div>
+                        <h5 class="mb-2 mb-lg-3 fw-bold">Why Nunjucks?</h5>
+                        <p>Nunjucks lets me write templates that are clean, readable, and reusable. It’s powerful enough for complex layouts, but simple enough to keep everything maintainable.</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row mb-4">
             {% set heroImage = projectId | assetImagePath('png', '', tags, 'lg') %}
