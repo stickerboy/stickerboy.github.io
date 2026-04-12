@@ -33,7 +33,8 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
             </div>
             {% endfor %}
         </div>
-
-        {% include "components/list-pagination.njk" %}
+        <div class="mt-5">
+            {% include "components/list-pagination.njk" %}
+        </div>
     </div>
 </section>

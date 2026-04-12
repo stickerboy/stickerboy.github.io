@@ -1,13 +1,19 @@
 ---
 layout: base.njk
+pagination:
+  data: collections.showcases
+  size: 3
+  alias: showcases
+  reverse: false
 title: About
 pageHeading: About
 cssFile: home
+permalink: "{% if pagination.pageNumber == 0 %}/about/{% else %}/about/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
 <section class="showcase" id="showcase-list">
     <div class="container-fluid p-0">
-        {% for item in collections.showcases %}
+        {% for item in showcases %}
         {% set imageOrderClass = 'order-lg-2' if loop.index0 % 2 == 0 else '' %}
         {% set textOrderClass = 'order-lg-1' if loop.index0 % 2 == 0 else '' %}
         {% set imageId = 'about-showcase-' ~ loop.index %}
@@ -17,7 +23,7 @@ cssFile: home
                   style="background-image: url('{{ imagePath | assetImagePath('', '', item.data.tags) | url }}')"
                  aria-describedby="{{ imageId }}"></div>
             <p class="visually-hidden" id="{{ imageId }}">{{ item.data.imageAlt or item.data.title }}</p>
-            <div class="col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-9">
+            <div class="col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">
                 <h2>{{ item.data.pageHeading or item.data.title }}</h2>
                 <p class="fs-6 mt-3">{{ item.data.summary }}</p>
                 {% if item.data.homeSecondary %}
@@ -27,5 +33,11 @@ cssFile: home
             </div>
         </div>
         {% endfor %}
+
+        <div class="p-5 p-md-6 p-lg-7 p-xl-9 pt-0 pt-sm-0 pt-md-0 py-lg-5 py-xl-5">
+             {% set pageNext = "Next" %}
+             {% set pagePrev = "Previous" %}
+            {%- include "components/list-pagination.njk" %}
+        </div>
     </div>
 </section>
