@@ -1,14 +1,14 @@
-<nav class="photos-nav pb-3" aria-label="Next and previous photos">
+<nav class="pagination-nav pb-3" aria-label="Next and previous items">
   <ul class="pagination pagination-sm justify-content-between m-0">
     <li class="page-item">
       <div class="btn-group d-flex flex-row" role="group">
         {% if pagination.href.first and pagination.pageNumber > 0 %}
-          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded{% if pagination.href.previous %}-sm-start{% endif %} fw-normal" href="{{ pagination.href.first }}" title="Latest photo">
+          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded{% if pagination.href.previous %}-sm-start{% endif %} fw-normal" href="{{ pagination.href.first }}" title="Latest item">
             &laquo; <span class="d-none d-sm-inline-flex">Latest</span>
           </a>
         {% endif %}
         {% if pagination.href.previous %}
-          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded-end rounded-start-0 fw-normal" href="{{ pagination.href.previous }}" title="Previous photo: {{ pagination.page.previous.title or pagination.page.previous.pageHeading }}">
+          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded-end rounded-start-0 fw-normal" href="{{ pagination.href.previous }}" title="Previous item: {{ pagination.page.previous.title or pagination.page.previous.pageHeading }}">
             &#8678; <span class="visually-hidden">Previous:&nbsp;</span> {{ pagination.page.previous.title or pagination.page.previous.pageHeading }}
           </a>
         {% endif %}
@@ -17,12 +17,12 @@
     <li class="page-item">
       <div class="btn-group d-flex flex-row" role="group">
         {% if pagination.href.next %}
-          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded-start rounded-end-0 fw-normal" href="{{ pagination.href.next }}" title="Next photo: {{ pagination.page.next.title or pagination.page.next.pageHeading }}">
+          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded-start rounded-end-0 fw-normal" href="{{ pagination.href.next }}" title="Next item: {{ pagination.page.next.title or pagination.page.next.pageHeading }}">
             <span class="visually-hidden">Next:&nbsp;</span> {{ pagination.page.next.title or pagination.page.next.pageHeading }} &#8680;
           </a>
         {% endif %}
         {% if pagination.href.last and pagination.pageNumber < pagination.pages.length - 1 %}
-          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded{% if pagination.href.next %}-sm-end{% endif %} fw-normal" href="{{ pagination.href.last }}" title="Earliest photo">
+          <a class="btn btn-outline-stckr border-light-subtle py-2 px-3 rounded{% if pagination.href.next %}-sm-end{% endif %} fw-normal" href="{{ pagination.href.last }}" title="Earliest item">
             <span class="d-none d-sm-inline-flex">Earliest</span> &raquo;
           </a>
         {% endif %}

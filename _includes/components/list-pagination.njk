@@ -1,0 +1,17 @@
+{% if pagination.href.previous or pagination.href.next %}
+    <nav class="d-flex justify-content-between align-items-center mt-5" aria-label="{{ title }} pagination">
+        <div>
+            {% if pagination.href.previous %}
+            <a class="btn btn-outline-stckr" href="{{ pagination.href.previous | url }}">Newer photos</a>
+            {% endif %}
+        </div>
+        <div class="text-muted lead fw-normal">
+            Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+        </div>
+        <div>
+            {% if pagination.href.next %}
+            <a class="btn btn-outline-stckr" href="{{ pagination.href.next | url }}">Older photos</a>
+            {% endif %}
+        </div>
+    </nav>
+{% endif %}

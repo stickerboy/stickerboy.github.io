@@ -34,22 +34,6 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
             {% endfor %}
         </div>
 
-        {% if pagination.href.previous or pagination.href.next %}
-        <nav class="d-flex justify-content-between align-items-center mt-5" aria-label="Photography pagination">
-            <div>
-                {% if pagination.href.previous %}
-                <a class="btn btn-outline-stckr" href="{{ pagination.href.previous | url }}">Newer photos</a>
-                {% endif %}
-            </div>
-            <div class="text-muted small">
-                Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
-            </div>
-            <div>
-                {% if pagination.href.next %}
-                <a class="btn btn-outline-stckr" href="{{ pagination.href.next | url }}">Older photos</a>
-                {% endif %}
-            </div>
-        </nav>
-        {% endif %}
+        {% include "components/list-pagination.njk" %}
     </div>
 </section>
