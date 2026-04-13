@@ -1,21 +1,21 @@
 <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom border-stckr border-5">
-            <div class="container-fluid">
-                <p class="navbar-brand mb-0">{{ pkg.sitename }}</p>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <div class="navbar-nav me-auto mb-2 mb-lg-0 hidden"></div>
-                    <ul class="d-flex navbar-nav">
-                        {%- for item in nav %}
-                        {%- if not item.excludeFromNav %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#{{ item.id }}">{{ item.label }}</a>
-                        </li>
-                        {%- endif %}
-                        {%- endfor %}
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom border-stckr border-5">
+        <div class="container">
+            <p class="navbar-brand mb-0">{{ pkg.sitename }}</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto mb-2 mb-lg-0 hidden"></div>
+                <ul class="d-flex navbar-nav">
+                {%- for item in nav %}
+                    {%- if not item.excludeFromNav %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#{{ item.id }}">{{ item.label }}</a>
+                    </li>
+                    {%- endif %}
+                {%- endfor %}
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
