@@ -5,7 +5,8 @@
     "icon": "chat-left-dots",
     "description": "Places to find me online",
     "ariaLabel": "",
-    "excludeFromNav": false
+    "excludeFromNav": false,
+    "homepageOnly": true
   },
   {
     "id": "about",
@@ -13,7 +14,8 @@
     "icon": "person-circle",
     "description": "Background, experience, and what I do",
     "ariaLabel": "",
-    "excludeFromNav": false
+    "excludeFromNav": false,
+    "homepageOnly": false
   },
   {
     "id": "photography",
@@ -21,7 +23,8 @@
     "icon": "camera",
     "description": "Some of my photography and visual work",
     "ariaLabel": "",
-    "excludeFromNav": false
+    "excludeFromNav": false,
+    "homepageOnly": false
   },
   {
     "id": "projects",
@@ -29,7 +32,8 @@
     "icon": "kanban",
     "description": "Projects I have designed and shipped",
     "ariaLabel": "",
-    "excludeFromNav": false
+    "excludeFromNav": false,
+    "homepageOnly": false
   },
   {
     "id": "contact",
@@ -37,6 +41,7 @@
     "icon": "envelope-at",
     "description": "Reach out if you want to chat or work together",
     "ariaLabel": "",
-    "excludeFromNav": false
+    "excludeFromNav": false,
+    "homepageOnly": false
   }
 ]
