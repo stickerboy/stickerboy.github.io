@@ -6,22 +6,24 @@
             best on Flickr.</p>
         <p>All photography used on this site was taken by me.</p>
         <div class="row g-4 mb-3">
-            {% for photo in photographs if photo.featured %}
-            {% set destination = '/photography/' + photo.slug + '/' %}
-            {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
-            <div class="col-sm-4">
-                <div class="card">
-                    <a href="{{ destination }}"
-                        title="{{ photo.pageHeading or photo.title }} - photo by Kenny Cameron"
-                        class="flickr-item">
-                        <img src="{{ imagePathFull | url }}" class="card-img"
-                            alt="{{ photo.imageAlt or photo.title }}">
-                        <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
-                            <p class="h3 text-white">{{ photo.pageHeading or photo.title }}</p>
+            {% for photo in photos %}
+                {% if photo.featured %}
+                    {% set destination = '/photography/' + photo.slug + '/' %}
+                    {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <a href="{{ destination }}"
+                                title="{{ photo.pageHeading or photo.title }} - photo by Kenny Cameron"
+                                class="flickr-item">
+                                <img src="{{ imagePathFull | url }}" class="card-img"
+                                    alt="{{ photo.imageAlt or photo.title }}">
+                                <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
+                                    <p class="h3 text-white">{{ photo.pageHeading or photo.title }}</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="mt-5">
