@@ -9,32 +9,29 @@ cssFile: home
 <section class="projects card-container py-md-6 py-5" id="projects-list">
     <div class="container">
         <p class="mb-4">{{ description }}</p>
-
-        <div class="row g-4">
-            {% for project in collections.projects %}
-            {% set destination = project.url %}
-            {% set imagePath = project.data.projectId | assetImagePath('png', '', project.data.tags, 'sm') %}
-            <div class="col-12">
-                <article class="card h-100">
-                    <div class="row g-0">
-                        <div class="col-md-5 col-lg-4">
-                            <img src="{{ imagePath | url }}" class="card-img h-100"
-                                alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}">
-                        </div>
-                        <div class="col-md-7 col-lg-8">
-                            <div class="card-body d-flex flex-column h-100">
-                                <h2 class="card-title">{{ project.data.title }}</h2>
-                                {%- if project.data.summary %}
-                                <p class="card-text">{{ project.data.description }}</p>
-                                {%- endif %}
-                                <a href="{{ destination }}" class="btn btn-outline-stckr btn-sm me-auto mt-auto">View project</a>
-                            </div>
-                        </div>
+    </div>
+    <div class="container">
+    {% for project in collections.projects %}
+        {% set destination = project.url %}
+        {% set imagePath = project.data.projectId | assetImagePath('png', '', project.data.tags, 'md') %}
+        {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
+        {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
+            <div class="row g-0{% if not loop.last %} pb-3{% endif %}">
+                <div class=" col-12 col-lg-5 col-xl-4 {{ imageOrderClass }} projects-img"
+                     style="background-image: url('{{ imagePath | assetImagePath('', '', item.data.tags) | url }}')">
+                    {# <img src="{{ imagePath | url }}" class="card-img h-100" alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}"> #}
+                </div>
+                <div class="col-12 col-lg-7 col-xl-8 {{ textOrderClass }}">
+                    <div class="align-content-center project-text p-4 p-md-5 d-flex flex-column h-100">
+                        <h2 class="card-title">{{ project.data.title }}</h2>
+                        {%- if project.data.summary %}
+                        <p class="card-text">{{ project.data.description }}</p>
+                        {%- endif %}
+                        <a href="{{ destination }}" class="btn btn-outline-stckr btn-sm me-auto mt-auto">View project</a>
                     </div>
-                </article>
+                </div>
             </div>
-            {% endfor %}
-        </div>
+    {% endfor %}
     </div>
 </section>
 
