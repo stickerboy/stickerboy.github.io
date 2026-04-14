@@ -74,11 +74,11 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 */
 .features-icons {
     &-item {
-        max-width: 20rem;
+        
     }
     &-icon {
         height: 5rem;
-
+        
         i {
             font-size: #{map-get($display-font-sizes, 7)};
             @include media-breakpoint-up(md) {
@@ -88,12 +88,20 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
                 transition: stroke 0.4s ease, color 0.4s ease;
             }
         }
+        &:after {
+            transition: background-color 0.4s ease;
+            border-radius: var(--bs-border-radius);
+        }
 
         &:hover,
         &:active,
         &:focus {
             i::before {
                 color: var(--bs-stckr);
+            }
+            &:after {
+                --bs-bg-opacity: 0.1;
+                background-color: rgba(var(--bs-stckr-rgb), var(--bs-bg-opacity)) !important
             }
         }
     }
