@@ -5,11 +5,15 @@ main {
     overflow-y: auto;
     scroll-snap-type: both mandatory;
     scroll-behavior: smooth;
-    margin-top: 60px;
     height: calc(100vh - 60px);
 }
-.homepage section {
-    scroll-margin-top: 60px;
+.homepage { 
+    section {
+        scroll-margin-top: 60px;
+    }
+    main {
+        margin-top: 60px;
+    }
 }
 
 h4, .h4, h3, .h3, h2, .h2, h1, .h1,
