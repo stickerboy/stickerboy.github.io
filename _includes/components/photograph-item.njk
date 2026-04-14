@@ -1,0 +1,15 @@
+<div class="col-sm-4">
+  <div class="card">
+    <a href="{{ photoUrl }}" title="{{ photo.pageHeading or photo.title }} - photo by Kenny Cameron" class="flickr-item">
+      <img src="{{ imagePathFull | url }}" class="card-img{% if showCaption %}-top{% endif %}" alt="{{ photo.imageAlt or photo.title }}">
+      <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
+        <p class="h3 text-white">{{ photo.pageHeading or photo.title }}</p>
+      </div>
+    </a>
+    {% if showCaption %}
+      <div class="card-body">
+        <p class="card-text text-start text-body">{{ photo.summary }}</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

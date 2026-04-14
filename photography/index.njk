@@ -16,23 +16,10 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
 
         <div class="row g-4">
             {% for photo in pagedPhotos %}
-            {% set destination = '/photography/' + photo.slug + '/' %}
-            {% set imagePath = photo.photoId | assetImagePath('jpg', 'photography') %}
-            <div class="col-12 col-md-6 col-lg-4">
-                <article class="card h-100">
-                    <a href="{{ destination }}" class="flickr-item link-underline link-underline-opacity-0">
-                        <div class="card-heading position-relative">
-                            <img src="{{ imagePath | url }}" class="card-img-top" alt="{{ photo.imageAlt or photo.title }}">
-                            <div class="card-caption d-flex w-100 h-100 align-items-center justify-content-center">
-                                <p class="h3 text-white">{{ photo.title or photo.pageHeading }}</p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text text-start text-body">{{ photo.summary }}</p>
-                        </div>
-                    </a>
-                </article>
-            </div>
+                {% set photoUrl = '/photography/' + photo.slug + '/' %}
+                {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
+                {% set showCaption = true %}
+                {% include "components/photograph-item.njk" %}
             {% endfor %}
         </div>
         <div class="mt-5">
