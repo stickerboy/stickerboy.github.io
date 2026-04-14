@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <!--
             //START FILE/
@@ -14,9 +13,9 @@
         {% include "layout/if.njk" %}
         {% include "layout/css.njk" %}
     </head>
-
     <body>
         {% include "layout/nav-simple.njk" %}
+        <main>
         {% include "layout/masthead.njk" %}
 
         {{ content | safe }}
@@ -24,6 +23,6 @@
         {% include "layout/footer.njk" %}
 
         {% include "layout/scripts.njk" %}
+        </main>
     </body>
-
 </html>

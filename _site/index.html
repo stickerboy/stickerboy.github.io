@@ -43,9 +43,9 @@
 
     </head>
     
-    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true">
+    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true" class="homepage">
         <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg sticky-top bg-light border-bottom border-stckr border-5">
+    <nav class="navbar navbar-expand-lg fixed-top w-100 bg-light border-bottom border-stckr border-5">
         <div class="container">
             <p class="navbar-brand mb-0">kenny.cx</p>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,28 +55,29 @@
                 <div class="navbar-nav me-auto mb-2 mb-lg-0 hidden"></div>
                 <ul class="d-flex navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#social">Social</a>
+                        <a class="nav-link" href="#social" data-target="social">Social</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about" data-target="about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#photography">Photography</a>
+                        <a class="nav-link" href="#photography" data-target="photography">Photography</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#projects" data-target="projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact" data-target="contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+        <main>
     
 
-        <!-- Masthead-->
-        <header class="masthead py-6 py-sm-8 py-md-12">
+            <!-- Masthead-->
+        <header class="masthead py-6 py-sm-8 py-md-10">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-8">
@@ -89,7 +90,7 @@
             </div>
         </header>
 
-                        <!-- Social icons -->
+                            <!-- Social icons -->
         <section class="features-icons bg-light text-center py-md-5 py-4" id="social">
             <div class="container">
                 <div class="row">
@@ -386,7 +387,7 @@
 </section>
 
 
-        <!-- Footer-->
+            <!-- Footer-->
         <footer class="footer bg-light py-md-6 py-5">
             <div class="container">
                 <div class="row">
@@ -465,11 +466,12 @@
             </div>
         </footer>
 
-        <!-- Bootstrap core JS-->
+            <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
         <!-- Core theme JS-->
         <script src="/js/scripts.js"></script>
         
+        </main>
     </body>
 </html>

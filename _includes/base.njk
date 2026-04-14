@@ -8,19 +8,22 @@
         {% include "layout/css.njk" %}
     </head>
     {% if homepage %}
-    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true">
+    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true" class="homepage">
         {% include "layout/nav.njk" %}
+        <main>
     {% else %}
     <body>
         {% include "layout/nav-simple.njk" %}
+        <main>
     {% endif %}
 
-        {% include "layout/masthead.njk" %}
+            {% include "layout/masthead.njk" %}
 
-        {{ content | safe }}
+            {{ content | safe }}
 
-        {% include "layout/footer.njk" %}
+            {% include "layout/footer.njk" %}
 
-        {% include "layout/scripts.njk" %}
+            {% include "layout/scripts.njk" %}
+        </main>
     </body>
 </html>
