@@ -27,6 +27,16 @@ permalink: /photography/{{ photo.slug }}/
                     <p class="visually-hidden fs-6 mt-{% if photo.summary %}1{% else %}3{% endif %}">{{ photo.details }}</p>
                 {% endif %}
 
+                {% if photo.tags %}
+                    <div class="pb-4">
+                        {% for tag in photo.tags %}
+                        <h2 class="visually-hidden">Tags</h2>
+                        <small class="d-inline-flex {% if not loop.last %}me-2 {% endif %}my-2 px-2 py-1 fw-semibold text-success-emphasis bg-light-subtle border border-stckr-subtle rounded-2">
+                            {{ tag }}
+                        </small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
 
                 {% if photo.photoUrl %}
                 <p><a href="{{ photo.photoUrl }}" class="btn btn-light" rel="noopener" target="_blank">View this image on Flickr</a></p>
@@ -39,17 +49,6 @@ permalink: /photography/{{ photo.slug }}/
         </div>
     </div>
 </section>
-{% if photo.tags %}
-    <section class="py-md-5 py-4">
-        <div class="container pm-0">
-            {% for tag in photo.tags %}
-            <small class="d-inline-flex {% if not loop.last %}me-2 {% endif %}my-2 px-2 py-1 fw-semibold text-success-emphasis bg-light-subtle border border-stckr-subtle rounded-2">
-                {{ tag }}
-            </small>
-            {% endfor %}
-        </div>
-    </section>
-{% endif %}
 {% if photo.exif %}
 <section class="py-md-6 py-5 bg-light">
     <div class="container">
