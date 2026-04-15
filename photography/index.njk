@@ -5,7 +5,7 @@ pageHeading: Photography
 cssFile: home
 pagination:
     data: photographs
-    size: 9
+    size: 12
     alias: pagedPhotos
 permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photography/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
@@ -14,7 +14,7 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
     <div class="container">
         <p class="mb-4">A curated set of photographs and visual work.</p>
 
-        <div class="row g-4">
+        <div class="grid g-4">
             {% for photo in pagedPhotos %}
                 {% set photoUrl = '/photography/' + photo.slug + '/' %}
                 {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}

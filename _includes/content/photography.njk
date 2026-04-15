@@ -5,7 +5,7 @@
         <p>In my spare time I spend a lot of it taking photographs, capturing little moments in life. I share some of my
             best on Flickr.</p>
         <p>All photography used on this site was taken by me.</p>
-        <div class="row g-4 mb-3">
+        <div class="grid g-4 mb-3">
             {% for photo in photos %}
                 {% if photo.featured %}
                     {% set photoUrl = '/photography/' + photo.slug + '/' %}
