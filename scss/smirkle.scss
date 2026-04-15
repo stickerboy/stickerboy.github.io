@@ -3,7 +3,7 @@
 */
 @import "imports/default";
 
-.masthead {
+.masthead.masthead-photo {
     background: url(map-get($backgrounds, "smirkle"))  map-get($background-pos, "smirkle");
 }
 .ascii {

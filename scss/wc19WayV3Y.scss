@@ -3,7 +3,7 @@
 */
 @import "imports/default";
 
-.masthead {
+.masthead.masthead-photo {
     background: url(map-get($backgrounds, "wc19WayV3Y"))  map-get($background-pos, "wc19WayV3Y");
 }
 #curiousgrid button {

@@ -3,6 +3,6 @@
 */
 @import "imports/default";
 
-.masthead {
+.masthead.masthead-photo {
     background: url(map-get($backgrounds, "pFkcklHa")) map-get($background-pos, "pFkcklHa");
 }

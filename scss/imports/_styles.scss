@@ -114,27 +114,31 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 .masthead {
     position: relative;
     background-color: var(--bs-343);
-    background: url(map-get($backgrounds, "default")) map-get($background-pos, "default");
-    background-size: cover;
     border-bottom: 5px solid var(--bs-stckr);
+
+    &.masthead-photo {
+        background: url(map-get($backgrounds, "default")) map-get($background-pos, "default");
+        background-size: cover;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-color: var(--bs-ice);
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.5;
+        }
+    }
 
     h1,
     .h1 {
-        font-size: #{map-get($display-font-sizes, 7)};
+        font-size: #{map-get($display-font-sizes, 5)};
         @media (min-width: 768px) {
             font-size: #{map-get($display-font-sizes, 3)};
         }
         text-shadow: 2px 2px 3px var(--bs-dark);
-    }
-    &:before {
-        content: "";
-        position: absolute;
-        background-color: var(--bs-ice);
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        opacity: 0.5;
     }
 }
 
