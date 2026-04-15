@@ -10,8 +10,8 @@
 {% set imagePath = showcaseItem.data.image or (showcaseItem.data.page.fileSlug ~ '.jpg') %}
 {% set imagePathFull = imagePath | assetImagePath('', '', showcaseItem.data.tags) %}
 
-<div class="row g-0">
-  <div class="col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">
+<div class="grid g-0">
+  <div class="g-col-12 g-col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">
     <h2>{{ showcaseItem.data.pageHeading or showcaseItem.data.title }}</h2>
     <p class="fs-6 mt-3">{{ showcaseItem.data.summary }}</p>
     {% if showcaseItem.data.homeSecondary %}
@@ -19,7 +19,7 @@
     {% endif %}
     <p class="fs-6 mb-0 mt-1"><a href="{{ showcaseItem.url }}" class="btn btn-light">Read more</a></p>
   </div>
-  <div class="col-lg-6 {{ imageOrderClass }} text-white showcase-img"
+  <div class="g-col-12 g-col-lg-6 {{ imageOrderClass }} text-white showcase-img"
     style="background-image: url('{{ imagePathFull | url }}')"
     aria-describedby="{{ imageId }}"></div>
   <p class="visually-hidden" id="{{ imageId }}">{{ showcaseItem.data.imageAlt or showcaseItem.data.title }}</p>
