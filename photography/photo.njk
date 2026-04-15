@@ -39,7 +39,17 @@ permalink: /photography/{{ photo.slug }}/
         </div>
     </div>
 </section>
-
+{% if photo.tags %}
+    <section class="py-md-5 py-4">
+        <div class="container pm-0">
+            {% for tag in photo.tags %}
+            <small class="d-inline-flex {% if not loop.last %}me-2 {% endif %}my-2 px-2 py-1 fw-semibold text-success-emphasis bg-light-subtle border border-stckr-subtle rounded-2">
+                {{ tag }}
+            </small>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}
 {% if photo.exif %}
 <section class="py-md-6 py-5 bg-light">
     <div class="container">
