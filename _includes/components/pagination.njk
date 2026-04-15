@@ -1,5 +1,5 @@
 <nav class="pagination-nav pb-3" aria-label="Next and previous items">
-  <ul class="pagination pagination-sm justify-content-between m-0">
+  <ul class="pagination pagination-sm pagination-stacked justify-content-between m-0">
     <li class="page-item">
       <div class="btn-group d-flex flex-row" role="group">
         {% if pagination.href.first and pagination.pageNumber > 0 %}
@@ -14,6 +14,13 @@
         {% endif %}
       </div>
     </li>
+    {% if showReturnButton %}
+    <li class="page-item">
+      <div class="btn-group d-flex flex-row" role="group">
+        <a href="{{ returnButton | url }}" class="btn btn-outline-stckr btn-sm">{{ returnButtonText }}</a>
+      </div>
+    </li>
+    {% endif %}
     <li class="page-item">
       <div class="btn-group d-flex flex-row" role="group">
         {% if pagination.href.next %}

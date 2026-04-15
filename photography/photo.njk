@@ -128,9 +128,10 @@ permalink: /photography/{{ photo.slug }}/
 {% endif %}
 
 <section class="py-md-4 py-3">
-        <div class="container">
-
+    <div class="container">
+        {% set showReturnButton = true %}
+        {% set returnButton = "/photography" %}
+        {% set returnButtonText = "Back to all photography" %}
         {% include "components/pagination.njk" %}
-        <p class="mb-0"><a href="/photography/" class="btn btn-outline-stckr">Back to all photography</a></p>
     </div>
 </section>
