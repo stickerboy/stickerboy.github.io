@@ -17,52 +17,55 @@ summary: My personal portfolio site, built with 11ty.
 
 <section class="py-md-6 py-5">
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <p class="lead fw-normal">{{ description }}</p>
-                <p><a href="{{ projectUrl }}" class="link-stckr">{{ projectUrl }}</a></p>
+        <div class="mb-5">
+            <p class="lead fw-normal">{{ description }}</p>
+            <div class="d-grid col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <a href="{{ projectUrl }}" class="btn btn-stckr" title="Visit project website: {{ projectUrl }}">Visit project website</a>
             </div>
         </div>
-        <div class="row g-4 g-md-5 mb-4">
-            <div class="col-md-6 col-xl-4">
-                <div class="d-flex">
+        <div class="grid g-4 g-md-5 mb-4">
+            <div class="g-col-12 g-col-md-6 g-col-xl-4">
+                <div class="d-flex h-100">
                     <div class="text-stckr me-4">
                         {% include "svg/11ty.njk" %}
                     </div>
-                    <div>
-                        <h5 class="mb-2 mb-lg-3 fw-bold">Why 11ty?</h5>
-                        <p>I chose Eleventy (11ty) because it’s fast, flexible, and lets me build exactly the kind of site I want—without getting in my way. Its simplicity and power make it perfect for a creative portfolio.</p>
+                    <div class="d-flex-flex-column">
+                        <h5 class="fw-bold">Why 11ty?</h5>
+                        <p class="m-0">I chose Eleventy (11ty) because it’s fast, flexible, and lets me build exactly the kind of site I want—without getting in my way. Its simplicity and power make it perfect for a creative portfolio.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="d-flex">
+            <div class="g-col-12 g-col-md-6 g-col-xl-4">
+                <div class="d-flex h-100">
                     <div class="text-stckr me-4">
                         {% include "svg/bootstrap.njk" %}
                     </div>
-                    <div>
-                        <h5 class="mb-2 mb-lg-3 fw-bold">Why Bootstrap?</h5>
-                        <p>I use Bootstrap because it gives me a solid, responsive grid and a ton of utility classes—so I can focus on design and content, not reinventing the basics.</p>
+                    <div class="d-flex flex-column">
+                        <h5 class="fw-bold">Why Bootstrap?</h5>
+                        <p class="m-0">I use Bootstrap because it gives me a solid, responsive grid and a ton of utility classes—so I can focus on design and content, not reinventing the basics.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-4">
-                <div class="d-flex">
+            <div class="g-col-12 g-col-md-6 g-col-xl-4">
+                <div class="d-flex h-100">
                     <div class="text-stckr me-4">
                         {% include "svg/nunjucks.njk" %}
                     </div>
-                    <div>
-                        <h5 class="mb-2 mb-lg-3 fw-bold">Why Nunjucks?</h5>
-                        <p>Nunjucks lets me write templates that are clean, readable, and reusable. It’s powerful enough for complex layouts, but simple enough to keep everything maintainable.</p>
+                    <div class="d-flex flex-column">
+                        <h5 class="fw-bold">Why Nunjucks?</h5>
+                        <p class="m-0">Nunjucks lets me write templates that are clean, readable, and reusable. It’s powerful enough for complex layouts, but simple enough to keep everything maintainable.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mb-4">
+        <div class="mb-5">
             {% set heroImage = projectId | assetImagePath('png', '', tags, 'lg') %}
-            <img src="{{ heroImage | url }}" class="card-img h-100"
+            <img src="{{ heroImage | url }}" class="img-fluid rounded shadow-sm h-100"
                 alt="{{ imageAlt or (title ~ ' screenshot') }}">
         </div>
-        <p><a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a></p>
+        {% include "components/gallery.njk" %}
+        <p>
+            <a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a>
+        </p>
     </div>
 </section>

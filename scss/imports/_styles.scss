@@ -211,7 +211,28 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
             }
         }
     }
-} 
+}
+
+.gallery {
+    .card {
+        transition: border 0.4s ease;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: transparent;
+        }
+    }
+
+    &-link {
+        transition: box-shadow 0.4s ease;
+
+        &:hover,
+        &:active {
+            box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0) var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+        }
+    }
+}
 
 .card-caption {
     opacity: 0;

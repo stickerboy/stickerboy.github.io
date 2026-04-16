@@ -16,20 +16,64 @@ summary: A custom light theme for the Halo Waypoint forums.
 
 <section class="py-md-6 py-5">
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <p class="lead fw-normal">{{ description }}</p>
-                <p><a href="{{ projectUrl }}" class="link-stckr">{{ projectUrl }}</a></p>
+        <div class="mb-5">
+            <p class="lead fw-normal">{{ description }}</p>
+            <div class="d-grid col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
+                <a href="{{ projectUrl }}" class="btn btn-stckr" title="Visit project website: {{ projectUrl }}">Visit project website</a>
             </div>
         </div>
-        <div class="row g-4 g-md-5 mb-4">
-
+        <div class="grid g-4 g-md-5 mb-4">
+            <div class="g-col-12 g-col-xl-6">
+                <div class="d-flex h-100">
+                    <div class="text-stckr me-4">
+                        {% include "svg/universal-access.njk" %}
+                    </div>
+                    <div class="d-flex-flex-column">
+                        <h5 class="fw-bold">Accessibility</h5>
+                        <p class="m-0">I am passionate about accessible web design, always aiming to create interfaces that are both visually appealing and easy for everyone to use. When the Halo Waypoint forums lost their light theme after a migration to Discourse, I took the initiative to design a new, user-friendly theme. This work-in-progress showcases my approach to building a cleaner, more comfortable browsing experience within the constraints of Userstyles and the existing site theme.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="g-col-12 g-col-xl-6">
+                <div class="d-flex h-100">
+                    <div class="text-stckr me-4">
+                        {% include "svg/bookmark-star.njk" %}
+                    </div>
+                    <div class="d-flex-flex-column">
+                        <h5 class="fw-bold">Additional features</h5>
+                        <p class="m-0">Beyond restoring the light theme, I focused on improving grid layouts, increasing button sizes and tap targets, and refining focus and hover states for better accessibility. I also worked to re-surface and highlight supported features that the current theme had removed or hidden, making the forums more functional and inclusive for all users. </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row mb-4">
+        <div class="mb-5">
             {% set heroImage = projectId | assetImagePath('png', '', tags, 'lg') %}
-            <img src="{{ heroImage | url }}" class="card-img h-100"
+            <img src="{{ heroImage | url }}" class="img-fluid rounded shadow-sm h-100"
                 alt="{{ imageAlt or (title ~ ' screenshot') }}">
         </div>
-        <p><a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a></p>
+        {% set images = [
+            {
+                src: 'waypoint-light/badges-sm.jpg' | assetImagePath('', 'projects'),
+                link: 'waypoint-light/badges-lg.jpg' | assetImagePath('', 'projects'),
+                alt: 'View badge display example',
+                caption: 'Badge display'
+            },
+            {
+                src: 'waypoint-light/forum-sm.jpg' | assetImagePath('', 'projects'),
+                link: 'waypoint-light/forum-lg.jpg' | assetImagePath('', 'projects'),
+                alt: 'View forum thread list example',
+                caption: 'Forum thread list'
+            },
+            {
+                src: 'waypoint-light/topic-sm.jpg' | assetImagePath('', 'projects'),
+                link: 'waypoint-light/topic-lg.jpg' | assetImagePath('', 'projects'),
+                alt: 'View topic view example',
+                caption: 'Topic view'
+            }
+        ] %}
+        {% include "components/gallery.njk" %}
+        <p>
+            <a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a>
+        </p>
     </div>
 </section>
