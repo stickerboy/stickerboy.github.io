@@ -13,8 +13,8 @@ permalink: /photography/{{ photo.slug }}/
 
 <section class="showcase photo">
     <div class="container-fluid p-0">
-        <div class="row g-0">
-            <div class="col-lg-6 my-auto showcase-text p-5 p-md-9">
+        <div class="grid g-0">
+            <div class="g-col-12 g-col-lg-6 my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">
                 <h2>About this photo</h2>
 
                 {% if photo.summary %}
@@ -42,7 +42,7 @@ permalink: /photography/{{ photo.slug }}/
                 <p><a href="{{ photo.photoUrl }}" class="btn btn-light" rel="noopener" target="_blank">View this image on Flickr</a></p>
                 {% endif %}
             </div>
-            <div class="col-lg-6 text-white showcase-img"
+            <div class="g-col-12 g-col-lg-6 text-white showcase-img"
                 style="background-image: url('{{ photo.photoId | assetImagePath(photo.imageExtension or 'jpg', '', tags)  }}')"
                 aria-describedby="showcase-detail-img"></div>
             <p class="visually-hidden" id="showcase-detail-img">{{ photo.imageAlt or photo.title }}</p>
@@ -52,59 +52,59 @@ permalink: /photography/{{ photo.slug }}/
 {% if photo.exif %}
 <section class="py-md-6 py-5 bg-light">
     <div class="container">
-        <h2>Exif</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-4">
+        <h2 class="mb-3">Exif</h2>
+        <div class="grid g-4 g-md-5">
             {% if photo.exif.camera or photo.exif.model %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Camera</h3>
                 <p class="mb-0">{{ photo.exif.camera | replace("OLYMPUS IMAGING CORP.", "Olympus Pen ") or "Unknown" }}{% if photo.exif.model %} {{ photo.exif.model | replace("OLYMPUS IMAGING CORP.", "Olympus Pen ") }}{% endif %}</p>
             </div>
             {% endif %}
 
             {% if photo.exif.lens %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Lens</h3>
                 <p class="mb-0">{{ photo.exif.lens | replace("OLYMPUS", "Olympus") }}</p>
             </div>
             {% endif %}
 
             {% if photo.exif.iso %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">ISO</h3>
                 <p class="mb-0">{{ photo.exif.iso }}</p>
             </div>
             {% endif %}
 
             {% if photo.exif.dateTimeOriginal %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Date Taken</h3>
                 <p class="mb-0">{{ photo.exif.dateTimeFormatted or photo.exif.dateTimeOriginal }}</p>
             </div>
             {% endif %}
 
             {% if photo.exif.shutterSpeed %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Shutter Speed</h3>
                 <p class="mb-0">{{ photo.exif.shutterSpeed }} sec</p>
             </div>
             {% endif %}
 
             {% if photo.exif.focalLength %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Focal Length</h3>
                 <p class="mb-0">{{ photo.exif.focalLength }}mm</p>
             </div>
             {% endif %}
 
             {% if photo.exif.aperture %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Aperture</h3>
                 <p class="mb-0">ƒ/{{ photo.exif.aperture }}</p>
             </div>
             {% endif %}
 
             {% if photo.exif.location %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Location</h3>
                 <p class="mb-0">
                     <a href="https://maps.google.com/?q={{ photo.exif.location.latitude }},{{ photo.exif.location.longitude }}" 
@@ -116,7 +116,7 @@ permalink: /photography/{{ photo.slug }}/
             {% endif %}
 
             {% if photo.exif.software %}
-            <div class="col mb-4">
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Software</h3>
                 <p class="mb-0">{{ photo.exif.software }}</p>
             </div>
