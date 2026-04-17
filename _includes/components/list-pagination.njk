@@ -5,7 +5,7 @@
             <a class="btn btn-outline-stckr" href="{{ pagination.href.previous | url }}"> &laquo; {{ pagePrev or "Newer"}}</a>
             {% endif %}
         </div>
-        <div class="text-muted lead fw-normal">
+        <div class="lead fw-normal">
             Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
         </div>
         <div>
