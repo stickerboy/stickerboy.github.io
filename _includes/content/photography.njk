@@ -6,14 +6,14 @@
             best on Flickr.</p>
         <p>All photography used on this site was taken by me.</p>
         <div class="grid g-4 mb-3">
-            {% for photo in photos %}
-                {% if photo.featured %}
-                    {% set photoUrl = '/photography/' + photo.slug + '/' %}
-                    {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
-                    {% set showCaption = false %}
-                    {% include "components/photograph-item.njk" %}
-                {% endif %}
-            {% endfor %}
+            {%- for photo in photos %}
+                {%- if photo.featured %}
+                    {%- set photoUrl = '/photography/' + photo.slug + '/' %}
+                    {%- set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
+                    {%- set showCaption = false %}
+                    {%- include "components/photograph-item.njk" %}
+                {%- endif %}
+            {%- endfor %}
         </div>
         <div class="mt-5">
             <a class="btn btn-stckr" href="{{ '/photography' | url}}">View more photos</a>
