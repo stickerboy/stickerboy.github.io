@@ -1,8 +1,8 @@
 <!-- Footer-->
         <footer class="footer bg-light py-md-6 py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 h-100 text-center text-lg-start my-auto">
+                <div class="grid">
+                    <div class="g-col-12 g-col-lg-7 h-100 text-center text-lg-start my-auto">
                         <p class="text-body mb-4 mb-lg-0">
                             &copy; <a href="{{ pkg.authorUrl }}" title="{{ pkg.authorDesc }}" class="link-stckr">{{ pkg.author }}</a> {% year
                             %}. Content licensed under <a href="{{ pkg.licenseURL }}" class="link-stckr">{{ pkg.license }}</a>.<br />
@@ -13,31 +13,31 @@
                                 class="link-stckr">GitHub Pages</a>
                         </p>
                     </div>
-                    <div class="col-lg-5 h-100 text-center text-lg-end my-auto">
+                    <div class="g-col-12 g-col-lg-5 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0 glyphs">
                             <li class="list-inline-item me-4">
                                 <div data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Reclaimer">
-                                    {% include "content/reclaimer.njk" %}
+                                    {% include "svg/reclaimer.njk" %}
                                 </div>
                             </li>
                             <li class="list-inline-item me-4">
                                 <div data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Septagon">
-                                    {% include "content/septagon.njk" %}
+                                    {% include "svg/septagon.njk" %}
                                 </div>
                             </li>
                             <li class="list-inline-item me-4">
                                 <div data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Halo">
-                                    {% include "content/halo.njk" %}
+                                    {% include "svg/halo.njk" %}
                                 </div>
                             </li>
                             <li class="list-inline-item" id="curious">
                                 <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="" data-bs-original-title="Section 3 <br /><em>Curious...?</em>">
-                                    {% include "content/curious.njk" %}
+                                    {% include "svg/curious.njk" %}
                                 </div>
                             </li>
                             <li class="list-inline-item visually-hidden" id="curiouser">
                                 <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="" data-bs-original-title="<em>Curiouser...??</em>">
-                                    {% include "content/curious.njk" %}
+                                    {% include "svg/curious.njk" %}
                                 </div>
                             </li>
                         </ul>
