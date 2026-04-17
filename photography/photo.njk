@@ -39,7 +39,12 @@ permalink: /photography/{{ photo.slug }}/
                 {% endif %}
 
                 {% if photo.photoUrl %}
-                <p><a href="{{ photo.photoUrl }}" class="btn btn-light" rel="noopener" target="_blank">View this image on Flickr</a></p>
+                <p>
+                    <a href="{{ photo.photoUrl }}" class="btn btn-light d-inline-flex align-items-center" rel="noopener" target="_blank">
+                        {% include "svg/flickr.njk" %}
+                        View this image on Flickr
+                    </a>
+                </p>
                 {% endif %}
             </div>
             <div class="g-col-12 g-col-lg-6 text-white showcase-img"
