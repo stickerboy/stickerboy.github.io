@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: Contact
+pageHeading: Contact
+description: Want to get in touch? Whether you have a project in mind, or some feedback to send over,
+cssFile: home
+eleventyComputed:
+  description: "{{ description }}<br />send me an email or a message—I’d love to hear from you!"
+---
+        <section class="py-md-6 py-5 text-center">
+            <div class="container">
+                <p class="mb-0">{{ description | safe }}</p>
+            </div>
+        </section>
+
+        {% set showAll = true %}
+        {% include "content/social.njk" %}
+
+        {% include "content/contact.njk" %}

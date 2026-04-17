@@ -1,58 +1,108 @@
 [
     {
-        "platform": "Instagram",
-        "handle": "stckrboy",
-        "url": "https://instagram.com/stckrboy",
-        "icon": "bi-instagram",
-        "title": "Link to Kenny's profile on Instagram",
-        "enabled": true
+        "platform": "Flickr",
+        "handle": "stickerboy",
+        "url": "https://www.flickr.com/photos/stickerboy/",
+        "icon": "bi-flickr",
+        "svg": "flickr",
+        "enabled": true,
+        "featured": true
     },
     {
         "platform": "Spotify",
         "handle": "stickerboy",
         "url": "https://open.spotify.com/user/frv4z7134a70e194ff72bqbcj",
         "icon": "bi-spotify",
-        "title": "Link to Kenny's profile on Spotify",
-        "enabled": true
+        "enabled": true,
+        "featured": true
     },
     {
         "platform": "Xbox Live",
         "handle": "stckrboy",
         "url": "https://account.xbox.com/en-us/Profile?gamerTag=stckrboy",
         "icon": "bi-xbox",
-        "title": "Link to Kenny's profile on Xbox Live",
-        "enabled": true
+        "enabled": true,
+        "featured": true
     },
     {
         "platform": "GitHub",
         "handle": "stickerboy",
         "url": "https://github.com/stickerboy",
         "icon": "bi-github",
-        "title": "Link to Kenny's profile on Github",
-        "enabled": true
+        "enabled": true,
+        "featured": true
     },
     {
         "platform": "Threads",
         "handle": "stckrboy",
         "url": "https://threads.com/stckrboy",
         "icon": "bi-threads",
-        "title": "Link to Kenny's profile on Threads",
-        "enabled": true
+        "enabled": true,
+        "featured": true
     },
     {
         "platform": "LinkedIn",
         "handle": "stickerboy",
         "url": "https://www.linkedin.com/in/stickerboy/",
         "icon": "bi-linkedin",
-        "title": "Link to Kenny's profile on LinkedIn",
-        "enabled": true
+        "enabled": true,
+        "featured": true
     },
     {
-        "platform": "Flickr",
+        "platform": "Instagram",
+        "handle": "stckrboy",
+        "url": "https://instagram.com/stckrboy",
+        "icon": "bi-instagram",
+        "enabled": true,
+        "featured": false
+    },
+    {
+        "platform": "Bluesky",
+        "handle": "kenny.cx",
+        "url": "https://bsky.app/profile/kenny.cx",
+        "icon": "bi-bluesky",
+        "enabled": true,
+        "featured": false
+    },
+    {
+        "platform": "Discord",
         "handle": "stickerboy",
-        "url": "https://www.flickr.com/photos/stickerboy/",
-        "icon": "bi-flickr",
-        "title": "Link to Kenny's profile on Flickr",
-        "enabled": false
+        "url": "https://www.discord.com/users/147097454209269760/",
+        "icon": "bi-discord",
+        "enabled": true,
+        "featured": false
+    },
+    {
+        "platform": "Stack overflow",
+        "handle": "stckrboy",
+        "url": "https://stackoverflow.com/users/3172872/stckrboy",
+        "icon": "bi-stack-overflow",
+        "enabled": true,
+        "featured": false
+    },
+    {
+        "platform": "Tiktok",
+        "handle": "stckrboy",
+        "url": "https://www.tiktok.com/@stckrboy",
+        "icon": "bi-tiktok",
+        "enabled": true,
+        "featured": false
+    },
+    {
+        "platform": "Last.fm",
+        "handle": "stckrboy",
+        "url": "https://www.last.fm/user/stckrboy",
+        "icon": "bi-lastfm",
+        "svg": "last.fm",
+        "enabled": true,
+        "featured": false
+    },
+    {
+        "platform": "Reddit",
+        "handle": "stckrboy",
+        "url": "https://www.reddit.com/user/stckrboy/",
+        "icon": "bi-reddit",
+        "enabled": false,
+        "featured": false
     }
 ]
