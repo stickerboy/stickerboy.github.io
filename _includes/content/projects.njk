@@ -18,7 +18,12 @@
                     <div class="g-col-12 g-col-md-6 g-col-lg-3 {% if loop.index0 % 2 == 1 %} order-md-2{% endif %} bg-light align-content-center project-text p-4 p-md-5">
                         <h3>{{ project.data.pageHeading or project.data.title }}</h3>
                         <p class="fs-6 mt-3">{{ project.data.summary }}</p>
-                        <p class="fs-6 mb-0 mt-1"><a href="{{ destination }}" class="btn btn-outline-halo btn-sm">Read more</a></p>
+                        <p class="fs-6 mb-0 mt-1">
+                            <a href="{{ destination }}" class="btn btn-outline-halo btn-sm"
+                               arial-label="Read more about {{ project.data.pageHeading or project.data.title }}">
+                                Read more
+                            </a>
+                        </p>
                     </div>
                     <div class="g-col-12 g-col-md-6 g-col-lg-3 {% if loop.index0 % 2 == 1 %} order-lg-2{% endif %} projects-img"
                         style="background-image: url('{{ imagePath | url }}')"

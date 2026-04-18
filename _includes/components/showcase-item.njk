@@ -17,7 +17,11 @@
     {% if showcaseItem.data.homeSecondary %}
     <p class="fs-6 mt-1">{{ showcaseItem.data.homeSecondary }}</p>
     {% endif %}
-    <p class="fs-6 mb-0 mt-1"><a href="{{ showcaseItem.url }}" class="btn btn-light">Read more</a></p>
+    <p class="fs-6 mb-0 mt-1">
+        <a href="{{ showcaseItem.url }}" class="btn btn-light" aria-label="Read more about {{ showcaseItem.data.pageHeading or showcaseItem.data.title }}">
+            Read more
+        </a>
+    </p>
   </div>
   <div class="g-col-12 g-col-lg-6 {{ imageOrderClass }} text-white showcase-img"
     style="background-image: url('{{ imagePathFull | url }}')"

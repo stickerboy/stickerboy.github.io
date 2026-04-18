@@ -3,7 +3,9 @@
         <a href="{{ photoUrl }}" title="{{ photo.pageHeading or photo.title }} - photo by {{ pkg.author }}" 
            class="flickr-item position-relative text-reset text-decoration-none h-100 focus-ring focus-ring-stckr rounded">
             <img src="{{ imagePathFull | url }}" class="card-img{% if showCaption %}-top{% endif %}" alt="{{ photo.imageAlt or photo.title }}">
-            <div class="card-caption d-flex w-100 {% if not showCaption %}h-100{% endif %} align-items-center justify-content-center">
+            <div class="card-caption d-flex w-100 {% if not showCaption %}h-100{% endif %} align-items-center justify-content-center"
+                  aria-hidden="true"
+            >
                 <p class="h3 text-white">{{ photo.pageHeading or photo.title }}</p>
             </div>
         {% if showCaption %}
