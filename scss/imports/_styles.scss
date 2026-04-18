@@ -292,6 +292,11 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     }
 }
 
+.text-transparent {
+    --bs-text-opacity: 0;
+    color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+}
+
 .lead {
     color: var(--bs-ice);
 }
