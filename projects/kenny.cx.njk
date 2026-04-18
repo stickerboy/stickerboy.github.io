@@ -20,7 +20,10 @@ summary: My personal portfolio site, built with 11ty.
         <div class="mb-5">
             <p class="lead fw-normal">{{ description }}</p>
             <div class="d-grid col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="{{ projectUrl }}" class="btn btn-stckr" title="Visit project website: {{ projectUrl }}">Visit project website</a>
+                <a href="{{ projectUrl }}" class="btn btn-stckr" title="Visit project website: {{ projectUrl }}">
+                    <i class="bi-globe2"></i> &nbsp;
+                    Visit project website
+                </a>
             </div>
         </div>
         <div class="grid g-4 g-md-5 mb-4">
@@ -65,7 +68,10 @@ summary: My personal portfolio site, built with 11ty.
         </div>
         {% include "components/gallery.njk" %}
         <p>
-            <a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">Back to all projects</a>
+            <a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">
+                <i class="bi-arrow-left"></i> &nbsp;
+                Back to all projects
+            </a>
         </p>
     </div>
 </section>

@@ -27,7 +27,10 @@ cssFile: home
                         {%- if project.data.summary %}
                         <p class="card-text">{{ project.data.description }}</p>
                         {%- endif %}
-                        <a href="{{ destination }}" class="btn btn-outline-stckr btn-sm me-auto mt-auto">View project</a>
+                        <a href="{{ destination }}" class="btn btn-outline-stckr btn-sm me-auto mt-auto">
+                            <i class="bi-laptop"></i> &nbsp;
+                            View project
+                        </a>
                     </div>
                 </div>
             </div>
