@@ -14,8 +14,9 @@
         {% include "layout/css.njk" %}
     </head>
     <body>
+        <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
         {% include "layout/nav-simple.njk" %}
-        <main>
+        <main id="content">
         {% include "layout/masthead.njk" %}
 
         {{ content | safe }}

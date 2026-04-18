@@ -9,12 +9,14 @@
     </head>
     {% if homepage %}
     <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true" class="homepage">
+        <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
         {% include "layout/nav.njk" %}
-        <main>
+        <main id="content">
     {% else %}
     <body>
+        <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
         {% include "layout/nav-simple.njk" %}
-        <main>
+        <main id="content">
     {% endif %}
 
             {% include "layout/masthead.njk" %}
