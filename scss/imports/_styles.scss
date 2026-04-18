@@ -103,6 +103,9 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
             i::before {
                 color: var(--bs-stckr);
             }
+            svg {
+                fill: var(--bs-stckr);
+            }
             &:after {
                 --bs-bg-opacity: 0.1;
                 background-color: rgba(var(--bs-stckr-rgb), var(--bs-bg-opacity)) !important
