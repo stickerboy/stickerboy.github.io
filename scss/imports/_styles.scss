@@ -30,6 +30,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 
         &:hover,
         &:active,
+        &:active,
         &:focus {
             fill: var(--bs-stckr);
             stroke: var(--bs-body-color);
@@ -96,6 +97,9 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
             transition: background-color 0.4s ease;
             border-radius: var(--bs-border-radius);
         }
+        svg path {
+            transition: fill 0.4s ease;
+        }
 
         &:hover,
         &:active,
@@ -103,7 +107,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
             i::before {
                 color: var(--bs-stckr);
             }
-            svg {
+            svg path {
                 fill: var(--bs-stckr);
             }
             &:after {
