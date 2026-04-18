@@ -20,7 +20,7 @@ summary: My personal portfolio site, built with 11ty.
         <div class="mb-5">
             <p class="lead fw-normal">{{ description }}</p>
             <div class="d-grid col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2">
-                <a href="{{ projectUrl }}" class="btn btn-stckr" title="Visit project website: {{ projectUrl }}">
+                <a href="{{ projectUrl }}" class="btn btn-halo" title="Visit project website: {{ projectUrl }}">
                     <i class="bi-globe2"></i> &nbsp;
                     Visit project website
                 </a>
@@ -33,7 +33,7 @@ summary: My personal portfolio site, built with 11ty.
                         {% include "svg/11ty.njk" %}
                     </div>
                     <div class="d-flex-flex-column">
-                        <p class="h5 fw-bold lh-base">Why 11ty?</p>
+                        <h2 class="h4 lh-base">Why 11ty?</h2>
                         <p class="m-0">I chose Eleventy (11ty) because it’s fast, flexible, and lets me build exactly the kind of site I want—without getting in my way. Its simplicity and power make it perfect for a creative portfolio.</p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ summary: My personal portfolio site, built with 11ty.
                         {% include "svg/bootstrap.njk" %}
                     </div>
                     <div class="d-flex flex-column">
-                        <p class="h5 fw-bold lh-base">Why Bootstrap?</p>
+                        <h2 class="h4 lh-base">Why Bootstrap?</h2>
                         <p class="m-0">I use Bootstrap because it gives me a solid, responsive grid and a ton of utility classes—so I can focus on design and content, not reinventing the basics.</p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ summary: My personal portfolio site, built with 11ty.
                         {% include "svg/nunjucks.njk" %}
                     </div>
                     <div class="d-flex flex-column">
-                        <p class="h5 fw-bold lh-base">Why Nunjucks?</p>
+                        <h2 class="h4 lh-base">Why Nunjucks?</h2>
                         <p class="m-0">Nunjucks lets me write templates that are clean, readable, and reusable. It’s powerful enough for complex layouts, but simple enough to keep everything maintainable.</p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@ summary: My personal portfolio site, built with 11ty.
         </div>
         {% include "components/gallery.njk" %}
         <p>
-            <a href="{{ '/projects' | url }}" class="btn btn-outline-stckr btn-sm">
+            <a href="{{ '/projects' | url }}" class="btn btn-outline-halo btn-sm">
                 <i class="bi-arrow-left"></i> &nbsp;
                 Back to all projects
             </a>

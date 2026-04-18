@@ -6,7 +6,7 @@
             <div class="card-caption d-flex w-100 {% if not showCaption %}h-100{% endif %} align-items-center justify-content-center"
                   aria-hidden="true"
             >
-                <p class="h3 text-white">{{ photo.pageHeading or photo.title }}</p>
+                <h3 class="text-white">{{ photo.pageHeading or photo.title }}</h3>
             </div>
         {% if showCaption %}
             <div class="card-body">
