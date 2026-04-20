@@ -15,7 +15,7 @@
             {%- include "layout/nav-simple.njk" %}
         {%- endif %}
         <main id="content">
-            {%s include "layout/masthead.njk" %}
+            {% include "layout/masthead.njk" %}
 
             {{ content | safe }}
 
