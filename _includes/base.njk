@@ -7,25 +7,21 @@
         {% include "layout/if.njk" %}
         {% include "layout/css.njk" %}
     </head>
-    {% if homepage %}
-    <body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-smooth-scroll="true" class="homepage">
+    <body{%- if homepage %} class="homepage"{%- endif %}>
         <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
-        {% include "layout/nav.njk" %}
+        {%- if homepage %}
+            {%- include "layout/nav.njk" %}
+        {%- else %}
+            {%- include "layout/nav-simple.njk" %}
+        {%- endif %}
         <main id="content">
-    {% else %}
-    <body>
-        <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
-        {% include "layout/nav-simple.njk" %}
-        <main id="content">
-    {% endif %}
-
-            {% include "layout/masthead.njk" %}
+            {%s include "layout/masthead.njk" %}
 
             {{ content | safe }}
 
-            {% include "layout/footer.njk" %}
+            {%- include "layout/footer.njk" %}
 
-            {% include "layout/scripts.njk" %}
+            {%- include "layout/scripts.njk" %}
         </main>
     </body>
 </html>

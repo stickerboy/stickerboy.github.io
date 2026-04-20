@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!--
-            //START FILE/
-            /Route detected..
-            /Processing......
-            {% if route == "noroute" %}/Route access denied - the easter egg is in another castle
-            /Be a little more... curious{% else %}/Route found - /{{ route }}{% endif %}
-            /END FILE ../
-        -->
+        {% include "layout/route.njk" %}
         {% include "layout/meta.njk" %}
         {% include "layout/if.njk" %}
         {% include "layout/css.njk" %}
@@ -17,13 +10,13 @@
         <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
         {% include "layout/nav-simple.njk" %}
         <main id="content">
-        {% include "layout/masthead.njk" %}
+        {%- include "layout/masthead.njk" %}
 
         {{ content | safe }}
 
-        {% include "layout/footer.njk" %}
+        {%- include "layout/footer.njk" %}
 
-        {% include "layout/scripts.njk" %}
+        {%- include "layout/scripts.njk" %}
         </main>
     </body>
 </html>
