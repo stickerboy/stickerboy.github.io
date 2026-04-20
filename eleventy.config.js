@@ -24,8 +24,8 @@ export default function (eleventyConfig) {
         eleventyConfig.addPassthroughCopy(entry);
     });
 
-    eleventyConfig.addTemplateFormats("md");
-    eleventyConfig.addGlobalData("layout", "md.njk");
+    // eleventyConfig.addTemplateFormats("md");
+    // eleventyConfig.addGlobalData("layout", "md.njk");
 
     eleventyConfig.addShortcode("year", () => `2020 &mdash; ${new Date().getFullYear()}`);
 

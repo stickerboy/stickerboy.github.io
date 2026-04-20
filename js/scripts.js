@@ -28,30 +28,3 @@ curious.addEventListener("click", function () {
 curiouser.addEventListener("click", function () {
     window.location = "../==wc19WayV3Y";
 });
-
-if (document.body.classList.contains('homepage')) {
-    const main = document.querySelector('main');
-
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(link => {
-        link.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href').slice(1);
-            const target = document.getElementById(targetId);
-            if (target && main) {
-                e.preventDefault();
-                // Get the position of the target relative to the main scroll container
-                const elementPosition = target.getBoundingClientRect().top - main.getBoundingClientRect().top + main.scrollTop;
-                let scrollTo = elementPosition; // -8 for extra spacing
-
-                // If scrolling would leave a gap at the bottom, adjust
-                const maxScroll = main.scrollHeight - main.clientHeight;
-                if (scrollTo > maxScroll) scrollTo = maxScroll;
-
-                main.scrollTo({
-                    top: scrollTo,
-                    behavior: 'smooth'
-                });
-                history.replaceState(null, '', '#' + targetId);
-            }
-        });
-    });
-}

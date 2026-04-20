@@ -9,11 +9,7 @@
     </head>
     <body{%- if homepage %} class="homepage"{%- endif %}>
         <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
-        {%- if homepage %}
-            {%- include "layout/nav.njk" %}
-        {%- else %}
-            {%- include "layout/nav-simple.njk" %}
-        {%- endif %}
+        {%- include "layout/nav.njk" %}
         <main id="content">
             {% include "layout/masthead.njk" %}
 

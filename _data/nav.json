@@ -5,7 +5,7 @@
     "icon": "chat-left-dots",
     "description": "Places to find me online",
     "ariaLabel": "",
-    "excludeFromNav": false,
+    "excludeFromNav": true,
     "homepageOnly": true
   },
   {

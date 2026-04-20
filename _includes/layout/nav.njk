@@ -4,6 +4,7 @@
             <p class="navbar-brand mb-0">
                 <a href="{{ '/' | url }}" class="link-343 py-3">{{ pkg.sitename }}</a>
             </p>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -13,7 +14,7 @@
                 {%- for item in nav %}
                     {%- if not item.excludeFromNav and (not item.homepageOnly or homepage) %}
                     <li class="nav-item">
-                        <a class="nav-link py-3" href="#{{ item.id }}" data-target="{{ item.id }}">{{ item.label }}</a>
+                        <a class="nav-link py-3" href="{{ '/' ~ item.id }}">{{ item.label }}</a>
                     </li>
                     {%- endif %}
                 {%- endfor %}
