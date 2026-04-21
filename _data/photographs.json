@@ -409,5 +409,43 @@
             "solitude",
             "peaceful"
         ]
+    },
+    {
+        "photoId": "light-glass",
+        "slug": "the-light-and-the-glass",
+        "title": "The light and the glass",
+        "pageHeading": "The light and the glass",
+        "featured": false,
+        "photoUrl": "https://www.flickr.com/photos/stickerboy/10211715486",
+        "imageAlt": "Long-exposure photo of city street lights at night, creating colorful light trails.",
+        "summary": "A long-exposure photo capturing light trails from cars and street lamps on a rainy night in Glasgow.",
+        "description": "This image was taken, handheld, on a wet city night in Glasgow using a long exposure, transforming the headlights, taillights, and street lamps into vibrant trails of color. I captured it right before I went to see the Coheed and Cambria supporting Deftones at the O2 Academy.",
+        "details": "Bright lines of white, yellow, and red light stretch across the frame, with blurred reflections on the wet sidewalk. The scene is dynamic and abstract, emphasizing movement and the interplay of artificial light and rain.",
+        "tags": [
+            "light",
+            "abstract",
+            "pattern",
+            "highlight",
+            "shadow"
+        ]
+    },
+    {
+        "photoId": "filament",
+        "slug": "filament",
+        "title": "Filament",
+        "pageHeading": "Filament",
+        "featured": false,
+        "photoUrl": "https://www.flickr.com/photos/stickerboy/20930722405",
+        "imageAlt": "Close-up view of a glowing filament inside a round vintage light bulb.",
+        "summary": "A macro photograph of a glowing filament inside a vintage-style light bulb, radiating warm golden light.",
+        "description": "This close-up shot focuses on the intricate glowing filament of a classic Edison bulb. I enjoy capturing abstract images like this, using unique framing and unusual angles or perspectives to highlight everyday objects in a new light. ",
+        "details": "The image is centered on the bright filament, surrounded by concentric rings of glass and metal. The golden glow dominates the composition, with subtle reflections and textures visible in the bulb’s surface.",
+        "tags": [
+            "filament",
+            "light-bulb",
+            "vintage",
+            "warm",
+            "glow"
+        ]
     }
 ]
