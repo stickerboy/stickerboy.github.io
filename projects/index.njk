@@ -4,6 +4,11 @@ title: Projects
 pageHeading: Projects
 description: This page is a collection of projects I have been building and improving over time, from practical tools to creative experiments that reflect what I enjoy making and learning.
 cssFile: home
+pagination:
+    data: collections.projects
+    size: 3
+    alias: pagedProjects
+permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
 <section class="projects card-container py-md-6 py-5" id="projects-list">
@@ -11,30 +16,16 @@ cssFile: home
         <p class="mb-4">{{ description }}</p>
     </div>
     <div class="container">
-    {% for project in collections.projects %}
+    {% for project in pagedProjects %}
         {% set destination = project.url %}
         {% set imagePath = project.data.projectId | assetImagePath('png', '', project.data.tags, 'md') %}
         {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
         {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
-            <div class="row g-0{% if not loop.last %} pb-3{% endif %}">
-                <div class=" col-12 col-lg-5 col-xl-4 {{ imageOrderClass }} projects-img"
-                     style="background-image: url('{{ imagePath | assetImagePath('', '', item.data.tags) | url }}')">
-                    {# <img src="{{ imagePath | url }}" class="card-img h-100" alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}"> #}
-                </div>
-                <div class="col-12 col-lg-7 col-xl-8 {{ textOrderClass }}">
-                    <div class="align-content-center project-text p-4 p-md-5 d-flex flex-column h-100">
-                        <h2 class="card-title">{{ project.data.title }}</h2>
-                        {%- if project.data.summary %}
-                        <p class="card-text">{{ project.data.description }}</p>
-                        {%- endif %}
-                        <a href="{{ destination }}" class="btn btn-outline-halo btn-sm me-auto mt-auto">
-                            <i class="bi-laptop"></i> &nbsp;
-                            View project
-                        </a>
-                    </div>
-                </div>
-            </div>
+        {% include "components/project-item.njk" %}
     {% endfor %}
+        <div class="mt-5">
+            {% include "components/list-pagination.njk" %}
+        </div>
     </div>
 </section>
 
