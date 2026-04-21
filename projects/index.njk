@@ -23,9 +23,11 @@ permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ 
         {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
         {% include "components/project-item.njk" %}
     {% endfor %}
+    {% if pagination.pages.length > 1 %}
         <div class="mt-5">
             {% include "components/list-pagination.njk" %}
         </div>
+    {% endif %}
     </div>
 </section>
 
