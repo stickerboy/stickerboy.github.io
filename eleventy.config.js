@@ -13,7 +13,7 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addPlugin(RenderPlugin);
 
-    ["README.md", "LICENSE", "_includes/", "_templates/", ".github", "docs"].forEach((entry) => {
+    ["README.md", "LICENSE", "_includes/", "_templates/", ".github", "docs", "scss"].forEach((entry) => {
         eleventyConfig.ignores.add(entry);
     });
 
