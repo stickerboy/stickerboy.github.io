@@ -36,11 +36,12 @@ homeSecondary: Along the way, I discovered that my real niche sits in the realm 
             engineering, the goal is always the same: bring ideas to life as efficiently and clearly as possible.
             In a world that often chases complexity, there’s something reassuring about building with the simplest tools available — and using experience to know when that’s more than enough.
         </p>
-        <p class="mt-4 mb-0">
-            <a href="{{ '/about' | url}}" class="btn btn-outline-halo">
-                <i class="bi-arrow-left"></i> &nbsp;
-                Back to about
-            </a>
-        </p>
+
+        {% set showReturnButton = true %}
+        {% set returnButton = "/about" %}
+        {% set returnButtonText = "Back to about" %}
+        {% set itemPaginationCollection = collections.showcases %}
+        {% set itemPaginationInputPath = page.inputPath %}
+        {% include "components/item-pagination.njk" %}
     </div>
 </section>

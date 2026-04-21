@@ -67,11 +67,12 @@ summary: My personal portfolio site, built with 11ty.
                 alt="{{ imageAlt or (title ~ ' screenshot') }}">
         </div>
         {% include "components/gallery.njk" %}
-        <p>
-            <a href="{{ '/projects' | url }}" class="btn btn-outline-halo btn-sm">
-                <i class="bi-arrow-left"></i> &nbsp;
-                Back to all projects
-            </a>
-        </p>
+
+        {% set showReturnButton = true %}
+        {% set returnButton = "/projects" %}
+        {% set returnButtonText = "Back to projects" %}
+        {% set itemPaginationCollection = collections.projects %}
+        {% set itemPaginationInputPath = page.inputPath %}
+        {% include "components/item-pagination.njk" %}
     </div>
 </section>
