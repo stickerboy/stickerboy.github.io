@@ -24,9 +24,6 @@ export default function (eleventyConfig) {
         eleventyConfig.addPassthroughCopy(entry);
     });
 
-    // eleventyConfig.addTemplateFormats("md");
-    // eleventyConfig.addGlobalData("layout", "md.njk");
-
     eleventyConfig.addShortcode("year", () => `2020 &mdash; ${new Date().getFullYear()}`);
 
     // Load and enhance photographs data with EXIF information.
@@ -60,7 +57,7 @@ export default function (eleventyConfig) {
             const curated = JSON.parse(curatedRaw);
 
             // Enhance each entry with EXIF data
-            const enhanced = curated.map((entry) => {
+            let enhanced = curated.map((entry) => {
                 const resolvedPhoto = resolvePhotoPath(entry.photoId);
                 const fullImagePath = resolvedPhoto.filePath;
 
@@ -77,6 +74,21 @@ export default function (eleventyConfig) {
                 }
 
                 return merged;
+            });
+
+            // Sort by exif.dateTimeOriginal, newest first
+            enhanced = enhanced.sort((a, b) => {
+                const aDate = a.exif?.dateTimeOriginal || "";
+                const bDate = b.exif?.dateTimeOriginal || "";
+                if (aDate && bDate) {
+                    return bDate.localeCompare(aDate);
+                } else if (aDate) {
+                    return -1;
+                } else if (bDate) {
+                    return 1;
+                } else {
+                    return 0;
+                }
             });
 
             return enhanced;
