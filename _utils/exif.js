@@ -59,6 +59,8 @@ export const extractExif = (imagePath) => {
       };
     }
 
+    // Attach the full EXIF tags as pretty-printed JSON for reference
+    exif.exifRaw = JSON.stringify(tags, null, 2);
     return Object.keys(exif).length > 0 ? exif : null;
   } catch (error) {
     return null;

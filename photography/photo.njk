@@ -21,7 +21,7 @@ permalink: /photography/{{ photo.slug }}/
                     <p class="fs-6 mt-3">{{ photo.summary }}</p>
                 {% endif %}
                 {%- if photo.description %}
-                    <p class="fs-6 mt-3">{{ photo.description }}</p>
+                    <p class="fs-6 mt-3 text-break">{{ photo.description | autoLinkUrls | breakLines | safe }}</p>
                 {% endif %}
                 {%- if photo.details %}
                     <p class="visually-hidden fs-6 mt-{% if photo.summary %}1{% else %}3{% endif %}">{{ photo.details }}</p>
@@ -109,24 +109,38 @@ permalink: /photography/{{ photo.slug }}/
             </div>
             {% endif %}
 
-            {%- if photo.exif.location %}
-            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
-                <h3 class="h5">Location</h3>
-                <p class="mb-0">
-                    <a href="https://maps.google.com/?q={{ photo.exif.location.latitude }},{{ photo.exif.location.longitude }}" 
-                       class="link-stckr" rel="noopener" target="_blank">
-                       {{ photo.exif.location.latitude }}, {{ photo.exif.location.longitude }}
-                    </a>
-                </p>
-            </div>
-            {% endif %}
-
             {%- if photo.exif.software %}
             <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
                 <h3 class="h5">Software</h3>
                 <p class="mb-0">{{ photo.exif.software }}</p>
             </div>
             {%- endif %}
+
+            {%- if photo.exif.location %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Location</h3>
+                <p class="mb-0">
+                    <a href="https://maps.google.com/?q={{ photo.exif.location.latitude }},{{ photo.exif.location.longitude }}" 
+                       class="link-halo" rel="noopener" target="_blank" title="View location on Google Maps">
+                       {{ photo.exif.location.latitude }}, {{ photo.exif.location.longitude }}
+                    </a>
+                </p>
+            </div>
+            {% elif photo.location %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Location</h3>
+                <p class="mb-0">
+                    <a href="https://maps.google.com/?q={{ photo.location.latitude }},{{ photo.location.longitude }}" 
+                       class="link-halo" target="_blank" rel="noopener" title="View location on Google Maps">
+                       {%- if photo.locationName %}
+                       {{ photo.locationName }}
+                       {%- else %}
+                       {{ photo.location.latitude }}, {{ photo.location.longitude }}
+                       {%- endif %}
+                    </a>
+                </p>
+            </div>
+            {% endif %}
         </div>
     </div>
 </section>

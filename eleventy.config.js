@@ -71,6 +71,9 @@ export default function (eleventyConfig) {
 
                 if (exifData) {
                     merged.exif = exifData;
+                    if (exifData.exifRaw) {
+                        merged.exifRaw = exifData.exifRaw;
+                    }
                 }
 
                 return merged;
@@ -163,6 +166,22 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addFilter("dateISO", (date) => {
         return new Date(date).toISOString();
+    });
+
+    // Auto-link URLs in text
+    eleventyConfig.addFilter("autoLinkUrls", (text) => {
+        if (!text) return text;
+        const urlRegex = /((https?:\/\/|www\.)[\w\-._~:/?#[\]@!$&'()*+,;=%]+)/gi;
+        return text.replace(urlRegex, (url) => {
+            let href = url;
+            if (!href.startsWith("http")) href = "https://" + href;
+            return `<a href="${href}" class="link-halo" rel="noopener" target="_blank">${url}</a>`;
+        });
+    });
+
+    eleventyConfig.addFilter("breakLines", (text) => {
+        if (!text) return text;
+        return text.replace(/\n/g, "</p><p class=\"fs-6 mt-3 text-break\">");
     });
 
     eleventyConfig.on("eleventy.before", ({ runMode }) => {
