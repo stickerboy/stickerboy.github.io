@@ -194,7 +194,8 @@ export default function (eleventyConfig) {
         }
     });
 
-    const pagesDir = path.join(process.cwd(), "pages");
+
+    const pagesDir = path.join(process.cwd(), "src", "pages");
     const pageEntries = fs.readdirSync(pagesDir).filter((entry) => {
         return fs.lstatSync(path.join(pagesDir, entry)).isFile();
     });
@@ -202,7 +203,7 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addCollection("groupPages", (collectionApi) => {
         return pageNames.map((pageName) => {
-            const pageItems = collectionApi.getFilteredByGlob(`./pages/${pageName}.*`);
+            const pageItems = collectionApi.getFilteredByGlob(`./src/pages/${pageName}.*`);
             return {
                 pageGroup: pageName,
                 pageEntries: pageItems,
@@ -213,7 +214,7 @@ export default function (eleventyConfig) {
 
     pageNames.forEach((pageName) => {
         eleventyConfig.addCollection(pageName, (collectionApi) => {
-            return collectionApi.getFilteredByGlob(`./pages/${pageName}.*`);
+            return collectionApi.getFilteredByGlob(`./src/pages/${pageName}.*`);
         });
     });
 
@@ -283,11 +284,12 @@ export default function (eleventyConfig) {
         const normalizedInputPath = inputPath.replace(/\\/g, "/");
 
         for (const [sourceDir, outputDir] of Object.entries(contentPermalinkRoots)) {
-            if (!normalizedInputPath.includes(`/${sourceDir}/`) && !normalizedInputPath.startsWith(`${sourceDir}/`)) {
+            // Accept src/ as the new root
+            if (!normalizedInputPath.includes(`/src/${sourceDir}/`) && !normalizedInputPath.startsWith(`src/${sourceDir}/`)) {
                 continue;
             }
 
-            const relativePath = normalizedInputPath.replace(new RegExp(`^.*?${sourceDir}/`), "");
+            const relativePath = normalizedInputPath.replace(new RegExp(`^.*?src/${sourceDir}/`), "");
             const permalinkPath = relativePath.replace(/\.[^/.]+$/, "");
 
             if (permalinkPath === "index") {
@@ -305,7 +307,7 @@ export default function (eleventyConfig) {
     };
 
     const getPagesPermalink = (inputPath) => {
-        const relativePath = inputPath.replace(/^.*\/pages\//, "");
+        const relativePath = inputPath.replace(/^.*\/src\/pages\//, "");
         const permalinkPath = relativePath.replace(/\.[^/.]+$/, "");
         const normalizedPath = permalinkPath.replace(/\/index$/, "");
         return `/${normalizedPath}/`;
