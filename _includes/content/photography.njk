@@ -11,7 +11,7 @@
                     {%- set photoUrl = '/photography/' + photo.slug + '/' %}
                     {%- set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
                     {%- set showCaption = false %}
-                    {%- include "components/photograph-item.njk" %}
+                    {%- include "components/photography/item.njk" %}
                 {%- endif %}
             {%- endfor %}
         </div>

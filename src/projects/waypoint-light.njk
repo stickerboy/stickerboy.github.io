@@ -21,14 +21,7 @@ summary: A custom light theme for the Halo Waypoint forums.
             <p class="my-3">
                 Developing this theme was a personal accessibility project for me. For years, I focused on creating dark themes for sites that didn’t offer them, but over time I noticed that reading and focusing on dark backgrounds was causing eye strain. I gradually switched to using light themes for most of my apps and websites. As someone who helped moderate the forums nearly every day, having a light theme made it much easier and more comfortable to browse and manage the site, which was a huge benefit for my daily workflow.
             </p>
-            <div class="grid">
-                <div class="g-col-12 g-col-sm-6 g-col-md-5 g-col-lg-4 g-col-xl-3">
-                    <a href="{{ projectUrl }}" class="btn btn-halo w-100" title="Visit project website: {{ projectUrl }}">
-                        <i class="bi-globe2"></i> &nbsp;
-                        Visit project website
-                    </a>
-                </div>
-            </div>
+            {% include "components/projects/button.njk" %}
         </div>
         <div class="project-details grid g-4 g-md-5 mb-4">
             <div class="g-col-12 g-col-xl-6">
@@ -79,13 +72,13 @@ summary: A custom light theme for the Halo Waypoint forums.
                 caption: 'Topic view'
             }
         ] %}
-        {% include "components/gallery.njk" %}
+        {% include "components/projects/gallery.njk" %}
 
         {% set showReturnButton = true %}
         {% set returnButton = "/projects" %}
         {% set returnButtonText = "Back to projects" %}
         {% set itemPaginationCollection = collections.projects %}
         {% set itemPaginationInputPath = page.inputPath %}
-        {% include "components/item-pagination.njk" %}
+        {% include "components/pagination/item.njk" %}
     </div>
 </section>

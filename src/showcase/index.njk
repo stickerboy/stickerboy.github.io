@@ -17,14 +17,14 @@ permalink: "{% if pagination.pageNumber == 0 %}/about/{% else %}/about/{{ pagina
             {% set showcaseItem = item %}
             {% set loopIndex = loop.index %}
             {% set loopIndex0 = loop.index0 %}
-            {% include "components/showcase-item.njk" %}
+            {% include "components/showcase/item.njk" %}
         {% endfor %}
 
         {% if pagination.pages.length > 1 %}
         <div class="p-5 p-md-6 p-lg-7 p-xl-9 pt-0 pt-sm-0 pt-md-0 py-lg-5 py-xl-5">
              {% set pageNext = "Next" %}
              {% set pagePrev = "Previous" %}
-            {%- include "components/list-pagination.njk" %}
+            {%- include "components/pagination/list.njk" %}
         </div>
         {% endif %}
     </div>

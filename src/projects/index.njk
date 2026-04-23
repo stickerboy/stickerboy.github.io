@@ -21,11 +21,11 @@ permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ 
         {% set imagePath = project.data.projectId | assetImagePath('png', '', project.data.tags, 'md') %}
         {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
         {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
-        {% include "components/project-item.njk" %}
+        {% include "components/projects/item.njk" %}
     {% endfor %}
     {% if pagination.pages.length > 1 %}
         <div class="mt-5">
-            {% include "components/list-pagination.njk" %}
+            {% include "components/pagination/list.njk" %}
         </div>
     {% endif %}
     </div>

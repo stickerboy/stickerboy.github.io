@@ -436,6 +436,3 @@ export default function (eleventyConfig) {
         dataTemplateEngine: "njk",
     };
 }
-
-
-

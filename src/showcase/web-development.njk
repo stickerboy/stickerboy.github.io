@@ -13,7 +13,7 @@ imageAlt: Photo of me kneeling down next to bright green grass in a garden, ther
 homeSecondary: Along the way, I discovered that my real niche sits in the realm between design and development — as a prototyper.
 ---
 
-{% include "components/showcaseHeader.njk" %}
+{% include "components/showcase/header.njk" %}
 
 <section class="py-md-6 py-5">
     <div class="container">
@@ -44,6 +44,6 @@ homeSecondary: Along the way, I discovered that my real niche sits in the realm 
         {% set returnButtonText = "Back to about" %}
         {% set itemPaginationCollection = collections.showcases %}
         {% set itemPaginationInputPath = page.inputPath %}
-        {% include "components/item-pagination.njk" %}
+        {% include "components/pagination/item.njk" %}
     </div>
 </section>

@@ -13,7 +13,7 @@ imageAlt: Macro shot of the head and chest plate of the Darkhorse Halo Infinite 
 homeSecondary: Through sustained involvement and contribution to the Halo community, I was fortunate enough to be invited to programmes such as Halo’s Forerunner Council, an initiative set up by 343 Industries to gather early, representative feedback from across the community. It was an incredibly rewarding experience that provided direct insight into the realities of modern game development and the importance of structured collaboration between players and developers.
 ---
 
-{% include "components/showcaseHeader.njk" %}
+{% include "components/showcase/header.njk" %}
 
 <section class="py-md-6 py-5">
     <div class="container">
@@ -45,6 +45,6 @@ homeSecondary: Through sustained involvement and contribution to the Halo commun
         {% set returnButtonText = "Back to about" %}
         {% set itemPaginationCollection = collections.showcases %}
         {% set itemPaginationInputPath = page.inputPath %}
-        {% include "components/item-pagination.njk" %}
+        {% include "components/pagination/item.njk" %}
     </div>
 </section>

@@ -19,11 +19,11 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
                 {% set photoUrl = '/photography/' + photo.slug + '/' %}
                 {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
                 {% set showCaption = true %}
-                {% include "components/photograph-item.njk" %}
+                {% include "components/photography/item.njk" %}
             {% endfor %}
         </div>
         <div class="mt-5">
-            {% include "components/list-pagination.njk" %}
+            {% include "components/pagination/list.njk" %}
         </div>
     </div>
 </section>
