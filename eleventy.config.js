@@ -24,7 +24,15 @@ export default function (eleventyConfig) {
         eleventyConfig.addPassthroughCopy(entry);
     });
 
-    eleventyConfig.addShortcode("year", () => `2020 &mdash; ${new Date().getFullYear()}`);
+    eleventyConfig.on("eleventy.before", ({ runMode }) => {
+        if (runMode !== "build") return;
+
+        const outputDir = path.join(process.cwd(), "_site");
+        if (fs.existsSync(outputDir)) {
+            fs.rmSync(outputDir, { recursive: true, force: true });
+            console.log("Cleaned _site directory.");
+        }
+    });
 
     // Load and enhance photographs data with EXIF information.
     // Keep this under a separate key so curated _data/photographs.json remains the primary source.
@@ -101,6 +109,96 @@ export default function (eleventyConfig) {
         }
     })());
 
+    // Automatically set permalinks for content sections, flat pages content, and changelog items.
+    eleventyConfig.addGlobalData("eleventyComputed", {
+        permalink: (data) => {
+            if (data.customPermalink) {
+                return data.customPermalink; // Use custom permalink if provided
+            }
+
+            // Keep explicit front matter permalinks on paginated templates.
+            if (data.pagination && data.permalink) {
+                return data.permalink;
+            }
+
+            const collectionPermalink = getCollectionPermalink(data.page.inputPath);
+            if (collectionPermalink) {
+                return collectionPermalink;
+            }
+
+            if (isWithinDir(data.page.inputPath, "pages")) {
+                return getPagesPermalink(data.page.inputPath);
+            }
+
+            if (isWithinDir(data.page.inputPath, "changelog")) {
+                return getChangelogPermalink(data.page.fileSlug);
+            }
+
+            return data.permalink; // Keep existing permalink for other files
+        },
+        description: (data) => {
+            if (isWithinDir(data.page.inputPath, "changelog")) {
+                const date = new Date(data.date);
+                return `Released on ${date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                })}`;
+            }
+            return data.description; // Keep existing description for other pages
+        },
+        title: (data) => {
+            return getPhotoFallbackValue(data, "title", ["title", "pageHeading"]);
+        },
+        pageHeading: (data) => {
+            return getPhotoFallbackValue(data, "pageHeading", ["pageHeading", "title"]);
+        },
+        featured: (data) => {
+            if (data.photo && typeof data.featured === "undefined") {
+                return Boolean(data.photo.featured);
+            }
+            return data.featured;
+        },
+        photoId: (data) => {
+            return getPhotoFallbackValue(data, "photoId", ["photoId", "slug"]);
+        },
+        photoUrl: (data) => {
+            return getPhotoFallbackValue(data, "photoUrl", ["photoUrl"]);
+        },
+        imageAlt: (data) => {
+            return getPhotoFallbackValue(data, "imageAlt", ["imageAlt"]);
+        },
+        summary: (data) => {
+            return getPhotoFallbackValue(data, "summary", ["summary"]);
+        },
+        pageGroup: (data) => {
+            if (isWithinDir(data.page.inputPath, "pages")) {
+                return data.page.fileSlug;
+            }
+
+            if (data.page.fileSlug && data.collections && data.collections.groupPages) {
+                const pageGroupData = getPageGroupData(data, data.page.fileSlug);
+                return pageGroupData ? pageGroupData.pageGroup : null;
+            }
+
+            return data.pageGroup;
+        },
+        pageEntries: (data) => {
+            if (data.pageGroup) {
+                const pageGroupData = getPageGroupData(data, data.pageGroup);
+                return pageGroupData ? pageGroupData.pageEntries : [];
+            }
+
+            return [];
+        },
+        pageId: (data) => {
+            if (data.page && data.page.fileSlug) {
+                return data.page.fileSlug;
+            }
+            return null;
+        },
+    });
+
     const inferImageGroupFromTags = (tags) => {
         const tagList = Array.isArray(tags) ? tags : (typeof tags === "string" ? [tags] : []);
         if (tagList.includes("projects")) return "projects";
@@ -147,6 +245,7 @@ export default function (eleventyConfig) {
         return `/assets/img/${pathWithGroup}.${normalizedExtension}`;
     };
 
+    eleventyConfig.addShortcode("year", () => `2020 &mdash; ${new Date().getFullYear()}`);
     eleventyConfig.addShortcode("assetImagePath", buildAssetImagePath);
     eleventyConfig.addFilter("assetImagePath", buildAssetImagePath);
 
@@ -182,16 +281,6 @@ export default function (eleventyConfig) {
     eleventyConfig.addFilter("breakLines", (text) => {
         if (!text) return text;
         return text.replace(/\n/g, "</p><p class=\"fs-6 mt-3 text-break\">");
-    });
-
-    eleventyConfig.on("eleventy.before", ({ runMode }) => {
-        if (runMode !== "build") return;
-
-        const outputDir = path.join(process.cwd(), "_site");
-        if (fs.existsSync(outputDir)) {
-            fs.rmSync(outputDir, { recursive: true, force: true });
-            console.log("Cleaned _site directory.");
-        }
     });
 
 
@@ -338,96 +427,6 @@ export default function (eleventyConfig) {
 
         return data[targetKey];
     };
-
-    // Automatically set permalinks for content sections, flat pages content, and changelog items.
-    eleventyConfig.addGlobalData("eleventyComputed", {
-        permalink: (data) => {
-            if (data.customPermalink) {
-                return data.customPermalink; // Use custom permalink if provided
-            }
-
-            // Keep explicit front matter permalinks on paginated templates.
-            if (data.pagination && data.permalink) {
-                return data.permalink;
-            }
-
-            const collectionPermalink = getCollectionPermalink(data.page.inputPath);
-            if (collectionPermalink) {
-                return collectionPermalink;
-            }
-
-            if (isWithinDir(data.page.inputPath, "pages")) {
-                return getPagesPermalink(data.page.inputPath);
-            }
-
-            if (isWithinDir(data.page.inputPath, "changelog")) {
-                return getChangelogPermalink(data.page.fileSlug);
-            }
-
-            return data.permalink; // Keep existing permalink for other files
-        },
-        description: (data) => {
-            if (isWithinDir(data.page.inputPath, "changelog")) {
-                const date = new Date(data.date);
-                return `Released on ${date.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                })}`;
-            }
-            return data.description; // Keep existing description for other pages
-        },
-        title: (data) => {
-            return getPhotoFallbackValue(data, "title", ["title", "pageHeading"]);
-        },
-        pageHeading: (data) => {
-            return getPhotoFallbackValue(data, "pageHeading", ["pageHeading", "title"]);
-        },
-        featured: (data) => {
-            if (data.photo && typeof data.featured === "undefined") {
-                return Boolean(data.photo.featured);
-            }
-            return data.featured;
-        },
-        photoId: (data) => {
-            return getPhotoFallbackValue(data, "photoId", ["photoId", "slug"]);
-        },
-        photoUrl: (data) => {
-            return getPhotoFallbackValue(data, "photoUrl", ["photoUrl"]);
-        },
-        imageAlt: (data) => {
-            return getPhotoFallbackValue(data, "imageAlt", ["imageAlt"]);
-        },
-        summary: (data) => {
-            return getPhotoFallbackValue(data, "summary", ["summary"]);
-        },
-        pageGroup: (data) => {
-            if (isWithinDir(data.page.inputPath, "pages")) {
-                return data.page.fileSlug;
-            }
-
-            if (data.page.fileSlug && data.collections && data.collections.groupPages) {
-                const pageGroupData = getPageGroupData(data, data.page.fileSlug);
-                return pageGroupData ? pageGroupData.pageGroup : null;
-            }
-
-            return data.pageGroup;
-        },
-        pageEntries: (data) => {
-            if (data.pageGroup) {
-                const pageGroupData = getPageGroupData(data, data.pageGroup);
-                return pageGroupData ? pageGroupData.pageEntries : [];
-            }
-
-            return [];
-        },
-        pageId: (data) => {
-            if (data.page && data.page.fileSlug) {
-                return data.page.fileSlug;
-            }
-            return null;
-        },
-    });
 
     return {
         templateFormats: ["njk", "md", "html"],
