@@ -4,8 +4,9 @@ title: Projects
 pageHeading: Projects
 description: This page is a collection of projects I have been building and improving over time, from practical tools to creative experiments that reflect what I enjoy making and learning.
 cssFile: home
+
 pagination:
-    data: collections.projects
+    data: projects
     size: 3
     alias: pagedProjects
 permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ pagination.pageNumber + 1 }}/{% endif %}"
@@ -17,8 +18,8 @@ permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ 
     </div>
     <div class="container">
     {% for project in pagedProjects %}
-        {% set destination = project.url %}
-        {% set imagePath = project.data.projectId | assetImagePath('png', '', project.data.tags, 'md') %}
+        {% set destination = '/projects/' ~ project.projectId ~ '/' %}
+        {% set imagePath = project.projectId | assetImagePath('png', '', project.tags, 'md') %}
         {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
         {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
         {% include "components/projects/item.njk" %}

@@ -1,13 +1,13 @@
 <div class="row g-0{% if not loop.last %} pb-3{% endif %}">
     <div class=" col-12 col-lg-5 col-xl-4 {{ imageOrderClass }} projects-img"
-            style="background-image: url('{{ imagePath | assetImagePath('', '', item.data.tags) | url }}')">
-        {# <img src="{{ imagePath | url }}" class="card-img h-100" alt="{{ project.data.imageAlt or (project.data.title ~ ' screenshot') }}"> #}
+            style="background-image: url('{{ imagePath | assetImagePath('', '', item.tags) | url }}')">
+        {# <img src="{{ imagePath | url }}" class="card-img h-100" alt="{{ project.imageAlt or (project.title ~ ' screenshot') }}"> #}
     </div>
     <div class="col-12 col-lg-7 col-xl-8 {{ textOrderClass }}">
         <div class="align-content-center project-text p-4 p-md-5 d-flex flex-column h-100">
-            <h2 class="card-title">{{ project.data.title }}</h2>
-            {%- if project.data.summary %}
-            <p class="card-text">{{ project.data.description }}</p>
+            <h2 class="card-title">{{ project.title }}</h2>
+            {%- if project.summary %}
+            <p class="card-text">{{ project.description }}</p>
             {%- endif %}
             <a href="{{ destination }}" class="btn btn-outline-halo btn-sm me-auto mt-auto">
                 <i class="bi-laptop"></i> &nbsp;

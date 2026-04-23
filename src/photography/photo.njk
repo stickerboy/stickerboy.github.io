@@ -148,7 +148,7 @@ permalink: /photography/{{ photo.slug }}/
 
 <section class="py-md-4 py-3">
     <div class="container">
-        {%- set showReturnButton = true %}
+        {%- set showReturnButton, showEarliestLatest = true %}
         {%- set returnButton = "/photography" %}
         {%- set returnButtonText = "Back to all photography" %}
         {% include "components/global/pagination.njk" %}

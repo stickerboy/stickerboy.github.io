@@ -1,0 +1,58 @@
+---
+layout: base.njk
+tags: projects
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/projects/{{ project.slug }}/"
+eleventyComputed:
+  title: "{{ project.title }}"
+  pageHeading: "{{ project.title }}"
+---
+
+<section class="project py-md-6 py-5">
+  <div class="container">
+    <div class="mb-5">
+      <p class="lead fw-normal">{{ project.description }}</p>
+      <p class="my-3">{{ project.summary }}</p>
+      {% if project.descriptionExtended %}
+      <p class="mb-3">{{ project.descriptionExtended }}</p>
+      {% endif %}
+      {% include "components/projects/button.njk" %}
+    </div>
+    <div class="project-details grid g-4 g-md-5 mb-4">
+      {% for detail in project.details %}
+      <div class="g-col-12 g-col-md-6 g-col-xl-4">
+        <div class="d-flex h-100">
+          <div class="text-stckr me-4">
+            {% include "svg/" + detail.icon %}
+          </div>
+          <div class="d-flex flex-column">
+            <h2 class="h4 lh-base">{{ detail.title }}</h2>
+            <p class="m-0">{{ detail.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if project.heroImage %}
+    <div class="mb-5">
+      <img src="{{ project.projectId | assetImagePath('png', '', project.tags, 'lg') | url }}" class="img-fluid rounded shadow-sm h-100"
+        alt="{{ project.imageAlt or (project.title ~ ' screenshot') }}">
+    </div>
+    {% endif %}
+    {% if project.gallery and project.gallery.length %}
+      {% set images = project.gallery %}
+      {% include "components/projects/gallery.njk" %}
+    {% endif %}
+
+    {% set showReturnButton = true %}
+    {% set showEarliestLatest = false %}
+    {% set returnButton = "/projects" %}
+    {% set returnButtonText = "Back to projects" %}
+    {% set itemPaginationCollection = collections.projects %}
+    {% set itemPaginationInputPath = page.inputPath %}
+    {% include "components/global/pagination.njk" %}
+  </div>
+</section>

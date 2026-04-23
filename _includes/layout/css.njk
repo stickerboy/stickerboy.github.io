@@ -1,4 +1,5 @@
 <!-- Core theme CSS -->
-        <link href="{{ ('/assets/css/' ~ cssFile ~ '.css') | url }}" rel="stylesheet" />
+        {% set dCSS = cssFile or 'home' %}
+        <link href="{{ ('/assets/css/' ~ dCSS ~ '.css') | url }}" rel="stylesheet" />
         <!-- StartBootstrap Landing CSS -->
         <link href="{{ '/assets/css/start.css' | url }}" rel="stylesheet" />

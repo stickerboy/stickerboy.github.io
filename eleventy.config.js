@@ -330,9 +330,7 @@ export default function (eleventyConfig) {
         return sortByTitle(a, b);
     };
 
-    eleventyConfig.addCollection("projects", (collectionApi) => {
-        return collectionApi.getFilteredByTag("projects").sort(sortByTitle);
-    });
+
 
     eleventyConfig.addCollection("featuredProjects", (collectionApi) => {
         return collectionApi
