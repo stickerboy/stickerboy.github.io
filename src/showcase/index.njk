@@ -1,9 +1,9 @@
 ---
 layout: base.njk
 pagination:
-  data: collections.showcases
+  data: showcases
   size: 3
-  alias: showcases
+  alias: pagedShowcases
   reverse: false
 title: About
 pageHeading: About
@@ -13,17 +13,17 @@ permalink: "{% if pagination.pageNumber == 0 %}/about/{% else %}/about/{{ pagina
 
 <section class="showcase" id="showcase-list">
     <div class="container-fluid p-0">
-        {% for item in showcases %}
-            {% set showcaseItem = item %}
-            {% set loopIndex = loop.index %}
-            {% set loopIndex0 = loop.index0 %}
-            {% include "components/showcase/item.njk" %}
-        {% endfor %}
+    {% for item in pagedShowcases %}
+        {% set showcaseItem = item %}
+        {% set loopIndex = loop.index %}
+        {% set loopIndex0 = loop.index0 %}
+        {% include "components/showcase/item.njk" %}
+    {% endfor %}
 
         {% if pagination.pages.length > 1 %}
         <div class="p-5 p-md-6 p-lg-7 p-xl-9 pt-0 pt-sm-0 pt-md-0 py-lg-5 py-xl-5">
-             {% set pageNext = "Next" %}
-             {% set pagePrev = "Previous" %}
+            {% set pageNext = "Next" %}
+            {% set pagePrev = "Previous" %}
             {%- include "components/pagination/list.njk" %}
         </div>
         {% endif %}
