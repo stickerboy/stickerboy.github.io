@@ -90,7 +90,7 @@
     "tags": ["projects", "themes"],
     "section": "themes",
     "order": 2,
-    "featured": true,
+    "featured": false,
     "gallery": [
         {
             "src": "waypoint-light/badges-sm.jpg",

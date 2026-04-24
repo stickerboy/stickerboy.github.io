@@ -332,34 +332,6 @@ export default function (eleventyConfig) {
 
 
 
-    eleventyConfig.addCollection("featuredProjects", (collectionApi) => {
-        return collectionApi
-            .getFilteredByTag("projects")
-            .filter((item) => item.data.featured)
-            .sort(sortByTitle);
-    });
-
-    eleventyConfig.addCollection("photographs", (collectionApi) => {
-        return collectionApi.getFilteredByTag("photographs").sort(sortByPhotoLikeTitle);
-    });
-
-    eleventyConfig.addCollection("featuredPhotographs", (collectionApi) => {
-        return collectionApi
-            .getFilteredByTag("photographs")
-            .filter((item) => item.data.featured || item.data.photo?.featured)
-            .sort(sortByPhotoLikeTitle);
-    });
-
-    eleventyConfig.addCollection("showcases", (collectionApi) => {
-        return collectionApi.getFilteredByTag("showcases").sort(sortByOrderThenTitle);
-    });
-
-    eleventyConfig.addCollection("featuredShowcases", (collectionApi) => {
-        return collectionApi
-            .getFilteredByTag("showcases")
-            .filter((item) => item.data.featured)
-            .sort(sortByOrderThenTitle);
-    });
 
     const contentPermalinkRoots = {
         projects: "projects",
