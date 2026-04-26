@@ -1,11 +1,6 @@
 <!-- Showcases-->
 <section class="showcase" id="about">
-    <div class="container-fluid p-0">
-        {%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
-        {%- for showcaseItem in featuredShowcases %}
-          {%- set loopIndex = loop.index %}
-          {%- set loopIndex0 = loop.index0 %}
-          {%- include "components/showcase/item.njk" %}
-        {%- endfor %}
-    </div>
+  {%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
+  {%- set items = featuredShowcases %}
+  {% include "components/showcase-list.njk" %}
 </section>
