@@ -5,11 +5,36 @@ pageHeading: Kenny
 homepage: true
 ---
 
+{% set socialAttr = "featured" %}
 {% include "content/social.njk" %}
 
-{% include "content/showcase.njk" %}
+<!-- Showcases-->
+{%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
+{%- set items = featuredShowcases %}
+<section class="showcase" id="about">
+    {% include "components/showcase-list.njk" %}
+</section>
 
-{% include "content/photography.njk" %}
+<!-- Flickr-->
+{%- set sectionTitle = "Photography on Flickr" %}
+{%- set sectionDesc = [
+    "In my spare time I spend a lot of it taking photographs, capturing little moments in life. I share some of my best
+on Flickr.",
+    "All photography used on this site was taken by me."
+] %}
+{%- set featuredPhotos = photos | selectattr('featured', 'equalto', true) %}
+{%- set showCaption = false %}
+{%- set photos = featuredPhotos %}
+<section class="flickr card-container text-center bg-light py-md-6 py-5" id="photography">
+    {% include "components/photography-list.njk" %}
+    <div class="mt-5">
+        <a class="btn btn-halo" href="{{ '/photography' | url}}">
+            <span class="h4 m-0">
+                View more photos
+            </span>
+        </a>
+    </div>
+</section>
 
 {% include "content/projects.njk" %}
 

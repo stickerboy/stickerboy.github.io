@@ -22,10 +22,6 @@
                         {{ project.summary }}
                     </p>
                     <p class="fs-6 mb-0 mt-1">
-                        {# <a href="{{ destination }}" class="btn btn-outline-halo btn-sm"
-                            arial-label="Read more about {{ project.title }}">
-                            Read more
-                        </a> #}
                         <a href="{{ destination }}" class="btn btn-outline-halo btn-sm me-auto mt-auto"
                            arial-label="Read more about {{ project.title }}"
                         >
@@ -35,8 +31,8 @@
                     </p>
                 </div>
                 <div class="g-col-12 g-col-md-6 g-col-lg-3 {% if loop.index0 % 2 == 1 %} order-lg-2{% endif %} projects-img"
-                        style="background-image: url('{{ imagePath | url }}')"
-                        aria-describedby="{{ imageId }}">
+                     style="background-image: url('{{ imagePath | url }}')"
+                     aria-describedby="{{ imageId }}">
                 </div>
                 <p class="visually-hidden" id="{{ imageId }}">
                     {{ project.imageAlt or project.title }}
