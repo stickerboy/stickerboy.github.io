@@ -12,16 +12,10 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
 
 <section class="flickr card-container bg-light py-md-6 py-5" id="photography-list">
     <div class="container">
-        <p class="mb-4">A curated set of photographs and visual work.</p>
-
-        <div class="grid g-4">
-            {% for photo in pagedPhotos %}
-                {% set photoUrl = '/photography/' + photo.slug + '/' %}
-                {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
-                {% set showCaption = true %}
-                {% include "components/photography/item.njk" %}
-            {% endfor %}
-        </div>
+        {% set sectionDesc = "A curated set of photographs and visual work." %}
+        {% set photos = pagedPhotos %}
+        {% set showCaption = true %}
+        {% include "components/photography-list.njk" %}
         <div class="mt-5">
             {% include "components/pagination/list.njk" %}
         </div>
