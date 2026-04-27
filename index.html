@@ -7,7 +7,7 @@ homepage: true
 
 <!-- Social -->
 {% set socialAttr = "featured" %}
-{% include "components/social-list.njk" %}
+{% include "components/social/list.njk" %}
 
 <!-- Showcases-->
 {%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
@@ -54,4 +54,4 @@ on Flickr.",
 </section>
 
 <!-- Contact -->
-{% include "content/contact.njk" %}
+{% include "content/contact/item.njk" %}
