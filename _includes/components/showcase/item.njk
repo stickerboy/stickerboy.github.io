@@ -22,7 +22,9 @@
         <p class="fs-6 mt-1">{{ showcaseItem.homeSecondary }}</p>
     {% endif %}
         <p class="fs-6 mb-0 mt-1">
-            <a href="{{ '/about/' ~ showcaseItem.slug | url }}" class="btn btn-light" aria-label="Read more about {{ showcaseItem.data.pageHeading or showcaseItem.data.title }}">
+            <a href="{{ '/about/' ~ showcaseItem.slug | url }}" class="btn btn-light"
+               aria-label="Read more about {{ showcaseItem.data.pageHeading or showcaseItem.data.title }}">
+               <i class="bi-book"></i> &nbsp;
                 Read more
             </a>
         </p>
