@@ -15,7 +15,7 @@ permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photograp
         {% set sectionDesc = "A curated set of photographs and visual work." %}
         {% set photos = pagedPhotos %}
         {% set showCaption = true %}
-        {% include "components/photography-list.njk" %}
+        {% include "components/photography/list.njk" %}
         <div class="mt-5">
             {% include "components/pagination/list.njk" %}
         </div>

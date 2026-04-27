@@ -1,6 +1,0 @@
-<!-- Showcases-->
-<section class="showcase" id="about">
-  {%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
-  {%- set items = featuredShowcases %}
-  {% include "components/showcase-list.njk" %}
-</section>

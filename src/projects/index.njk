@@ -15,7 +15,7 @@ permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ 
 <section class="projects py-md-6 py-5" id="projects-list">
     {%- set sectionDesc = description %}
     {%- set projects = pagedProjects %}
-    {% include "components/projects-list.njk" %}
+    {% include "components/projects/list.njk" %}
     {% if pagination.pages.length > 1 %}
         <div class="mt-5">
             {% include "components/pagination/list.njk" %}

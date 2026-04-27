@@ -5,6 +5,7 @@ pageHeading: Kenny
 homepage: true
 ---
 
+<!-- Social -->
 {% set socialAttr = "featured" %}
 {% include "components/social-list.njk" %}
 
@@ -12,10 +13,10 @@ homepage: true
 {%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
 {%- set items = featuredShowcases %}
 <section class="showcase" id="about">
-    {% include "components/showcase-list.njk" %}
+    {% include "components/showcase/list.njk" %}
 </section>
 
-<!-- Flickr-->
+<!-- Photography -->
 {%- set sectionTitle = "Photography on Flickr" %}
 {%- set sectionDesc = [
     "In my spare time I spend a lot of it taking photographs, capturing little moments in life. I share some of my best
@@ -26,7 +27,7 @@ on Flickr.",
 {%- set showCaption = false %}
 {%- set photos = featuredPhotos %}
 <section class="flickr card-container text-center bg-light py-md-5 py-4" id="photography">
-    {% include "components/photography-list.njk" %}
+    {% include "components/photography/list.njk" %}
     <div class="mt-5">
         <a class="btn btn-halo" href="{{ '/photography' | url}}">
             <span class="h4 m-0">
@@ -36,12 +37,13 @@ on Flickr.",
     </div>
 </section>
 
+<!-- Projects -->
 {%- set sectionTitle = "Web projects" %}
 {%- set sectionDesc = "A selection of highlighted personal projects, each chosen to showcase my skills, creativity, and interests in web development." %}
 {%- set featuredProjects = projects | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
 {% set projects = featuredProjects %}
 <section class="projects text-center py-md-5 py-4" id="projects">
-    {% include "components/projects-list.njk" %}
+    {% include "components/projects/list.njk" %}
     <div class="mt-5">
         <a class="btn btn-halo" href="{{ '/projects' | url}}">
             <span class="h4 m-0">
@@ -51,4 +53,5 @@ on Flickr.",
     </div>
 </section>
 
+<!-- Contact -->
 {% include "content/contact.njk" %}
