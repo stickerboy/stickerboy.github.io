@@ -12,25 +12,14 @@ pagination:
 permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
-<section class="projects card-container py-md-6 py-5" id="projects-list">
-    <div class="container">
-        <p class="mb-4">{{ description }}</p>
-    </div>
-    <div class="container">
-        {% for project in pagedProjects %}
-            {% set destination = '/projects/' ~ project.projectId ~ '/' %}
-            {% set imagePath = project.projectId | assetImagePath('png', '', project.tags, 'md') %}
-            {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
-            {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
-        <div class="grid">
-            {% include "components/projects/item.njk" %}
-        </div>
-        {% endfor %}
+<section class="projects py-md-6 py-5" id="projects-list">
+    {%- set sectionDesc = description %}
+    {%- set projects = pagedProjects %}
+    {% include "components/projects-list.njk" %}
     {% if pagination.pages.length > 1 %}
         <div class="mt-5">
             {% include "components/pagination/list.njk" %}
         </div>
     {% endif %}
-    </div>
 </section>
 

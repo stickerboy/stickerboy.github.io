@@ -6,7 +6,7 @@ homepage: true
 ---
 
 {% set socialAttr = "featured" %}
-{% include "content/social.njk" %}
+{% include "components/social-list.njk" %}
 
 <!-- Showcases-->
 {%- set featuredShowcases = showcases | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
@@ -25,7 +25,7 @@ on Flickr.",
 {%- set featuredPhotos = photos | selectattr('featured', 'equalto', true) %}
 {%- set showCaption = false %}
 {%- set photos = featuredPhotos %}
-<section class="flickr card-container text-center bg-light py-md-6 py-5" id="photography">
+<section class="flickr card-container text-center bg-light py-md-5 py-4" id="photography">
     {% include "components/photography-list.njk" %}
     <div class="mt-5">
         <a class="btn btn-halo" href="{{ '/photography' | url}}">
@@ -36,6 +36,19 @@ on Flickr.",
     </div>
 </section>
 
-{% include "content/projects.njk" %}
+{%- set sectionTitle = "Web projects" %}
+{%- set sectionDesc = "A selection of highlighted personal projects, each chosen to showcase my skills, creativity, and interests in web development." %}
+{%- set featuredProjects = projects | selectattr('featured', 'equalto', true) | sort(attribute='order') %}
+{% set projects = featuredProjects %}
+<section class="projects text-center py-md-5 py-4" id="projects">
+    {% include "components/projects-list.njk" %}
+    <div class="mt-5">
+        <a class="btn btn-halo" href="{{ '/projects' | url}}">
+            <span class="h4 m-0">
+                View all projects
+            </span>
+        </a>
+    </div>
+</section>
 
 {% include "content/contact.njk" %}
