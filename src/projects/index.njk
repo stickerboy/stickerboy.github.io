@@ -17,13 +17,15 @@ permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ 
         <p class="mb-4">{{ description }}</p>
     </div>
     <div class="container">
-    {% for project in pagedProjects %}
-        {% set destination = '/projects/' ~ project.projectId ~ '/' %}
-        {% set imagePath = project.projectId | assetImagePath('png', '', project.tags, 'md') %}
-        {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
-        {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
-        {% include "components/projects/item.njk" %}
-    {% endfor %}
+        {% for project in pagedProjects %}
+            {% set destination = '/projects/' ~ project.projectId ~ '/' %}
+            {% set imagePath = project.projectId | assetImagePath('png', '', project.tags, 'md') %}
+            {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
+            {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
+        <div class="grid">
+            {% include "components/projects/item.njk" %}
+        </div>
+        {% endfor %}
     {% if pagination.pages.length > 1 %}
         <div class="mt-5">
             {% include "components/pagination/list.njk" %}
