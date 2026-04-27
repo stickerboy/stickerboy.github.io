@@ -175,6 +175,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     .card {
         -webkit-transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         transition: box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        box-shadow: var(--bs-box-shadow-sm);
 
         &:hover,
         &:focus,
