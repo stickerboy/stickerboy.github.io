@@ -4,9 +4,11 @@
            class="flickr-item position-relative text-reset text-decoration-none h-100 focus-ring focus-ring-stckr rounded">
             <img src="{{ imagePathFull | url }}" class="card-img{% if showCaption %}-top{% endif %}" alt="{{ photo.imageAlt or photo.title }}">
             <div class="card-caption d-flex w-100 {% if not showCaption %}h-100{% endif %} align-items-center justify-content-center"
-                  aria-hidden="true"
+                 aria-hidden="true"
             >
-                <{% if homepage %}h3{% else %}h2{% endif %} class="text-white">{{ photo.pageHeading or photo.title }}</{% if homepage %}h3{% else %}h2{% endif %}>
+                <{% if homepage %}h3{% else %}h2{% endif %} class="text-white">
+                    {{ photo.pageHeading or photo.title }}
+                </{% if homepage %}h3{% else %}h2{% endif %}>
             </div>
         {% if showCaption %}
             <div class="card-body">

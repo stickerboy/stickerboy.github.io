@@ -1,14 +1,14 @@
-{% set swapOrder = loopIndex0 % 2 != 0 %}
-{% if swapOrder %}
-    {% set textOrderClass = 'order-lg-2' %}
-    {% set imageOrderClass = 'order-lg-1' %}
-{% else %}
-    {% set textOrderClass = 'order-lg-1' %}
-    {% set imageOrderClass = 'order-lg-2' %}
-{% endif %}
-{% set imageId = 'showcase-' ~ (loopIndex or 0) %}
-{% set imagePath = showcaseItem.image or (showcaseItem.page.fileSlug ~ '.jpg') %}
-{% set imagePathFull = imagePath | assetImagePath('', '', showcaseItem.tags) %}
+{%- set swapOrder = loopIndex0 % 2 != 0 %}
+{%- if swapOrder %}
+    {%- set textOrderClass = 'order-lg-2' %}
+    {%- set imageOrderClass = 'order-lg-1' %}
+{%- else %}
+    {%- set textOrderClass = 'order-lg-1' %}
+    {%- set imageOrderClass = 'order-lg-2' %}
+{%- endif %}
+{%- set imageId = 'showcase-' ~ (loopIndex or 0) %}
+{%- set imagePath = showcaseItem.image or (showcaseItem.page.fileSlug ~ '.jpg') %}
+{%- set imagePathFull = imagePath | assetImagePath('', '', showcaseItem.tags) %}
 
 <div class="grid g-0">
     <div class="g-col-12 g-col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">

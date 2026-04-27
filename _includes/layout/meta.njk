@@ -1,22 +1,22 @@
 <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="{{ pkg.description }}" />
-        <meta name="keywords" content="{{ pkg.keywords | join(', ') }}">
-        <meta name="author" content="{{ pkg.author }}" />
-        <meta name="generator" content="{{ eleventy.generator }}">
-        {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
-        <title>{{ title }}{% if not homepage %} - {{ pkg.author }}{% endif %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="{{ pkg.description }}" />
+<meta name="keywords" content="{{ pkg.keywords | join(', ') }}">
+<meta name="author" content="{{ pkg.author }}" />
+<meta name="generator" content="{{ eleventy.generator }}">
+{% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+<title>{{ title }}{% if not homepage %} - {{ pkg.author }}{% endif %}</title>
 
-        {%- if route == "ouroboros" %}
-        <meta name="robots" content="noindex, nofollow" />
-        <meta http-equiv="refresh" content="0; url = {{ pkg.homepage }}" />
-        {%- endif %}
+{%- if route == "ouroboros" %}
+<meta name="robots" content="noindex, nofollow" />
+<meta http-equiv="refresh" content="0; url = {{ pkg.homepage }}" />
+{%- endif %}
 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="{{ pkg.homepage }}" />
-        <meta property="og:title" content="{{ pkg.author }}" />
-        <meta property="og:description" content="{{ pkg.description }}" />
-        <meta property="og:image" content="{{ '/assets/img/projects/kenny.cx/kenny.cx.png' | url }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ pkg.homepage }}" />
+<meta property="og:title" content="{{ pkg.author }}" />
+<meta property="og:description" content="{{ pkg.description }}" />
+<meta property="og:image" content="{{ '/assets/img/projects/kenny.cx/kenny.cx.png' | url }}" />
 
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | url }}" />
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico' | url }}" />

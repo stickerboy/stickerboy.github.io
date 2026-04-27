@@ -1,28 +1,28 @@
 <div class="container{%if homepage %} text-center{% endif %}">
-  {% if sectionTitle %}
+{%- if sectionTitle %}
     <h2 class="mb-5">{{ sectionTitle }}</h2>
-  {% endif %}
-  {% if sectionDesc %}
-    {% if sectionDesc is iterable and sectionDesc is not string %}
-      {% for description in sectionDesc %}
+{% endif %}
+{%- if sectionDesc %}
+    {%- if sectionDesc is iterable and sectionDesc is not string %}
+        {% for description in sectionDesc %}
         <p class="mb-4">
             {{ description }}
         </p>
-      {% endfor %}
-    {% else %}
-      <p class="mb-4">
+        {% endfor %}
+    {%- else %}
+        <p class="mb-4">
         {{ sectionDesc }}
     </p>
     {% endif %}
-  {% endif %}
+{% endif %}
 
-  {% for project in projects %}
-    {% set destination = '/projects/' ~ project.projectId ~ '/' %}
-    {% set imagePath = project.projectId | assetImagePath('png', '', project.tags, 'md') %}
-    {% set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
-    {% set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
+{%- for project in projects %}
+{%- set destination = '/projects/' ~ project.projectId ~ '/' %}
+{%- set imagePath = project.projectId | assetImagePath('png', '', project.tags, 'md') %}
+{%- set imageOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-2' %}
+{%- set textOrderClass = '' if loop.index0 % 2 == 0 else 'order-lg-1' %}
     <div class="grid gap-0">
-      {% include "components/projects/item.njk" %}
+        {% include "components/projects/item.njk" %}
     </div>
-  {% endfor %}
+{% endfor %}
 </div>

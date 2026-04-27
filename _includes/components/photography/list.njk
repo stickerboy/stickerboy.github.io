@@ -4,17 +4,17 @@
 {% endif %}
 {%- if sectionDesc %}
     {%- if sectionDesc is iterable and sectionDesc is not string %}
-    {% for desc in sectionDesc %}
+    {%- for desc in sectionDesc %}
         <p class="mb-4">{{ desc }}</p>
     {% endfor %}
-{% else %}
+{%- else %}
         <p class="mb-4">{{ sectionDesc }}</p>
-    {% endif %}
-{% endif %}
+    {%- endif %}
+{%- endif %}
     <div class="grid g-4 mb-3">
-    {% for photo in photos %}
-        {% set photoUrl = '/photography/' + photo.slug + '/' %}
-        {% set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
+    {%- for photo in photos %}
+        {%- set photoUrl = '/photography/' + photo.slug + '/' %}
+        {%- set imagePathFull = photo.photoId | assetImagePath('jpg', 'photography') %}
         {% include "components/photography/item.njk" %}
     {% endfor %}
     </div>

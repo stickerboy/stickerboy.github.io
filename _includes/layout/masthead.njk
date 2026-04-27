@@ -1,17 +1,19 @@
 <!-- Masthead-->
-        {%- if homepage %}
-        <header class="masthead masthead-photo py-6 py-sm-8 py-md-10">
-        {%- else %}
-        <header class="masthead {%if masthead %}masthead-photo {% else %}bg-gradient bg-stckr border-bottom border-5 border-halo {% endif %}py-5 pb-3">
-        {%- endif %}
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-8">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">{{ pageHeading }}</h1>
-                        </div>
-                    </div>
+{%- if homepage %}
+<header class="masthead masthead-photo py-6 py-sm-8 py-md-10">
+{%- else %}
+<header class="masthead {%if masthead %}masthead-photo {% else %}bg-gradient bg-stckr border-bottom border-5 border-halo {% endif %}py-5 pb-3">
+{%- endif %}
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-8">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">
+                        {{ pageHeading }}
+                    </h1>
                 </div>
             </div>
-        </header>
+        </div>
+    </div>
+</header>
