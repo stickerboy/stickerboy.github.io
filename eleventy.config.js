@@ -31,7 +31,7 @@ export default function (eleventyConfig) {
     eleventyConfig.setWatchThrottleWaitTime(100);
     eleventyConfig.addPassthroughCopy("LICENSE");
 
-    ["assets/css/*.css", "assets/icons/*", "assets/img", "assets/fonts/*", "assets/js/*.js"].forEach((entry) => {
+    ["assets/css/*.css", "assets/icons/*", "assets/img", "assets/js/*.js"].forEach((entry) => {
         eleventyConfig.addPassthroughCopy(entry);
     });
 
@@ -182,26 +182,6 @@ export default function (eleventyConfig) {
         summary: (data) => {
             return getPhotoFallbackValue(data, "summary", ["summary"]);
         },
-        pageGroup: (data) => {
-            if (isWithinDir(data.page.inputPath, "pages")) {
-                return data.page.fileSlug;
-            }
-
-            if (data.page.fileSlug && data.collections && data.collections.groupPages) {
-                const pageGroupData = getPageGroupData(data, data.page.fileSlug);
-                return pageGroupData ? pageGroupData.pageGroup : null;
-            }
-
-            return data.pageGroup;
-        },
-        pageEntries: (data) => {
-            if (data.pageGroup) {
-                const pageGroupData = getPageGroupData(data, data.pageGroup);
-                return pageGroupData ? pageGroupData.pageEntries : [];
-            }
-
-            return [];
-        },
         pageId: (data) => {
             if (data.page && data.page.fileSlug) {
                 return data.page.fileSlug;
@@ -260,22 +240,8 @@ export default function (eleventyConfig) {
     eleventyConfig.addShortcode("assetImagePath", buildAssetImagePath);
     eleventyConfig.addFilter("assetImagePath", buildAssetImagePath);
 
-    eleventyConfig.addFilter("readFile", (filePath) => {
-        const fullPath = path.join(process.cwd(), filePath);
-        return fs.readFileSync(fullPath, "utf-8");
-    });
-
-    eleventyConfig.addFilter("fileExists", (filePath, joinPath = "_includes") => {
-        const fullPath = path.join(joinPath, filePath);
-        return fs.existsSync(fullPath);
-    });
-
     eleventyConfig.addFilter("safe", (content) => {
         return new Nunjucks.runtime.SafeString(content);
-    });
-
-    eleventyConfig.addFilter("dateISO", (date) => {
-        return new Date(date).toISOString();
     });
 
     // Auto-link URLs in text
@@ -298,24 +264,6 @@ export default function (eleventyConfig) {
     const pagesDir = path.join(process.cwd(), "src", "pages");
     const pageEntries = fs.readdirSync(pagesDir).filter((entry) => {
         return fs.lstatSync(path.join(pagesDir, entry)).isFile();
-    });
-    const pageNames = pageEntries.map((entry) => path.parse(entry).name);
-
-    eleventyConfig.addCollection("groupPages", (collectionApi) => {
-        return pageNames.map((pageName) => {
-            const pageItems = collectionApi.getFilteredByGlob(`./src/pages/${pageName}.*`);
-            return {
-                pageGroup: pageName,
-                pageEntries: pageItems,
-                permalink: `/${pageName}/`,
-            };
-        });
-    });
-
-    pageNames.forEach((pageName) => {
-        eleventyConfig.addCollection(pageName, (collectionApi) => {
-            return collectionApi.getFilteredByGlob(`./src/pages/${pageName}.*`);
-        });
     });
 
     const sortByTitle = (a, b) => {
@@ -340,8 +288,6 @@ export default function (eleventyConfig) {
 
         return sortByTitle(a, b);
     };
-
-
 
 
     const contentPermalinkRoots = {
@@ -385,14 +331,6 @@ export default function (eleventyConfig) {
 
     const getChangelogPermalink = (fileSlug) => {
         return `/changelog/${fileSlug}/`;
-    };
-
-    const getPageGroupData = (data, key) => {
-        if (!data.collections || !data.collections.groupPages) {
-            return null;
-        }
-
-        return data.collections.groupPages.find((group) => group.pageGroup === key) || null;
     };
 
     const getPhotoFallbackValue = (data, targetKey, photoKeys) => {
