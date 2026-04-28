@@ -1,4 +1,4 @@
-iThank you for your interest in contributing! We welcome all kinds of contributions — bug reports, feature requests, documentation improvements, and code. My portfolio site is a passion project, and every contribution helps make it that little bit better. Please read through the guidelines below to understand how to contribute effectively.
+Thank you for your interest in contributing! I welcome all kinds of contributions — bug reports, feature requests, documentation improvements, and code. My portfolio site is a passion project, and every contribution helps make it that little bit better. Please read through the guidelines below to understand how to contribute effectively.
 
 ## How to contribute
 
@@ -6,12 +6,12 @@ iThank you for your interest in contributing! We welcome all kinds of contributi
 
 - **Spot something weird?** First, check if it’s already been reported in [Issues](https://github.com/stickerboy/stickerboy.github.io/issues).
 - **Not there?** [Open a new issue](https://github.com/stickerboy/stickerboy.github.io/issues/new) and give it a clear title.
-- **Tell us what happened** — what you expected to happen vs. what actually happened.
+- **Tell me what happened** — what you expected to happen vs. what actually happened.
 - **Include steps to reproduce** the bug, if you can. The more descriptive you can be, the better.
 - **Screenshots or error messages?** Super helpful!
-- **Mention your setup** — browser, OS, version, anything that might help us debug.
+- **Mention your setup** — browser, OS, version, anything that might help me debug.
 
-Thanks for helping us squash bugs and make the site better!
+Thanks for helping me squash bugs and make the site better!
 
 ### Reporting a security issue
 
