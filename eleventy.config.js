@@ -132,30 +132,13 @@ export default function (eleventyConfig) {
                 return data.permalink;
             }
 
-            const collectionPermalink = getCollectionPermalink(data.page.inputPath);
-            if (collectionPermalink) {
-                return collectionPermalink;
-            }
-
             if (isWithinDir(data.page.inputPath, "pages")) {
                 return getPagesPermalink(data.page.inputPath);
-            }
-
-            if (isWithinDir(data.page.inputPath, "changelog")) {
-                return getChangelogPermalink(data.page.fileSlug);
             }
 
             return data.permalink; // Keep existing permalink for other files
         },
         description: (data) => {
-            if (isWithinDir(data.page.inputPath, "changelog")) {
-                const date = new Date(data.date);
-                return `Released on ${date.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                })}`;
-            }
             return data.description; // Keep existing description for other pages
         },
         title: (data) => {
@@ -289,35 +272,6 @@ export default function (eleventyConfig) {
         return sortByTitle(a, b);
     };
 
-
-    const contentPermalinkRoots = {
-        projects: "projects",
-        photography: "photography",
-        showcase: "about",
-    };
-
-    const getCollectionPermalink = (inputPath) => {
-        const normalizedInputPath = inputPath.replace(/\\/g, "/");
-
-        for (const [sourceDir, outputDir] of Object.entries(contentPermalinkRoots)) {
-            // Accept src/ as the new root
-            if (!normalizedInputPath.includes(`/src/${sourceDir}/`) && !normalizedInputPath.startsWith(`src/${sourceDir}/`)) {
-                continue;
-            }
-
-            const relativePath = normalizedInputPath.replace(new RegExp(`^.*?src/${sourceDir}/`), "");
-            const permalinkPath = relativePath.replace(/\.[^/.]+$/, "");
-
-            if (permalinkPath === "index") {
-                return `/${outputDir}/`;
-            }
-
-            return `/${outputDir}/${permalinkPath}/`;
-        }
-
-        return null;
-    };
-
     const isWithinDir = (inputPath, dirName) => {
         return inputPath.includes(`${dirName}/`);
     };
@@ -327,10 +281,6 @@ export default function (eleventyConfig) {
         const permalinkPath = relativePath.replace(/\.[^/.]+$/, "");
         const normalizedPath = permalinkPath.replace(/\/index$/, "");
         return `/${normalizedPath}/`;
-    };
-
-    const getChangelogPermalink = (fileSlug) => {
-        return `/changelog/${fileSlug}/`;
     };
 
     const getPhotoFallbackValue = (data, targetKey, photoKeys) => {
