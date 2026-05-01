@@ -7,7 +7,7 @@ pagination:
   alias: project
 permalink: "/projects/{{ project.slug }}/"
 eleventyComputed:
-  title: "{{ project.title }}"
+  title: "{{ project.title }} · Projects"
   pageHeading: "{{ project.title }}"
 ---
 
@@ -68,3 +68,4 @@ eleventyComputed:
         {% include "components/_global/pagination.njk" %}
     </div>
 </section>
+

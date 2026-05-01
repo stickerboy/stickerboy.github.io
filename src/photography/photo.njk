@@ -9,6 +9,9 @@ pagination:
   alias: photo
   resolve: values
 permalink: /photography/{{ photo.slug }}/
+eleventyComputed:
+  title: "{{ photo.pageHeading or photo.title }} · Photography"
+  pageHeading: "{{ photo.pageHeading or photo.title }}"
 ---
 
 <section class="showcase photo">
@@ -154,3 +157,4 @@ permalink: /photography/{{ photo.slug }}/
         {% include "components/_global/pagination.njk" %}
     </div>
 </section>
+

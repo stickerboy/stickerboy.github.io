@@ -71,6 +71,10 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     border-color: var(--bs-stckr) !important;
 }
 
+.bg-gradient-stckr {
+    background-image: linear-gradient(180deg, rgba(var(--bs-halo-rgb), 0.15), rgba(var(--bs-stckr-rgb), 0.85)) !important;
+}
+
 
 /*!
 * Site feature styling
@@ -143,7 +147,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
         @media (min-width: 768px) {
             font-size: #{map-get($display-font-sizes, 3)};
         }
-        text-shadow: 2px 2px 3px var(--bs-dark);
+        text-shadow: 2px 2px 3px var(--bs-343);
     }
 }
 
