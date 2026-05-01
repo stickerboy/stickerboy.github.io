@@ -6,6 +6,7 @@
         <meta name="generator" content="{{ eleventy.generator }}">
         {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
         <title>{{ title }}{% if not homepage %} - {{ pkg.author }}{% endif %}</title>
+        <link rel="canonical" href="{{ pkg.homepage }}">
 
         {%- if route == "ouroboros" %}
         <meta name="robots" content="noindex, nofollow" />
