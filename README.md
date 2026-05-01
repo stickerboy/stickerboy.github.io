@@ -20,8 +20,8 @@ Thanks for stopping by!
 — Kenny
 
 ## Convrtr is powered by
-[![Eleventy](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fstickerboy%2Fstickerboy.github.io%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=%24.dependencies%5B'%4011ty%2Feleventy'%5D&style=for-the-badge&logo=eleventy&label=11ty&color=f8f9fa
-)](https://github.com/11ty/eleventy) &nbsp; [![Bootstrap](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fstickerboy%2Fstickerboy.github.io%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=%24.dependencies%5B'bootstrap-scss'%5D&style=for-the-badge&logo=bootstrap&logoColor=white&label=Bootstrap&labelColor=712cf9&color=f8f9fa
+[![Eleventy](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fstickerboy%2Fstickerboy.github.io%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=%24.devDependencies%5B'%4011ty%2Feleventy'%5D&style=for-the-badge&logo=eleventy&label=11ty&color=f8f9fa
+)](https://github.com/11ty/eleventy) &nbsp; [![Bootstrap](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fstickerboy%2Fstickerboy.github.io%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=%24.devDependencies%5B'bootstrap-scss'%5D&style=for-the-badge&logo=bootstrap&logoColor=white&label=Bootstrap&labelColor=712cf9&color=f8f9fa
 )](https://github.com/twbs/bootstrap) 
 
 ## License
