@@ -30,8 +30,9 @@ export default function (eleventyConfig) {
 
     eleventyConfig.setWatchThrottleWaitTime(100);
     eleventyConfig.addPassthroughCopy("LICENSE");
+    eleventyConfig.addPassthroughCopy("manifest.json");
 
-    ["assets/css/*.css", "assets/icons/*", "assets/img", "assets/js/*.js"].forEach((entry) => {
+    ["assets/css/", "assets/icons/", "assets/img/", "assets/js/"].forEach((entry) => {
         eleventyConfig.addPassthroughCopy(entry);
     });
 

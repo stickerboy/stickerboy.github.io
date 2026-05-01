@@ -1,19 +1,19 @@
 <!--
-    //START FILE/
-    /{%- if fourohfour %}No {% endif %}Route detected..
-    /Processing......
-    {%- if fourohfour %}
-        {#- 404: Only show message, no route #}
-    {%- elif route %}
-        {%- if route == "noroute" %}
-        /Route access denied - the easter egg is in another castle
-        /Be a little more... curious
-        {%- else %}
-        /Route found - /{{ route }}
+            //START FILE/
+            /{%- if fourohfour %}No {% endif %}Route detected..
+            /Processing......
+        {%- if fourohfour %}
+            {#- 404: Only show message, no route #}
+        {%- elif route %}
+            {%- if route == "noroute" %}
+            /Route access denied - the easter egg is in another castle
+            /Be a little more... curious
+            {%- else %}
+            /Route found - /{{ route }}
+            {%- endif %}
+        {%- elif homepage %}
+            /Route access denied - the easter egg is in another castle
+            /Be a little more... curious
         {%- endif %}
-    {%- elif homepage %}
-        /Route access denied - the easter egg is in another castle
-        /Be a little more... curious
-    {%- endif %}
-    //END FILE ../
--->
+            //END FILE ../
+        -->

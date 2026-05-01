@@ -9,15 +9,15 @@
     </head>
     <body{%- if homepage %} class="homepage"{%- endif %}>
         <a class="visually-hidden-focusable position-absolute" href="#content">Skip to main content</a>
-        {%- include "layout/nav.njk" %}
+        {% include "layout/nav.njk" %}
         <main id="content">
             {% include "layout/masthead.njk" %}
 
             {{ content | safe }}
 
-            {%- include "layout/footer.njk" %}
+            {% include "layout/footer.njk" %}
 
-            {%- include "layout/scripts.njk" %}
+            {% include "layout/scripts.njk" %}
         </main>
     </body>
 </html>
