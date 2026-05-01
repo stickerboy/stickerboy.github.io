@@ -1,0 +1,24 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg fixed-top w-100 bg-light border-bottom border-stckr border-5 p-0">
+    <div class="container">
+        <p class="navbar-brand mb-0">
+            <a href="{{ '/' | url }}" class="link-343 py-3">{{ pkg.sitename }}</a>
+        </p>
+
+        <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav me-auto mb-2 mb-lg-0 hidden"></div>
+            <ul class="d-flex navbar-nav">
+            {%- for item in nav %}
+                {%- if not item.excludeFromNav and (not item.homepageOnly or homepage) %}
+                <li class="nav-item">
+                    <a class="nav-link py-3" href="{{ '/' ~ item.id }}">{{ item.label }}</a>
+                </li>
+                {%- endif %}
+            {%- endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

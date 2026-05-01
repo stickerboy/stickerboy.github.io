@@ -1,0 +1,127 @@
+[
+  {
+    "projectId": "convrtr",
+    "slug": "convrtr",
+    "title": "Convrtr",
+    "description": "Convrtr is a simple JavaScript based tool to quickly convert text between different formats and to help create or solve data driven puzzles and ciphers.",
+    "descriptionExtended": "Convrtr began as a set of fast, dependable PHP scripts supporting the Halo ARG community through rapid-fire decoding challenges. Inspired by the loss of tools like Everlost and Xlate, it evolved into a portable microsite and later a lightweight JavaScript app, designed for solvers needing reliable, offline-friendly converters anywhere. Today, Convrtr remains a nimble, always-ready toolkit for anyone tackling encoded text, carrying forward the spirit of the puzzle-solving community.",
+    "summary": "A simple JavaScript tool to convert text between formats.",
+    "projectUrl": "https://www.convrtr.xyz/",
+    "imageAlt": "Convrtr home page screenshot",
+    "tags": ["projects", "tools"],
+    "section": "tools",
+    "order": 1,
+    "featured": true,
+    "gallery": [],
+    "details": [
+      {
+        "icon": "code-square.njk",
+        "title": "Text tools",
+        "description": "A collection of practical utilities for editing, converting, analyzing text and exploring text patterns for a variety of tasks and puzzles."
+      },
+      {
+        "icon": "puzzle.njk",
+        "title": "Cipher tools",
+        "description": "A variety of classic and modern cipher utilities for encrypting, decrypting, and experimenting with secret codes and algorithms."
+      },
+      {
+        "icon": "nut.njk",
+        "title": "Hexadecimal tools",
+        "description": "Work with hexadecimal data using tools for conversion, analysis, and manipulation."
+      },
+      {
+        "icon": "journal-code.njk",
+        "title": "File tools",
+        "description": "Access utilities for inspecting, converting, and extracting information from different file types and formats."
+      },
+      {
+        "icon": "question-octagon.njk",
+        "title": "ONI tools",
+        "description": "Specialized decoders and utilities inspired by ARGs, offering advanced features for data analysis and cryptography."
+      },
+      {
+        "icon": "braces-asterisk.njk",
+        "title": "Miscellaneous tools",
+        "description": "A diverse set of unique tools designed to help with puzzle solving, creative challenges, and tasks that don’t fit elsewhere."
+      }
+    ]
+  },
+  {
+    "projectId": "kenny.cx",
+    "slug": "kenny.cx",
+    "title": "kenny.cx",
+    "description": "kenny.cx is my personal portfolio site, built to highlight the creative and technical work I have done over the years, from custom themes and tools to experiments that started as simple ideas and grew into something worth sharing.",
+    "descriptionExtended": "My portfolio site has taken many shapes and forms—from simple static HTML pages and Wordpress installs to a custom-built PHP and XML blogging platform. With this latest iteration on 11ty, I enjoy the freedom to design and build creative tools, while keeping the end result simple, fast, and deployable anywhere. It’s a blend of fun challenges and practical solutions that make the process as rewarding as the finished site.",
+    "summary": "My personal portfolio site, built with 11ty.",
+    "projectUrl": "https://www.kenny.cx",
+    "imageAlt": "kenny.cx personal site screenshot",
+    "tags": ["projects", "themes"],
+    "section": "themes",
+    "order": 3,
+    "featured": true,
+    "gallery": [],
+    "details": [
+      {
+        "icon": "11ty.njk",
+        "title": "Why 11ty?",
+        "description": "I chose Eleventy (11ty) because it’s fast, flexible, and lets me build exactly the kind of site I want—without getting in my way. Its simplicity and power make it perfect for a creative portfolio."
+      },
+      {
+        "icon": "bootstrap.njk",
+        "title": "Why Bootstrap?",
+        "description": "I use Bootstrap because it gives me a solid, responsive grid and a ton of utility classes—so I can focus on design and content, not reinventing the basics."
+      },
+      {
+        "icon": "nunjucks.njk",
+        "title": "Why Nunjucks?",
+        "description": "Nunjucks lets me write templates that are clean, readable, and reusable. It’s powerful enough for complex layouts, but simple enough to keep everything maintainable."
+      }
+    ]
+  },
+  {
+    "projectId": "waypoint-light",
+    "slug": "waypoint-light",
+    "title": "Waypoint Light",
+    "description": "Waypoint Light is a custom light theme built for the Halo Waypoint forums, designed to improve readability and create a cleaner, and more comfortable experience when browsing.",
+    "descriptionExtended": "Developing this theme was a personal accessibility project for me. For years, I focused on creating dark themes for sites that didn’t offer them, but over time I noticed that reading and focusing on dark backgrounds was causing eye strain. I gradually switched to using light themes for most of my apps and websites. As someone who helped moderate the forums nearly every day, having a light theme made it much easier and more comfortable to browse and manage the site, which was a huge benefit for my daily workflow.",
+    "summary": "A custom light theme for the Halo Waypoint forums.",
+    "projectUrl": "https://github.com/stickerboy/waypoint-light",
+    "imageAlt": "Halo Waypoint light theme screenshot",
+    "tags": ["projects", "themes"],
+    "section": "themes",
+    "order": 2,
+    "featured": false,
+    "gallery": [
+        {
+            "src": "waypoint-light/badges-sm.jpg",
+            "link": "waypoint-light/badges-lg.jpg",
+            "alt": "View badge display example",
+            "caption": "Badge display"
+        },
+        {
+            "src": "waypoint-light/forum-sm.jpg",
+            "link": "waypoint-light/forum-lg.jpg",
+            "alt": "View forum thread list example",
+            "caption": "Forum thread list"
+        },
+        {
+            "src": "waypoint-light/topic-sm.jpg",
+            "link": "waypoint-light/topic-lg.jpg",
+            "alt": "View topic view example",
+            "caption": "Topic view"
+        }
+    ],
+    "details": [
+      {
+        "icon": "universal-access.njk",
+        "title": "Accessibility",
+        "description": "I am passionate about accessible web design, always aiming to create interfaces that are both visually appealing and easy for everyone to use. When the Halo Waypoint forums lost their light theme after a migration to Discourse, I took the initiative to design a new, user-friendly theme. This work-in-progress showcases my approach to building a cleaner, more comfortable browsing experience within the constraints of Userstyles and the existing site theme."
+      },
+      {
+        "icon": "bookmark-star.njk",
+        "title": "Additional features",
+        "description": "Beyond restoring the light theme, I focused on improving grid layouts, increasing button sizes and tap targets, and refining focus and hover states for better accessibility. I also worked to re-surface and highlight supported features that the current theme had removed or hidden, making the forums more functional and inclusive for all users. "
+      }
+    ]
+  }
+]

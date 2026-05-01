@@ -1,0 +1,16 @@
+{%- if images %}
+<div class="gallery grid g-4 g-md-5 mb-4">
+    {%- for image in images %}
+    <div class="card h-100 g-col-12 g-col-lg-4{% if image.caption %} has-caption{% endif %}">
+        <a href="{{ image.link | assetImagePath('jpg', 'projects') | url }}" class="gallery-link focus-ring focus-ring-stckr rounded text-reset text-decoration-none h-100">
+            <img src="{{ image.src | assetImagePath('jpg', 'projects') | url }}" alt="{{ image.alt | url }}" class="card-img{% if image.caption %}-top{% endif %}">
+            {% if image.caption %}
+            <div class="card-body">
+                <p class="card-text text-start text-343">{{ image.caption }}</p>
+            </div>
+            {% endif %}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

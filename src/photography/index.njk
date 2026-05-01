@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Photography
+pageHeading: Photography
+cssFile: home
+pagination:
+    data: photos
+    size: 12
+    alias: pagedPhotos
+permalink: "{% if pagination.pageNumber == 0 %}/photography/{% else %}/photography/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+
+<section class="flickr card-container bg-light py-md-6 py-5" id="photography-list">
+    <div class="container">
+        {%- set sectionDesc = [
+  "A curated set of photographs and visual work, capturing moments both big and small from my creative journey.",
+  "From landscapes and city scenes to candid portraits and abstract compositions, each image reflects my passion for storytelling through the lens. Explore the gallery to discover the stories, colors, and emotions that inspire my photography."
+] %}
+        {%- set photos = pagedPhotos %}
+        {%- set showCaption = true %}
+        {% include "components/photography/list.njk" %}
+        <div class="mt-5">
+            {% include "components/pagination/list.njk" %}
+        </div>
+    </div>
+</section>

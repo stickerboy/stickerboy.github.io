@@ -1,0 +1,38 @@
+{%- set swapOrder = loopIndex0 % 2 != 0 %}
+{%- if swapOrder %}
+    {%- set textOrderClass = 'order-lg-2' %}
+    {%- set imageOrderClass = 'order-lg-1' %}
+{%- else %}
+    {%- set textOrderClass = 'order-lg-1' %}
+    {%- set imageOrderClass = 'order-lg-2' %}
+{%- endif %}
+{%- set imageId = 'showcase-' ~ (loopIndex or 0) %}
+{%- set imagePath = showcaseItem.image or (showcaseItem.page.fileSlug ~ '.jpg') %}
+{%- set imagePathFull = imagePath | assetImagePath('', '', showcaseItem.tags) %}
+
+<div class="grid g-0">
+    <div class="g-col-12 g-col-lg-6 {{ textOrderClass }} my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">
+        <h2>
+            {{ showcaseItem.pageHeading or showcaseItem.title }}
+        </h2>
+        <p class="fs-6 mt-3">
+            {{ showcaseItem.summary }}
+        </p>
+    {% if showcaseItem.homeSecondary %}
+        <p class="fs-6 mt-1">{{ showcaseItem.homeSecondary }}</p>
+    {% endif %}
+        <p class="fs-6 mb-0 mt-1">
+            <a href="{{ '/about/' ~ showcaseItem.slug | url }}" class="btn btn-light"
+               aria-label="Read more about {{ showcaseItem.data.pageHeading or showcaseItem.data.title }}">
+               <i class="bi-book"></i> &nbsp;
+                Read more
+            </a>
+        </p>
+    </div>
+    <div class="g-col-12 g-col-lg-6 {{ imageOrderClass }} text-white showcase-img"
+        style="background-image: url('{{ imagePathFull | url }}')"
+        aria-describedby="{{ imageId }}"></div>
+    <p class="visually-hidden" id="{{ imageId }}">
+    {{ showcaseItem.imageAlt or showcaseItem.title }}
+    </p>
+</div>

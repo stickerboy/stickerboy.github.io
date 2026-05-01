@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: Projects
+pageHeading: Projects
+description: This page is a collection of projects I have been building and improving over time, from practical tools to creative experiments that reflect what I enjoy making and learning.
+cssFile: home
+
+pagination:
+    data: projects
+    size: 3
+    alias: pagedProjects
+permalink: "{% if pagination.pageNumber == 0 %}/projects/{% else %}/projects/{{ pagination.pageNumber + 1 }}/{% endif %}"
+---
+
+<section class="projects py-md-6 py-5" id="projects-list">
+    {%- set sectionDesc = description %}
+    {%- set projects = pagedProjects %}
+    {% include "components/projects/list.njk" %}
+    {% if pagination.pages.length > 1 %}
+        <div class="mt-5">
+            {% include "components/pagination/list.njk" %}
+        </div>
+    {% endif %}
+</section>
+

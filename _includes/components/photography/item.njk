@@ -1,0 +1,20 @@
+<div class="g-col-12 g-col-md-{% if showCaption %}6 g-col-lg-4{% else %}4{% endif %}">
+    <div class="card{% if showCaption %} h-100 has-caption{% endif %}">
+        <a href="{{ photoUrl }}" title="{{ photo.pageHeading or photo.title }} - photo by {{ pkg.author }}" 
+           class="flickr-item position-relative text-reset text-decoration-none h-100 focus-ring focus-ring-stckr rounded">
+            <img src="{{ imagePathFull | url }}" class="card-img{% if showCaption %}-top{% endif %}" alt="{{ photo.imageAlt or photo.title }}">
+            <div class="card-caption d-flex w-100 {% if not showCaption %}h-100{% endif %} align-items-center justify-content-center"
+                 aria-hidden="true"
+            >
+                <{% if homepage %}h3{% else %}h2{% endif %} class="text-white">
+                    {{ photo.pageHeading or photo.title }}
+                </{% if homepage %}h3{% else %}h2{% endif %}>
+            </div>
+        {% if showCaption %}
+            <div class="card-body">
+                <p class="card-text text-start text-343">{{ photo.summary }}</p>
+            </div>
+        {% endif %}
+        </a>
+    </div>
+</div>

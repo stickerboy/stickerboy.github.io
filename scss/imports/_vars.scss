@@ -20,12 +20,14 @@ $spacers: (
 // Custom colors
 $custom-colors: (
   "stckr": #0aa2c0,
+  "halo": #088199,
   "343": #343a40,
   "ice": #1c375e
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
 $color-stckr: map-get($theme-colors, "stckr");
+$color-halo: map-get($theme-colors, "halo");
 $color-343: map-get($theme-colors, "343");
 $color-ice: map-get($theme-colors, "ice");
 

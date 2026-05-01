@@ -1,0 +1,41 @@
+{%- set items = itemPaginationCollection or [] %}
+{%- set currentIndex = -1 %}
+{%- for item in items %}
+    {%- if item.inputPath == itemPaginationInputPath %}
+        {% set currentIndex = loop.index0 %}
+    {% endif %}
+{% endfor %}
+{%- if items.length > 1 or showReturnButton %}
+<nav class="pagination-nav mt-5" aria-label="Item navigation">
+    <ul class="pagination pagination-sm pagination-stacked justify-content-between m-0">
+    {%- if currentIndex > 0 %}
+        <li class="page-item">
+            <div class="btn-group d-flex flex-row" role="group">
+            <a class="btn btn-outline-halo border-light-subtle py-2 px-3 rounded-sm-start fw-normal" href="{{ items[currentIndex - 1].url }}" title="Previous item: {{ items[currentIndex - 1].data.pageHeading or items[currentIndex - 1].data.title }}">
+                &#8678; <span class="visually-hidden">Previous:&nbsp;</span> {{ items[currentIndex - 1].data.pageHeading or items[currentIndex - 1].data.title }}
+            </a>
+            </div>
+        </li>
+    {% endif %}
+    {%- if showReturnButton %}
+        <li class="page-item">
+            <div class="btn-group d-flex flex-row" role="group">
+            <a href="{{ returnButton | url }}" class="btn btn-outline-halo btn-sm">
+                <i class="bi-arrow-left"></i> &nbsp;
+                {{ returnButtonText }}
+            </a>
+            </div>
+        </li>
+    {% endif %}
+    {%- if currentIndex > -1 and currentIndex < items.length - 1 %}
+        <li class="page-item">
+            <div class="btn-group d-flex flex-row" role="group">
+            <a class="btn btn-outline-halo border-light-subtle py-2 px-3 rounded-sm-end fw-normal" href="{{ items[currentIndex + 1].url }}" title="Next item: {{ items[currentIndex + 1].data.pageHeading or items[currentIndex + 1].data.title }}">
+                <span class="visually-hidden">Next:&nbsp;</span> {{ items[currentIndex + 1].data.pageHeading or items[currentIndex + 1].data.title }} &#8680;
+            </a>
+            </div>
+        </li>
+    {% endif %}
+    </ul>
+</nav>
+{% endif %}

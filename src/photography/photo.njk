@@ -1,0 +1,160 @@
+---
+layout: base.njk
+cssFile: home
+tags:
+  - photographs
+pagination:
+  data: photos
+  size: 1
+  alias: photo
+  resolve: values
+permalink: /photography/{{ photo.slug }}/
+eleventyComputed:
+  title: "{{ photo.pageHeading or photo.title }} · Photography"
+  pageHeading: "{{ photo.pageHeading or photo.title }}"
+---
+
+<section class="showcase photo">
+    <div class="container-fluid p-0">
+        <div class="grid g-0">
+            <div class="g-col-12 g-col-lg-6 my-auto showcase-text p-5 p-md-6 p-lg-7 p-xl-9">
+                <h2>About this photo</h2>
+
+                {%- if photo.summary %}
+                    <p class="fs-6 mt-3">{{ photo.summary }}</p>
+                {% endif %}
+                {%- if photo.description %}
+                    <p class="fs-6 mt-3 text-break">{{ photo.description | autoLinkUrls | breakLines | safe }}</p>
+                {% endif %}
+                {%- if photo.details %}
+                    <p class="visually-hidden fs-6 mt-{% if photo.summary %}1{% else %}3{% endif %}">{{ photo.details }}</p>
+                {% endif %}
+
+                {%- if photo.tags %}
+                    <div class="pb-4">
+                        <h2 class="visually-hidden">Tags</h2>
+                        {% for tag in photo.tags %}
+                        <small class="d-inline-flex {% if not loop.last %}me-2 {% endif %}my-2 px-2 py-1 fw-semibold text-success-emphasis bg-light-subtle border border-stckr-subtle rounded">
+                            {{ tag }}
+                        </small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {%- if photo.photoUrl %}
+                <p>
+                    <a href="{{ photo.photoUrl }}" class="btn btn-light d-inline-flex align-items-center" rel="noopener" target="_blank">
+                        {% include "svg/flickr.njk" %}
+                        View this image on Flickr
+                    </a>
+                </p>
+                {% endif %}
+            </div>
+            <div class="g-col-12 g-col-lg-6 text-white showcase-img"
+                style="background-image: url('{{ photo.photoId | assetImagePath(photo.imageExtension or 'jpg', '', tags)  }}')"
+                aria-describedby="showcase-detail-img"></div>
+            <p class="visually-hidden" id="showcase-detail-img">{{ photo.imageAlt or photo.title }}</p>
+        </div>
+    </div>
+</section>
+
+{%- if photo.exif %}
+<section class="py-md-6 py-5 bg-light">
+    <div class="container">
+        <h2 class="mb-3">Exif</h2>
+        <div class="grid g-4 g-md-5">
+            {%- if photo.exif.camera or photo.exif.model %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Camera</h3>
+                <p class="mb-0">{{ photo.exif.camera | replace("OLYMPUS IMAGING CORP.", "Olympus Pen ") or "Unknown" }}{% if photo.exif.model %} {{ photo.exif.model | replace("OLYMPUS IMAGING CORP.", "Olympus Pen ") }}{% endif %}</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.lens %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Lens</h3>
+                <p class="mb-0">{{ photo.exif.lens | replace("OLYMPUS", "Olympus") }}</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.iso %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">ISO</h3>
+                <p class="mb-0">{{ photo.exif.iso }}</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.dateTimeOriginal %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Date Taken</h3>
+                <p class="mb-0">{{ photo.exif.dateTimeFormatted or photo.exif.dateTimeOriginal }}</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.shutterSpeed %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Shutter Speed</h3>
+                <p class="mb-0">{{ photo.exif.shutterSpeed }} sec</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.focalLength %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Focal Length</h3>
+                <p class="mb-0">{{ photo.exif.focalLength }}mm</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.aperture %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Aperture</h3>
+                <p class="mb-0">ƒ/{{ photo.exif.aperture }}</p>
+            </div>
+            {% endif %}
+
+            {%- if photo.exif.software %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Software</h3>
+                <p class="mb-0">{{ photo.exif.software }}</p>
+            </div>
+            {%- endif %}
+
+            {%- if photo.exif.location %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Location</h3>
+                <p class="mb-0">
+                    <a href="https://maps.google.com/?q={{ photo.exif.location.latitude }},{{ photo.exif.location.longitude }}" 
+                       class="link-halo" rel="noopener" target="_blank" title="View location on Google Maps">
+                       {{ photo.exif.location.latitude }}, {{ photo.exif.location.longitude }}
+                    </a>
+                </p>
+            </div>
+            {% elif photo.location %}
+            <div class="d-flex flex-column g-col-12 g-col-md-6 g-col-xl-4">
+                <h3 class="h5">Location</h3>
+                <p class="mb-0">
+                    <a href="https://maps.google.com/?q={{ photo.location.latitude }},{{ photo.location.longitude }}" 
+                       class="link-halo" target="_blank" rel="noopener" title="View location on Google Maps">
+                       {%- if photo.locationName %}
+                       {{ photo.locationName }}
+                       {%- else %}
+                       {{ photo.location.latitude }}, {{ photo.location.longitude }}
+                       {%- endif %}
+                    </a>
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{%- endif %}
+
+<section class="py-md-4 py-3">
+    <div class="container">
+        {%- set showReturnButton, showEarliestLatest = true %}
+        {%- set returnButton = "/photography" %}
+        {%- set returnButtonText = "Back to all photography" %}
+        {% include "components/_global/pagination.njk" %}
+    </div>
+</section>
+

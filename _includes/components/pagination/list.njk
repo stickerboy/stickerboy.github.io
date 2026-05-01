@@ -1,0 +1,17 @@
+{%- if pagination.href.previous or pagination.href.next %}
+    <nav class="d-flex justify-content-between align-items-center" aria-label="{{ title }} pagination">
+        <div>
+            {%- if pagination.href.previous %}
+            <a class="btn btn-outline-stckr" href="{{ pagination.href.previous | url }}"> &laquo; {{ pagePrev or "Newer"}}</a>
+            {% endif %}
+        </div>
+        <div class="lead fw-normal">
+            Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+        </div>
+        <div>
+            {%- if pagination.href.next %}
+            <a class="btn btn-outline-stckr" href="{{ pagination.href.next | url }}">{{ pageNext or "Older" }} &raquo;</a>
+            {% endif %}
+        </div>
+    </nav>
+{% endif %}

@@ -1,0 +1,29 @@
+<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="{{ pkg.description }}" />
+        <meta name="keywords" content="{{ pkg.keywords | join(', ') }}">
+        <meta name="author" content="{{ pkg.author }}" />
+        <meta name="generator" content="{{ eleventy.generator }}">
+        {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+        <title>{{ title }}{% if not homepage %} · {{ pkg.author }}{% endif %}</title>
+        <link rel="canonical" href="{{ pkg.homepage }}">
+
+        {%- if route == "ouroboros" %}
+        <meta name="robots" content="noindex, nofollow" />
+        <meta http-equiv="refresh" content="0; url = {{ pkg.homepage }}" />
+        {%- endif %}
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ pkg.homepage }}" />
+        <meta property="og:title" content="{{ pkg.author }}" />
+        <meta property="og:description" content="{{ pkg.description }}" />
+        <meta property="og:image" content="{{ '/assets/img/og-image.jpg?v=' ~ pkg.version | url }}" />
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ '/assets/icons/favicon.ico?v=' ~ pkg.version | url }}" sizes="32x32" />
+        <link rel="icon" type="image/svg+xml" href="{{ '/assets/icons/icon.svg?v=' ~ pkg.version  | url }}" />
+        <link rel="icon" type="image/png" href="{{ '/assets/icons/icon-32x32.png?v=' ~ pkg.version | url }}" sizes="32x32">
+        <link rel="apple-touch-icon" href="{{ '/assets/icons/apple-touch-icon.png?v=' ~ pkg.version | url }}">
+
+
+        <link rel="manifest" href="{{ '/manifest.json' | url }}">

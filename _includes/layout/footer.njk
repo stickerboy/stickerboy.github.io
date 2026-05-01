@@ -1,0 +1,47 @@
+<!-- Footer-->
+            <footer class="footer bg-light py-md-6 py-5">
+                <div class="container">
+                    <div class="grid">
+                        <div class="g-col-12 g-col-lg-7 h-100 text-center text-lg-start my-auto">
+                            <p class="text-343 mb-4 mb-lg-0">
+                                &copy; <a href="{{ pkg.authorUrl }}" title="{{ pkg.authorDesc }}" class="link-halo">{{ pkg.author }}</a> {% year
+                                %}. Content licensed under <a href="{{ pkg.licenseURL }}" class="link-halo">{{ pkg.license }}</a>.<br />
+                                Powered by <a href="https://www.11ty.dev/" title="Eleventy, a simpler static site generator"
+                                    class="link-halo">11ty</a>, <a href="https://getbootstrap.com/"
+                                    title="Bootstrap - an HTML, CSS, and JS library" class="link-halo">Bootstrap</a> and <a
+                                    href="https://pages.github.com/" title="GitHub pages - websites hosted directly from your GitHub repository"
+                                    class="link-halo">GitHub Pages</a>
+                            </p>
+                        </div>
+                        <div class="g-col-12 g-col-lg-5 h-100 text-center text-lg-end my-auto">
+                            <ul class="list-inline mb-0 glyphs">
+                                <li class="list-inline-item me-4">
+                                    <div data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Reclaimer">
+                                        {% include "svg/reclaimer.njk" %}
+                                    </div>
+                                </li>
+                                <li class="list-inline-item me-4">
+                                    <div data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Septagon">
+                                        {% include "svg/septagon.njk" %}
+                                    </div>
+                                </li>
+                                <li class="list-inline-item me-4">
+                                    <div data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Halo">
+                                        {% include "svg/halo.njk" %}
+                                    </div>
+                                </li>
+                                <li class="list-inline-item" id="curious">
+                                    <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="" data-bs-original-title="Section 3 <br /><em>Curious...?</em>">
+                                        {% include "svg/curious.njk" %}
+                                    </div>
+                                </li>
+                                <li class="list-inline-item visually-hidden" id="curiouser">
+                                    <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="" data-bs-original-title="<em>Curiouser...??</em>">
+                                        {% include "svg/curious.njk" %}
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>

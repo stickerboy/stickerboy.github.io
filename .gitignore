@@ -1,2 +1,5 @@
+.nvmrc
+.vscode/*
 assets/devcss/*
 node_modules/*
+.photographs.json.hash

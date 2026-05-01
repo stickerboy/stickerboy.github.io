@@ -1,0 +1,52 @@
+---
+layout: base.njk
+tags:
+  - showcases
+pagination:
+  data: showcases
+  size: 1
+  alias: showcase
+permalink: "/about/{{ showcase.slug }}/"
+eleventyComputed:
+  title: "{{ showcase.pageHeading or showcase.title }}"
+  pageHeading: "{{ showcase.pageHeading or showcase.title }}"
+---
+
+{% include "components/showcase/header.njk" %}
+
+<section class="py-md-6 py-5">
+    <div class="container">
+    {%- if showcase.topSections %}
+        {% for section in showcase.topSections %}
+        <p class="fs-6 mb-3">
+            {{ section }}
+        </p>
+        {% endfor %}
+    {%- endif %}
+        <div class="showcase-detail grid g-4 g-md-5 mb-4">
+        {%- if showcase.imageSections %}
+            <div class="g-col-12 g-col-lg-5 g-col-xl-4">
+                <img src="{{ showcase.imageSections[0].image.src | assetImagePath('jpg', '', showcase.tags) | url }}" 
+                     class="img-fluid img-thumbnail" alt="{{ showcase.imageSections[0].image.alt }}"
+                >
+            </div>
+            <div class="g-col-12 g-col-lg-7 g-col-xl-8">
+            {%- for section in showcase.imageSections %}
+                {%- for para in section.content %}
+                <p class="fs-6 mb-3">{{ para }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        {%- endif %}
+        </div>
+
+        {%- set showReturnButton = true %}
+        {%- set showEarliestLatest = false %}
+        {%- set returnButton = "/projects" %}
+        {%- set returnButtonText = "Back to projects" %}
+        {%- set itemPaginationCollection = collections.projects %}
+        {%- set itemPaginationInputPath = page.inputPath %}
+        {% include "components/_global/pagination.njk" %}
+    </div>
+</section>
+
