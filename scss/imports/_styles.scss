@@ -21,7 +21,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 
 .glyphs {
     .glyph {
-        fill: var(--bs-body-color);
+        fill: var(--bs-343);
         stroke: rgba(0, 0, 0, 0);
         stroke-width: 50px;
         transition: stroke  0.4s ease, fill 0.4s ease;
@@ -31,7 +31,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
         &:active,
         &:focus {
             fill: var(--bs-stckr);
-            stroke: var(--bs-body-color);
+            stroke: var(--bs-343);
         }
     }
 }
@@ -199,7 +199,7 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
     .card {
         overflow: hidden;
         text-decoration: none;
-        color: var(--bs-dark);
+        color: var(--bs-343);
 
         &-img {
             border-radius: var(--bs-card-inner-border-radius) 0 0;
@@ -270,13 +270,13 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 
     h2,
     .h2 {
-        text-shadow: 2px 2px 3px var(--bs-dark);
+        text-shadow: 2px 2px 3px var(--bs-343);
     }
 
     &:before {
         content: "";
         position: absolute;
-        background-color: var(--bs-ice);
+        background-color: var(--bs-343);
         height: 100%;
         width: 100%;
         top: 0;
@@ -305,11 +305,12 @@ h4, .h4, h3, .h3, h2, .h2, h1, .h1,
 
 .text-transparent {
     --bs-text-opacity: 0;
-    color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
+    color: rgba(var(--bs-343-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-ice,
 .lead {
-    color: var(--bs-ice);
+    color: var(--bs-343);
 }
 
 .pagination-stacked {
